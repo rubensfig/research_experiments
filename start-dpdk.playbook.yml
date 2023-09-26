@@ -1,0 +1,30 @@
+---
+- name: Copy FPGA configuration file
+  copy:
+    src: "{{ FPGA_PROFILE }}"
+    dest: /opt/tofino-bng
+
+- name: Load uio driver
+  command: "modprobe uio"
+  become: yes
+  ignore_errors: True
+
+- name: Load igb_uio driver
+  command: "insmod {{ DPDK_BUILD }}/kernel/linux/igb_uio/igb_uio.ko"
+  become: yes
+  ignore_errors: True
+
+- name: "Bind FPGA {{ fpga1_pci }} to igb_uio"
+  command: "{{ DPDK }}/usertools/dpdk-devbind.py -b igb_uio {{ fpga1_pci }} "
+
+- name: "Bind FPGA {{ fpga2_pci }} to igb_uio"
+  command: "{{ DPDK }}/usertools/dpdk-devbind.py -b igb_uio {{ fpga2_pci }} "
+
+- name: Flash configuration on FPGAs
+  command: '{{ DPDK_BUILD }}/examples/dpdk-csp7551_app --legacy-mem -- --vbng_cfg=\(0000:{{ fpga1_pci }}_0,{{ file }}\),\(0000:{{ fpga1_pci }}_1,{{ file }}\),\(0000:{{ fpga1_pci }}_2,{{ file }}\),\(0000:{{ fpga1_pci }}_3,{{ file }}\),\(0000:{{ fpga1_pci }}_4,{{ file }}\),\(0000:{{ fpga2_pci }}_0,{{ file }}\),\(0000:{{ fpga2_pci }}_1,{{ file }}\),\(0000:{{ fpga2_pci }}_2,{{ file }}\),\(0000:{{ fpga2_pci }}_3,{{ file }}\),\(0000:{{ fpga2_pci }}_4,{{ file }}\)'
+  vars:
+    file: "/opt/tofino-bng/{{ FPGA_PROFILE }}"
+  register: command_results
+  become: yes
+  failed_when: "'Step 3: register configuration done' not in command_results.stdout_lines"
+

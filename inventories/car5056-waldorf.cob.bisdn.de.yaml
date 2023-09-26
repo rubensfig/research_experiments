@@ -1,0 +1,40 @@
+---
+vpp_control_plane:
+  hosts:
+    vbngcontrol.labshared.bisdn.de:		
+  vars:
+    ansible_user: ubuntu
+vpp_data_plane:
+  hosts:
+    statler.labshared.bisdn.de:		
+  vars:
+    ansible_user: ubuntu
+tof_data_plane:
+  hosts:
+    csp7551-1.labshared.bisdn.de:		
+  vars:
+    ansible_user: ubuntu
+    ansible_password: ubuntu
+
+    SDE: /home/ubuntu/bf-sde-9.9.1
+    SDE_INSTALL: /home/ubuntu/bf-sde-9.9.1/install/
+    BSP_INSTALL: /home/ubuntu/bf-sde-9.9.1/install/
+    DPDK: /home/ubuntu/dpdk-stable-20.11.5/
+    DPDK_BUILD: /home/ubuntu/dpdk-stable-20.11.5/build/
+    MILESTONE2: /home/ubuntu/Milestone2/
+
+    FPGA_PROFILE: 4user_5class.cfg
+
+    fpga1_pci: d8:00.0
+    fpga2_pci: 3b:00.0
+
+traffic_gen:
+  hosts:
+    waldorf.labshared.bisdn.de:		
+  vars:
+    ansible_user: centos
+pasta:
+  hosts:
+    s9180.labshared.bisdn.de:		
+  vars:
+    ansible_user: ubuntu

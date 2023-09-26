@@ -1,0 +1,86 @@
+---
+- name: Start kernel driver
+  command: /opt/bf/sde-9.5.0/bin/bf_kdrv_mod_load $SDE_INSTALL
+  environment:
+    SDE_INSTALL: /opt/bf/sde-9.5.0
+    SDE: /opt/bf/sde-9.5.0
+
+- name: "Copy configuration file"
+  copy:
+    src: se_16.conf
+    dest: /root/p4-dbng-up/p4src/se_16.tofino/
+
+- name: "start UP"
+  command: /root/GPIO/bf/run_switchd.sh --conf-file=/root/p4-dbng-up/p4src/se_16.tofino/se_16.conf --background
+  async: 1000000
+  poll: 0
+  environment:
+    SDE_INSTALL: /opt/bf/sde-9.5.0
+    SDE: /opt/bf/sde-9.5.0
+  register: out
+
+- name: "let switch init"
+  pause:
+    seconds: 15
+
+- name: "load port config"
+  command: /opt/bf/sde-9.5.0/bin/bfshell -f /root/p4-dbng-up/scripts/ports_vendor
+
+- name: "start containerized redis with docker for user plane"
+  docker_container:
+    name: redis
+    image: "redis:alpine"
+    command: redis-server /usr/local/etc/redis/redis.conf --appendonly yes
+    ports: "6379:6379"
+    state: started
+    volumes:
+      - /etc/bng_up/redis/redis.conf:/usr/local/etc/redis/redis.conf
+
+- name: "pfcp-bng-up-1"
+  docker_container:
+    name: "pfcp-up"
+    image: "core.harbor.k8s.bisdn.de/dbng/dbng-sci:ce2927e4"
+    network_mode: host
+    command: bngu
+    capabilities:
+      - "SYS_NICE"
+      - "NET_ADMIN"
+    volumes:
+      - /etc/bng_up/pfcp-bng-up-1.json:/etc/dbng-sci/bngu.json
+  loop_control:
+    index_var: loop_index
+
+- name: "start cp application"
+  command: python /root/p4-dbng-up/scripts/redis-mapper.py
+  environment:
+    SDE_INSTALL: /opt/bf/sde-9.5.0
+    SDE: /opt/bf/sde-9.5.0
+  async: 1000000
+  poll: 0
+
+- name: setup bridge
+  command: ip link add bridge type bridge vlan_filtering 1
+
+- name: setup vxlan
+  command: ip l a vxlan100 type vxlan id 100 dstport 4789 local 172.16.110.85 remote 172.16.110.234
+
+- name: enslave CPU port
+  command: ip link set enp134s0f0 master bridge
+
+- name: enslave vxlan100
+  command: ip link set vxlan100 master bridge
+
+- name: add vid 400 to bridge
+  command: bridge vlan add vid 400 dev enp134s0f0 master
+
+- name: add vid 400 to bridge
+  command: bridge vlan add vid 400 dev vxlan100 master
+
+- name: set CPU port up
+  command: ip link set enp134s0f0 up
+
+- name: set bridge up
+  command: ip link set bridge up
+
+- name: set vxlan100 port up
+  command: ip link set vxlan100 up

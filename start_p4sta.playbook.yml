@@ -1,0 +1,14 @@
+---
+- name: Start P4STA
+  shell: "pastaenv/bin/python3 core/core.py"
+  async: 1000000
+  poll: 0
+  args:
+    chdir: /home/ubuntu/P4STA
+
+- name: Start GUI
+  shell: "pastaenv/bin/python3 manage.py runserver 0.0.0.0:9997"
+  async: 1000000
+  poll: 0
+  args:
+    chdir: /home/ubuntu/P4STA
