@@ -20,7 +20,7 @@
 
     - name: let trex start
       pause:
-        seconds: 60
+        seconds: 90
 
     - name: start traffic
       # TOS=> DSCP:START:PPS
