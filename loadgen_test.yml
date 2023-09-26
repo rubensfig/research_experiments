@@ -11,16 +11,6 @@
     - set_fact:
        dest_dir: "output/{{ label }}/{{ subscribers }}/{{ measure_id }}/"
 
-    - name: Copy test file to server
-      copy:
-        src: bng_flow_stats.py
-        dest:  /opt/trex/v3.02/automation/trex_control_plane/interactive/trex/examples/stl/
-
-    - name: Copy traffic profile to server
-      template:
-        src: traffic_profiles.ini
-        dest:  /opt/trex/v3.02/
-
     - name: restart trex-server
       systemd:
         name: trex-server
@@ -30,11 +20,12 @@
 
     - name: let trex start
       pause:
-        seconds: 15
+        seconds: 30
 
     - name: start traffic
       # TOS=> DSCP:START:PPS
-      command: "python3 automation/trex_control_plane/interactive/trex/examples/stl/bng_flow_stats.py --tos 12:0:10000 --tos 13:0:10000 --tos 0:10:5000 --results {{ measure_id }} --packet {{ packet_size }} --duration 60 --subscribers {{ subscribers }}"
+      command: "./ndr --stl  --profile automation/trex_control_plane/interactive/trex/examples/stl/bng_flow_stats.py --ports 0 1  --prof-tun subscribers={{ subscribers }}"
+      # command: "python3 automation/trex_control_plane/interactive/trex/examples/stl/bng_flow_stats.py --tos 12:0:10000 --tos 13:0:10000 --tos 0:10:5000 --results {{ measure_id }} --packet {{ packet_size }} --duration 60 --subscribers {{ subscribers }}"
       async: 100000
       poll: 0
       args:
