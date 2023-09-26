@@ -20,7 +20,7 @@
 
     - name: let trex start
       pause:
-        seconds: 30
+        seconds: 60
 
     - name: start traffic
       # TOS=> DSCP:START:PPS
@@ -32,7 +32,6 @@
     - name: let test start
       pause:
         seconds: 20
-
 
     - name: Copy trex results
       become: yes
