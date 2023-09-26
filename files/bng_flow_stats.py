@@ -156,7 +156,7 @@ class BNGProfile(object):
                                 ),
                                 isg = param_start * 1000000,
                                 mode = STLTXCont(pps=param_pps),
-                                flow_stats = STLFlowStats(pg_id=param_tos),
+                                # flow_stats = STLFlowStats(pg_id=param_tos),
                             )
                         else:
                             s = STLStream(
