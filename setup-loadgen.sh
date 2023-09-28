@@ -2,7 +2,7 @@
 
 RANGE=(1 2 4 8 16 32 64 128 256 512 1024 2048 4096 8192 16384 20000)
 RETRIES=10
-LABEL="8core-loadgen"
+LABEL="12core-loadgen"
 
 ansible-playbook -i inventories/labshared-setup.bisdn.de.yaml loadgen_setup.yml
 
