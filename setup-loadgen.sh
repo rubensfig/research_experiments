@@ -1,9 +1,8 @@
 #!/bin/bash
 
-# RANGE=(1 2 4 8 16 32 64 128 256 512 1024 2048 4096 8192 16384 20000)
-RANGE=(16384 20000)
+RANGE=(1 2 4 8 16 32 64 128 256 512 1024 2048 4096 8192 16384 20000)
 RETRIES=10
-LABEL="16core-loadgen"
+LABEL="20core-loadgen"
 
 ansible-playbook -i inventories/labshared-setup.bisdn.de.yaml loadgen_setup.yml
 
