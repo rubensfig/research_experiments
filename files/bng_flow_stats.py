@@ -17,10 +17,12 @@ TREX_DIR = f"/opt/trex/{TREX_VERSION}/"
 TRAFFIC_PROFILE = "traffic_profiles.ini"
 
 
-def get_packet(dst_ip, tos, size):
+def get_packet(sub_id, dst_ip, tos, size):
     # pkt = Ether(src="02:00:00:00:00:01",dst="00:00:00:01:00:01") / IP(src="10.0.0.2", tos=tos) / UDP(sport=4444, dport=4444)
     pkt = (
         Ether(src="02:00:00:00:00:01", dst="00:00:00:01:00:01")
+        / Dot1Q(vlan = 0)
+        / Dot1Q(vlan = sub_id)
         / IP(src="10.0.0.2", dst=ip_address(dst_ip), tos=tos)
         / UDP(sport=4444, dport=4444)
     )
@@ -33,7 +35,7 @@ class Subscribers:
     def __init__(self, total=1):
         self.total = total
         self.current = -1
-        self.base_ip = int(ip_address("192.168.0.0"))
+        self.base_ip = int(ip_address("192.168.0.1"))
 
     def __iter__(self):
         return self
@@ -50,6 +52,7 @@ class Subscribers:
 
 def output_results(c, measurement_id):
     stats = c.get_stats()
+    print(stats)
     stats_dict = json.dumps(
         {
             0: stats[0],
@@ -135,7 +138,6 @@ class BNGProfile(object):
 
     def _make_streams(self, **kwargs):
         subscribers = int(kwargs['subscribers'])
-        print(subscribers)
 
         try:
             streams = []
@@ -144,7 +146,7 @@ class BNGProfile(object):
             for sub in it_sub:
                 for section in self.config.sections():
 
-                        param_tos = int(self.config[section]['tos'])
+                        param_tos = int(self.config[section]['tos']) * 4
                         param_packet_size = int(self.config[section]['packet_size'])
                         param_pps = int(self.config[section]['pps'])
                         param_start = int(self.config[section]['start'])
@@ -152,22 +154,22 @@ class BNGProfile(object):
                         if sub[0] == 0:
                             s = STLStream(
                                 packet=STLPktBuilder(
-                                    pkt=get_packet(sub[1], param_tos, param_packet_size)
+                                    pkt=get_packet(sub[0], sub[1], param_tos, param_packet_size)
                                 ),
                                 isg = param_start * 1000000,
-                                mode = STLTXCont(pps=param_pps),
+                                mode = STLTXCont(pps = param_pps),
                                 # flow_stats = STLFlowStats(pg_id=param_tos),
                             )
                         else:
                             s = STLStream(
                                 packet=STLPktBuilder(
-                                    pkt=get_packet(sub[1], param_tos, param_packet_size)
+                                    pkt=get_packet(sub[0], sub[1], param_tos, param_packet_size)
                                 ),
                                 isg = param_start * 1000000,
                                 mode = STLTXCont(pps=param_pps),
                             )
 
-                streams.append(s)
+                        streams.append(s)
 
             return streams
 

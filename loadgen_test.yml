@@ -24,8 +24,7 @@
 
     - name: start traffic
       # TOS=> DSCP:START:PPS
-      command: "./ndr --stl  --profile automation/trex_control_plane/interactive/trex/examples/stl/bng_flow_stats.py --ports 0 1  --prof-tun subscribers={{ subscribers }} -o results/ndr_{{ label }}_{{ measure_id }}.json"
-      # command: "python3 automation/trex_control_plane/interactive/trex/examples/stl/bng_flow_stats.py --tos 12:0:10000 --tos 13:0:10000 --tos 0:10:5000 --results {{ measure_id }} --packet {{ packet_size }} --duration 60 --subscribers {{ subscribers }}"
+      command: "python3 automation/trex_control_plane/interactive/trex/examples/stl/bng_flow_stats.py --results {{ measure_id }} --packet {{ packet_size }} --duration 60 --subscribers {{ subscribers }}"
       args:
         chdir: /opt/trex/v3.02/
 
@@ -36,6 +35,7 @@
     - name: Copy trex results
       become: yes
       fetch: 
-        src: "/opt/trex/v3.02/results/ndr_{{ label }}_{{ measure_id }}.json"
+        # src: "/opt/trex/v3.02/results/ndr_{{ label }}_{{ measure_id }}.json"
+        src: "/opt/trex/v3.02/results/{{ measure_id }}/trex_results.json"
         dest: "{{ dest_dir }}"
         flat: yes
