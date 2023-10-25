@@ -50,7 +50,7 @@ class Subscribers:
 
 
 
-def output_results(c, measurement_id):
+def output_results(c, measurement_id, subscribers):
     stats = c.get_stats()
     print(stats)
     stats_dict = json.dumps(
@@ -63,7 +63,7 @@ def output_results(c, measurement_id):
         sort_keys=True,
     )
 
-    output_dir = f"{TREX_VERSION}/results/{measurement_id}/"
+    output_dir = f"{TREX_DIR}/results/{measurement_id}/{subscribers}"
     if not os.path.isdir(output_dir):
         os.makedirs(output_dir)
 
@@ -209,7 +209,8 @@ def rx_example(tx_port, rx_port, **kwargs):
 
     rx_iteration(c, tx_port, rx_port, duration)
 
-    output_results(c, results_label)
+    subscribers = int(kwargs['subscribers'])
+    output_results(c, results_label, subscribers)
 
 
 def main():
