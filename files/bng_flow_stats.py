@@ -67,7 +67,7 @@ def output_results(c, measurement_id, subscribers):
     if not os.path.isdir(output_dir):
         os.makedirs(output_dir)
 
-    file_path = output_dir + "{measurement_id}_trex_results.json"
+    file_path = output_dir + f"{measurement_id}_trex_results.json"
     with open(file_path, "w") as results_file:
         results_file.write(str(stats))
 
