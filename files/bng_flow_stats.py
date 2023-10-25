@@ -69,7 +69,7 @@ def output_results(c, measurement_id, subscribers):
 
     file_path = output_dir + "{measurement_id}_trex_results.json"
     with open(file_path, "w") as results_file:
-        results_file.write(stats_dict)
+        results_file.write(str(stats))
 
 
 # RX one iteration
