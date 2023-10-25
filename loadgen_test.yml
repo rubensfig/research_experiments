@@ -24,7 +24,7 @@
 
     - name: start traffic
       # TOS=> DSCP:START:PPS
-      command: "python3 automation/trex_control_plane/interactive/trex/examples/stl/bng_flow_stats.py --results {{ measure_id }} --packet {{ packet_size }} --duration 60 --subscribers {{ subscribers }}"
+      command: "python3 automation/trex_control_plane/interactive/trex/examples/stl/bng_flow_stats.py --results {{ measure_id }} --duration 60 --subscribers {{ subscribers }}"
       args:
         chdir: /opt/trex/v3.02/
 
