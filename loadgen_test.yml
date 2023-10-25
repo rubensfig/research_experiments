@@ -36,6 +36,6 @@
       become: yes
       fetch: 
         # src: "/opt/trex/v3.02/results/ndr_{{ label }}_{{ measure_id }}.json"
-        src: "/opt/trex/v3.02/results/{{ measure_id }}/trex_results.json"
+        src: "/opt/trex/v3.02/results/{{ measure_id }}_trex_results.json"
         dest: "{{ dest_dir }}"
         flat: yes
