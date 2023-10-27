@@ -79,7 +79,7 @@ def rx_iteration(c, tx_port, rx_port, duration):
     # c.set_service_mode(ports = 0)
     # capture_id = c.start_capture(rx_ports=0)
 
-    c.start(ports=[tx_port], duration=duration)
+    c.start(ports=[tx_port], duration=duration, mult="100mpps")
     c.wait_on_traffic(ports=[tx_port, rx_port])
     # c.stop_capture(capture_id["id"], "/tmp/port_0.pcap")
 
@@ -157,7 +157,7 @@ class BNGProfile(object):
                                     pkt=get_packet(sub[0], sub[1], param_tos, param_packet_size)
                                 ),
                                 isg = param_start * 1000000,
-                                mode = STLTXCont(pps = param_pps),
+                                mode = STLTXCont((),
                                 # flow_stats = STLFlowStats(pg_id=param_tos),
                             )
                         else:
@@ -166,7 +166,7 @@ class BNGProfile(object):
                                     pkt=get_packet(sub[0], sub[1], param_tos, param_packet_size)
                                 ),
                                 isg = param_start * 1000000,
-                                mode = STLTXCont(pps=param_pps),
+                                mode = STLTXCont(),
                             )
 
                         streams.append(s)
