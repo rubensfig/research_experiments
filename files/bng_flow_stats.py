@@ -157,7 +157,7 @@ class BNGProfile(object):
                                     pkt=get_packet(sub[0], sub[1], param_tos, param_packet_size)
                                 ),
                                 isg = param_start * 1000000,
-                                mode = STLTXCont((),
+                                mode = STLTXCont(),
                                 # flow_stats = STLFlowStats(pg_id=param_tos),
                             )
                         else:
