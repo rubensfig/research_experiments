@@ -7,7 +7,7 @@
         src: p4tg_post_request.json
         dst: /home/ubuntu/P4TG/p4tg_post_request.json
       vars:
-        stream2_rate: {{ stream2_rate }}
+        stream2_rate: "{{ stream2_rate }}"
 
 - hosts: vpp_data_plane
   become: yes
