@@ -60,7 +60,7 @@
        dest_dir: "output/{{ label }}/{{ range }}/{{ measure_id }}/"
 
     - name: print vpp stats after test
-      command: ./build-root/build-vpp-native/vpp/bin/vpp_get_stats dump
+      command: /root/vpp/build-root/build-vpp-native/vpp/bin/vpp_get_stats dump
       register: vppstats
 
     - name: create stats file
