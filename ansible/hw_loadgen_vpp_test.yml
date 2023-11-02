@@ -60,7 +60,7 @@
 
     - name: print vpp stats after test
       command: ./build-root/build-vpp-native/vpp/bin/vpp_get_stats dump
-      register: {{ vppstats }}
+      register: "{{ vppstats }}"
 
     - name: create stats file
       file: 
