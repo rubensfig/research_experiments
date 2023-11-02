@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RANGE=(0 1 2 3 4 5 6)
+RANGE=(0.1 1 2 3 4 5 6)
 RETRIES=10
 LABEL="vpp-rate"
 
