@@ -28,15 +28,53 @@
 
     - name: Get statistics
       command: "curl http://car5056.labshared.bisdn.de:8000/statistics"
-      register: "{{ stats_out }}"
+      register: "{{ stats }}"
 
-    - name: Create file
+    - name: create file
       file: 
-        path: /home/ubuntu/p4tg/results/{{ measure_id }}_p4tg_stats.json
+        path: /home/ubuntu/P4TG/results/{{ measure_id }}_p4tg_stats.json
 
-    - name: Copy trex results
+    - name: output results
+      copy:
+        content: "{{ stats.stdout }}"
+        dest: /home/ubuntu/P4TG/results/{{ measure_id }}_p4tg_stats.json
+
+    - name: copy trex results
       become: yes
       fetch: 
         src: "/opt/trex/v3.02/results/{{ measure_id }}_trex_results.json"
         dest: "{{ dest_dir }}"
         flat: yes
+
+- hosts: vpp_data_plane
+  become: yes
+  tasks:
+    - set_fact:
+       measure_id: "{{ measure_id }}"    
+    - set_fact:
+       range: "{{ range }}"
+    - set_fact:
+       label: "{{ label }}"
+    - set_fact:
+       dest_dir: "output/{{ label }}/{{ range }}/{{ measure_id }}/"
+
+    - name: print vpp stats after test
+      command: ./build-root/build-vpp-native/vpp/bin/vpp_get_stats dump
+      register: {{ vppstats }}
+
+    - name: create stats file
+      file: 
+        path: /home/ubuntu/vpp/results/{{ measure_id }}_vpp_stats
+
+    - name: output results
+      copy:
+        content: "{{ vppstats.stdout }}"
+        dest: /home/ubuntu/P4TG/results/{{ measure_id }}_vpp_stats
+
+    - name: copy stats file
+      become: yes
+      fetch: 
+        src: "/home/ubuntu/P4TG/results/{{ measure_id }}_vpp_stats"
+        dest: "{{ dest_dir }}"
+        flat: yes
+
