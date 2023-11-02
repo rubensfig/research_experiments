@@ -32,6 +32,7 @@
 
     - name: create file
       file: 
+        state: touch
         path: /home/ubuntu/P4TG/results/{{ measure_id }}_p4tg_stats.json
 
     - name: output results
@@ -64,6 +65,7 @@
 
     - name: create stats file
       file: 
+        state: touch
         path: /home/ubuntu/vpp/results/{{ measure_id }}_vpp_stats
 
     - name: output results
