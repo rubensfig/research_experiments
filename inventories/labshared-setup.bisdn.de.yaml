@@ -27,7 +27,12 @@ tof_data_plane:
 
     fpga1_pci: d8:00.0
     fpga2_pci: 3b:00.0
-
+hw_traffic_gen:
+  hosts:
+    car5056.labshared.bisdn.de:
+  vars:
+    ansible_user: ubuntu
+    ansible_password: ubuntu
 traffic_gen:
   hosts:
     waldorf.labshared.bisdn.de:		

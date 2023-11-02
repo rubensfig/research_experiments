@@ -1,0 +1,42 @@
+---
+- hosts: hw_traffic_gen
+  become: yes
+  tasks:
+    - set_fact:
+       measure_id: "{{ measure_id }}"    
+    - set_fact:
+       range: "{{ range }}"
+    - set_fact:
+       label: "{{ label }}"
+    - set_fact:
+       dest_dir: "output/{{ label }}/{{ range }}/{{ measure_id }}/"
+
+    - name: reset traffic gen
+      command: "curl http://car5056.labshared.bisdn.de:8000/reset"
+
+    - name: start traffic gen
+      command: "curl http://car5056.labshared.bisdn.de:8000/trafficgen -X POST -H 'Content-Type: application/json' -d '@p4tg_post_request.json'"
+      args:
+        chdir: /home/ubuntu/P4TG
+
+    - name: run traffic
+      pause:
+        seconds: 65
+
+    - name: stop traffic gen
+      command: "curl http://car5056.labshared.bisdn.de:8000/trafficgen -X DELETE"
+
+    - name: Get statistics
+      command: "curl http://car5056.labshared.bisdn.de:8000/statistics"
+      register_output: "{{ stats_out }}"
+
+    - name: Create file
+      file: 
+        path: /home/ubuntu/p4tg/results/{{ measure_id }}_p4tg_stats.json
+
+    - name: Copy trex results
+      become: yes
+      fetch: 
+        src: "/opt/trex/v3.02/results/{{ measure_id }}_trex_results.json"
+        dest: "{{ dest_dir }}"
+        flat: yes
