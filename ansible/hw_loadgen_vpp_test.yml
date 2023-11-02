@@ -9,7 +9,7 @@
     - set_fact:
        label: "{{ label }}"
     - set_fact:
-       dest_dir: "output/{{ label }}/{{ range }}/{{ measure_id }}/"
+       dest_dir: "../output/{{ label }}/{{ range }}/{{ measure_id }}/"
 
     - name: reset traffic gen
       command: "curl http://car5056.labshared.bisdn.de:8000/reset"
@@ -57,7 +57,7 @@
     - set_fact:
        label: "{{ label }}"
     - set_fact:
-       dest_dir: "output/{{ label }}/{{ range }}/{{ measure_id }}/"
+       dest_dir: "../output/{{ label }}/{{ range }}/{{ measure_id }}/"
 
     - name: print vpp stats after test
       command: /root/vpp/build-root/build-vpp-native/vpp/bin/vpp_get_stats dump
