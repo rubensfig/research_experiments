@@ -40,10 +40,10 @@
         content: "{{ stats.stdout }}"
         dest: /home/ubuntu/P4TG/results/{{ measure_id }}_p4tg_stats.json
 
-    - name: copy trex results
+    - name: copy file results
       become: yes
       fetch: 
-        src: "/opt/trex/v3.02/results/{{ measure_id }}_trex_results.json"
+        src: "/home/ubuntu/P4TG/results/{{ measure_id }}_trex_results.json"
         dest: "{{ dest_dir }}"
         flat: yes
 
