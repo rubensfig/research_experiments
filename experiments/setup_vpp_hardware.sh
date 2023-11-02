@@ -9,7 +9,7 @@ for i in "${RANGE[@]}"; do
         echo $i $j
         ansible-playbook -i ../inventories/labshared-setup.bisdn.de.yaml ../ansible/hw_loadgen_vpp_setup.yml -e stream2_rate=$i
         ansible-playbook -i ../inventories/labshared-setup.bisdn.de.yaml ../ansible/hw_loadgen_vpp_test.yml -e measure_id=$j -e range=$i -e label=$LABEL
-        ansible-playbook -i ../inventories/labshared-setup.bisdn.de.yaml vpp_teardown.yml
+        ansible-playbook -i ../inventories/labshared-setup.bisdn.de.yaml ../ansible/vpp_teardown.yml
      done
 done
 
