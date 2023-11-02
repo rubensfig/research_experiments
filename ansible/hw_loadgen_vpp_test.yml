@@ -28,7 +28,7 @@
 
     - name: Get statistics
       command: "curl http://car5056.labshared.bisdn.de:8000/statistics"
-      register_output: "{{ stats_out }}"
+      register: "{{ stats_out }}"
 
     - name: Create file
       file: 
