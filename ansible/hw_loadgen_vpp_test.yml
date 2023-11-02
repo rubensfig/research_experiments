@@ -73,6 +73,10 @@
         content: "{{ vppstats.stdout }}"
         dest: /home/ubuntu/vpp/results/{{ measure_id }}_vpp_stats
 
+    - name: run traffic
+      pause:
+        seconds: 3
+
     - name: copy stats file
       become: yes
       fetch: 
