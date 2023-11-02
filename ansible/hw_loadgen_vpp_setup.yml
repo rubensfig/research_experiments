@@ -16,4 +16,5 @@
       command: make run-release
       environment:
         STARTUP_CONF: /etc/vpp/startup.conf
-      chdir: /root/vpp
+      args:
+        chdir: /root/vpp
