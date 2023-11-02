@@ -28,7 +28,7 @@
 
     - name: Get statistics
       command: "curl http://car5056.labshared.bisdn.de:8000/statistics"
-      register: "{{ stats }}"
+      register: stats
 
     - name: create file
       file: 
@@ -60,7 +60,7 @@
 
     - name: print vpp stats after test
       command: ./build-root/build-vpp-native/vpp/bin/vpp_get_stats dump
-      register: "{{ vppstats }}"
+      register: vppstats
 
     - name: create stats file
       file: 
