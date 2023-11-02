@@ -14,4 +14,4 @@ for i in "${RANGE[@]}"; do
 
     ansible-playbook -i ../inventories/labshared-setup.bisdn.de.yaml vpp_teardown.yml
 done
-
+R

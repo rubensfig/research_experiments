@@ -1,0 +1,8 @@
+---
+- hosts: vpp_data_plane
+  become: yes
+  tasks:
+    - name: kill  VPP
+      command: kill `pgrep vpp`
+
+
