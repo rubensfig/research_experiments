@@ -43,7 +43,7 @@
     - name: copy file results
       become: yes
       fetch: 
-        src: "/home/ubuntu/P4TG/results/{{ measure_id }}_trex_results.json"
+        src: "/home/ubuntu/P4TG/results/{{ measure_id }}_p4tg_stats.json"
         dest: "{{ dest_dir }}"
         flat: yes
 
