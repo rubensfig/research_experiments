@@ -71,12 +71,12 @@
     - name: output results
       copy:
         content: "{{ vppstats.stdout }}"
-        dest: /home/ubuntu/P4TG/results/{{ measure_id }}_vpp_stats
+        dest: /home/ubuntu/vpp/results/{{ measure_id }}_vpp_stats
 
     - name: copy stats file
       become: yes
       fetch: 
-        src: "/home/ubuntu/P4TG/results/{{ measure_id }}_vpp_stats"
+        src: " /home/ubuntu/vpp/results/{{ measure_id }}_vpp_stats"
         dest: "{{ dest_dir }}"
         flat: yes
 
