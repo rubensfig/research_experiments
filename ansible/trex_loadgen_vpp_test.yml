@@ -5,11 +5,11 @@
     - set_fact:
        measure_id: "{{ measure_id }}"    
     - set_fact:
-       range: "{{ range }}"
+       subscribers: "{{ range }}"
     - set_fact:
        label: "{{ label }}"
     - set_fact:
-       dest_dir: "../output/{{ label }}/{{ range }}/{{ measure_id }}/"
+       dest_dir: "../output/{{ label }}/{{ subscribers }}/{{ measure_id }}/"
 
     - name: restart trex-server
       systemd:
@@ -46,7 +46,7 @@
     - set_fact:
        label: "{{ label }}"
     - set_fact:
-       dest_dir: "../output/{{ label }}/{{ range }}/{{ measure_id }}/"
+       dest_dir: "../output/{{ label }}/{{ subscribers }}/{{ measure_id }}/"
 
     - name: print vpp stats after test
       command: /root/vpp/build-root/build-vpp-native/vpp/bin/vpp_get_stats dump
