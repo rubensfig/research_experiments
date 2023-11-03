@@ -42,7 +42,7 @@
     - set_fact:
        measure_id: "{{ measure_id }}"    
     - set_fact:
-       range: "{{ range }}"
+       subscribers: "{{ range }}"
     - set_fact:
        label: "{{ label }}"
     - set_fact:
