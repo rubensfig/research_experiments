@@ -1,5 +1,5 @@
 ---
-- hosts: hw_traffic_gen
+- hosts: traffic_gen
   become: yes
   tasks:
     - set_fact:
