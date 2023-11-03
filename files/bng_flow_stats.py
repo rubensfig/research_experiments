@@ -35,7 +35,7 @@ class Subscribers:
     def __init__(self, total=1):
         self.total = total
         self.current = -1
-        self.base_ip = int(ip_address("192.168.0.1"))
+        self.base_ip = int(ip_address("192.168.0.0"))
 
     def __iter__(self):
         return self
@@ -79,7 +79,7 @@ def rx_iteration(c, tx_port, rx_port, duration):
     # c.set_service_mode(ports = 0)
     # capture_id = c.start_capture(rx_ports=0)
 
-    c.start(ports=[tx_port], duration=duration, mult="100mpps")
+    c.start(ports=[tx_port], duration=duration, mult="5gbpsl1")
     c.wait_on_traffic(ports=[tx_port, rx_port])
     # c.stop_capture(capture_id["id"], "/tmp/port_0.pcap")
 

@@ -1,0 +1,23 @@
+---
+- hosts: traffic_gen
+  become: yes
+  tasks:
+    - name: Copy test file to server
+      copy:
+        src: bng_flow_stats.py
+        dest:  /opt/trex/v3.02/automation/trex_control_plane/interactive/trex/examples/stl/
+
+    - name: Copy traffic profile to server
+      copy:
+        src: traffic_profiles.ini
+        dest:  /opt/trex/v3.02/
+
+- hosts: vpp_data_plane
+  become: yes
+  tasks:
+    - name: init VPP
+      command: make run-release
+      environment:
+        STARTUP_CONF: /etc/vpp/startup.conf
+      args:
+        chdir: /root/vpp
