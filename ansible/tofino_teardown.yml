@@ -2,11 +2,11 @@
 - hosts: tofino_data_plane
   become: yes
   tasks:
-    - name: get bf_switchd process
+    - name: get tofino process
       command: "pgrep bf_switchd"
-      register: vpp
+      register: process
 
-    - name: kill bf_switchd process
-      command: "kill {{ vpp.stdout }}"
+    - name: kill tofino process
+      command: "kill {{ processs.stdout }}"
 
 
