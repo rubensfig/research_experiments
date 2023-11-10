@@ -1,8 +1,8 @@
 #!/bin/bash
 
 RANGE=(1 2 4 8 16 32 64 128 256 512 1024 2048 4096 8192)
-RETRIES=10
-LABEL="vpp-flows-ht"
+RETRIES=1
+LABEL="tofino-flows"
 
 for i in "${RANGE[@]}"; do
     ansible-playbook -i ../inventories/labshared-setup.bisdn.de.yaml ../ansible/trex_loadgen_tofino_setup.yml
