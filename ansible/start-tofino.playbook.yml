@@ -10,7 +10,7 @@
   ignore_errors: True
 
 - name: Start switchd process
-  command: "{{ SDE }}/run_switchd.sh -p switch -c /home/ubuntu/p4-dbng-up/se_16.tofino/se_16.conf"
+  command: "{{ SDE }}/run_switchd.sh -c /home/ubuntu/p4-dbng-up/basic_mirror/basic_mirror.conf"
   async: 1000000
   poll: 0
 

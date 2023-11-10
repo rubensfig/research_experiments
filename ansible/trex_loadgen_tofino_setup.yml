@@ -1,0 +1,30 @@
+---
+- hosts: traffic_gen
+  become: yes
+  tasks:
+    - name: Copy test file to server
+      copy:
+        src: bng_flow_stats.py
+        dest:  /opt/trex/v3.02/automation/trex_control_plane/interactive/trex/examples/stl/
+
+    - name: Copy traffic profile to server
+      copy:
+        src: traffic_profiles.ini
+        dest:  /opt/trex/v3.02/
+
+- hosts: tof_data_plane
+  become: yes
+  environment:
+    SDE_INSTALL: "{{ SDE_INSTALL }}"
+    SDE: "{{ SDE }}"
+    MILESTONE2: "/home/ubuntu/Milestone2/"
+  tasks:
+    # Needs to come before the FPGA config
+    - name: Start tofino environment
+      import_tasks: start-tofino.playbook.yml
+      environment:
+        SDE_INSTALL: "{{ SDE_INSTALL }}"
+        SDE: "{{ SDE }}"
+
+    - name: Program DPDK and FPGA
+      import_tasks: start-dpdk.playbook.yml

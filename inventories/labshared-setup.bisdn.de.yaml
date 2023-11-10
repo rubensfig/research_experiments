@@ -23,10 +23,10 @@ tof_data_plane:
     DPDK_BUILD: /home/ubuntu/dpdk-stable-20.11.5/build/
     MILESTONE2: /home/ubuntu/Milestone2/
 
-    FPGA_PROFILE: 4user_5class.cfg
+    FPGA_PROFILE: demo.cfg
 
     fpga1_pci: d8:00.0
-    fpga2_pci: 3b:00.0
+
 hw_traffic_gen:
   hosts:
     car5056.labshared.bisdn.de:
