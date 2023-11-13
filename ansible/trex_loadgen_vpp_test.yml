@@ -9,6 +9,8 @@
     - set_fact:
        label: "{{ label }}"
     - set_fact:
+       packet_size: "{{ packet_size }}"
+    - set_fact:
        dest_dir: "../output/{{ label }}/{{ subscribers }}/{{ packet_size }}/{{ measure_id }}/"
 
     - name: restart trex-server
@@ -45,6 +47,8 @@
        subscribers: "{{ range }}"
     - set_fact:
        label: "{{ label }}"
+    - set_fact:
+       packet_size: "{{ packet_size }}"
     - set_fact:
        dest_dir: "../output/{{ label }}/{{ subscribers }}/{{ packet_size }}/{{ measure_id }}/"
 
