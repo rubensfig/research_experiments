@@ -8,9 +8,11 @@
         dest:  /opt/trex/v3.02/automation/trex_control_plane/interactive/trex/examples/stl/
 
     - name: Copy traffic profile to server
-      copy:
+      template:
         src: traffic_profiles.ini
         dest:  /opt/trex/v3.02/
+      vars:
+        packet_size:  "{{ packet_size }}"
 
 - hosts: vpp_data_plane
   become: yes
