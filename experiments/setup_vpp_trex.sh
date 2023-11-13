@@ -10,7 +10,7 @@ for i in "${RANGE[@]}"; do
         for k in 64 256 512 1500; do
             echo $i $j $k;
             ansible-playbook -i ../inventories/labshared-setup.bisdn.de.yaml ../ansible/trex_loadgen_vpp_setup.yml -e packet_size=$k;
-            ansible-playbook -i ../inventories/labshared-setup.bisdn.de.yaml ../ansible/trex_loadgen_vpp_test.yml -e measure_id=$j -e range=$i -e label=$LABEL -e packe_size=$k;
+            ansible-playbook -i ../inventories/labshared-setup.bisdn.de.yaml ../ansible/trex_loadgen_vpp_test.yml -e measure_id=$j -e range=$i -e label=$LABEL -e packet_size=$k;
             ansible-playbook -i ../inventories/labshared-setup.bisdn.de.yaml ../ansible/vpp_teardown.yml;
         done;
      done
