@@ -2,7 +2,7 @@
 
 RANGE=(1 2 4 8 16 32 64 128 256 512 1024 2048 4096 8192)
 RETRIES=10
-LABEL="vpp-flows-ht"
+LABEL="vpp-flows-1gbps"
 
 for i in "${RANGE[@]}"; do
     for j in $(seq 1 $RETRIES); do

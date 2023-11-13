@@ -20,4 +20,4 @@
       environment:
         STARTUP_CONF: /etc/vpp/startup.conf
       args:
-        chdir: /root/vpp
+        chdir: /root/bisdn-vpp

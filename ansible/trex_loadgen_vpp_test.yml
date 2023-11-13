@@ -36,40 +36,40 @@
         dest: "{{ dest_dir }}"
         flat: yes
 
-          # - hosts: vpp_data_plane
-          #   become: yes
-          #   tasks:
-          #     - set_fact:
-          #        measure_id: "{{ measure_id }}"    
-          #     - set_fact:
-          #        subscribers: "{{ range }}"
-          #     - set_fact:
-          #        label: "{{ label }}"
-          #     - set_fact:
-          #        dest_dir: "../output/{{ label }}/{{ subscribers }}/{{ measure_id }}/"
-          # 
-          #     - name: print vpp stats after test
-          #       command: /root/vpp/build-root/build-vpp-native/vpp/bin/vpp_get_stats dump
-          #       register: vppstats
-          # 
-          #     - name: create stats file
-          #       file: 
-          #         state: touch
-          #         path: /home/ubuntu/vpp/results/{{ measure_id }}_vpp_stats
-          # 
-          #     - name: output results
-          #       copy:
-          #         content: "{{ vppstats.stdout }}"
-          #         dest: /home/ubuntu/vpp/results/{{ measure_id }}_vpp_stats
-          # 
-          #     - name: pause stats
-          #       pause:
-          #         seconds: 3
-          # 
-          #     - name: copy stats file
-          #       become: yes
-          #       fetch: 
-          #         src: "/home/ubuntu/vpp/results/{{ measure_id }}_vpp_stats"
-          #         dest: "{{ dest_dir }}"
-          #         flat: yes
-          # 
+- hosts: vpp_data_plane
+  become: yes
+  tasks:
+    - set_fact:
+       measure_id: "{{ measure_id }}"    
+    - set_fact:
+       subscribers: "{{ range }}"
+    - set_fact:
+       label: "{{ label }}"
+    - set_fact:
+       dest_dir: "../output/{{ label }}/{{ subscribers }}/{{ measure_id }}/"
+
+    - name: print vpp stats after test
+      command: /root/bisdn-vpp/build-root/build-vpp-native/vpp/bin/vpp_get_stats dump
+      register: vppstats
+
+    - name: create stats file
+      file: 
+        state: touch
+        path: /home/ubuntu/vpp/results/{{ measure_id }}_vpp_stats
+
+    - name: output results
+      copy:
+        content: "{{ vppstats.stdout }}"
+        dest: /home/ubuntu/vpp/results/{{ measure_id }}_vpp_stats
+
+    - name: pause stats
+      pause:
+        seconds: 3
+
+    - name: copy stats file
+      become: yes
+      fetch: 
+        src: "/home/ubuntu/vpp/results/{{ measure_id }}_vpp_stats"
+        dest: "{{ dest_dir }}"
+        flat: yes
+
