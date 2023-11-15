@@ -144,13 +144,15 @@ class BNGProfile(object):
             it_sub = Subscribers(subscribers)
             maxval = int(ip_address("192.168.0.0")) + subscribers
 
-            vm = [
+            vm = STLScVmRaw( [
                 # TODO: This can create packets with ip 10.0.0.0 and 10.0.0.255, is that a problem?
-                STLVmFlowVar('dstip', min_value=int(ip_address("192.168.0.0")), max_value=maxval, size=4, step=1),
+                STLVmFlowVar('dstip', min_value=int(ip_address("192.168.0.0")), max_value=maxval, size=4, step=1, op='inc'),
                 STLVmWrFlowVar(fv_name = 'dstip', pkt_offset = 'IP.dst'),
-                STLVmFixIpv4(offset = "IP")
-            ]
+                STLVmFixIpv4(offset = "IP"),
 
+                STLVmFlowVar('vlanid', min_value=0, max_value=maxval, size=4, step=1, op='inc'),
+                STLVmWrFlowVar(fv_name = 'vlanid', pkt_offset = 19),
+            ])
 
             for section in self.config.sections():
 
@@ -159,17 +161,16 @@ class BNGProfile(object):
                     param_pps = int(self.config[section]['pps'])
                     param_start = int(self.config[section]['start'])
 
-                    if sub[0] == 0:
-                        s = STLStream(
-                            packet=STLPktBuilder(
-                                pkt=get_packet(sub[0], sub[1], param_tos, param_packet_size),
-                                vm = vm,
-                            ),
-                            isg = param_start * 1000000,
-                            mode = STLTXCont(),
+                    s = STLStream(
+                        packet=STLPktBuilder(
+                            pkt=get_packet(0, param_tos, param_packet_size),
                             vm = vm,
-                            # flow_stats = STLFlowStats(pg_id=param_tos),
-                        )
+                        ),
+                        isg = param_start * 1000000,
+                        mode = STLTXCont(),
+                        vm = vm,
+                        # flow_stats = STLFlowStats(pg_id=param_tos),
+                    )
                     streams.append(s)
 
             return streams
