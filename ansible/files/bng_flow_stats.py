@@ -162,7 +162,7 @@ class BNGProfile(object):
                     if sub[0] == 0:
                         s = STLStream(
                             packet=STLPktBuilder(
-                                pkt=get_packet(sub[0], sub[1], param_tos, param_packet_size)
+                                pkt=get_packet(sub[0], sub[1], param_tos, param_packet_size),
                                 vm = vm,
                             ),
                             isg = param_start * 1000000,
