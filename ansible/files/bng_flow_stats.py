@@ -23,7 +23,7 @@ def get_packet(tos, size):
         Ether(src="02:00:00:00:00:01", dst="00:00:00:01:00:01")
         / Dot1Q(vlan = 0)
         / Dot1Q(vlan = 0)
-        / IP(src="10.0.0.2", dst=ip_address(dst_ip), tos=tos)
+        / IP(src="10.0.0.2", dst=0, tos=tos)
         / UDP(sport=4444, dport=4444)
     )
     pad = max(0, size - len(pkt)) * "x"
