@@ -17,7 +17,7 @@ TREX_DIR = f"/opt/trex/{TREX_VERSION}/"
 TRAFFIC_PROFILE = "traffic_profiles.ini"
 
 
-def get_packet(sub_id, dst_ip, tos, size):
+def get_packet(tos, size):
     # pkt = Ether(src="02:00:00:00:00:01",dst="00:00:00:01:00:01") / IP(src="10.0.0.2", tos=tos) / UDP(sport=4444, dport=4444)
     pkt = (
         Ether(src="02:00:00:00:00:01", dst="00:00:00:01:00:01")
@@ -163,7 +163,7 @@ class BNGProfile(object):
 
                     s = STLStream(
                         packet=STLPktBuilder(
-                            pkt=get_packet(0, param_tos, param_packet_size),
+                            pkt=get_packet(param_tos, param_packet_size),
                             vm = vm,
                         ),
                         isg = param_start * 1000000,
