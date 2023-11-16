@@ -17,13 +17,13 @@ TREX_DIR = f"/opt/trex/{TREX_VERSION}/"
 TRAFFIC_PROFILE = "traffic_profiles.ini"
 
 
-def get_packet(tos, size):
+def get_packet(sub_id, dst_ip, tos, size):
     # pkt = Ether(src="02:00:00:00:00:01",dst="00:00:00:01:00:01") / IP(src="10.0.0.2", tos=tos) / UDP(sport=4444, dport=4444)
     pkt = (
         Ether(src="02:00:00:00:00:01", dst="00:00:00:01:00:01")
         / Dot1Q(vlan = 0)
-        / Dot1Q(vlan = 0)
-        / IP(src="10.0.0.2", dst="192.168.0.0", tos=tos)
+        / Dot1Q(vlan = sub_id)
+        / IP(src="10.0.0.2", dst=ip_address(dst_ip), tos=tos)
         / UDP(sport=4444, dport=4444)
     )
     pad = max(0, size - len(pkt)) * "x"
@@ -142,35 +142,34 @@ class BNGProfile(object):
         try:
             streams = []
             it_sub = Subscribers(subscribers)
-            maxval = int(ip_address("192.168.0.0")) + subscribers
 
-            vm = STLScVmRaw( [
-                # TODO: This can create packets with ip 10.0.0.0 and 10.0.0.255, is that a problem?
-                STLVmFlowVar('dstip', min_value=int(ip_address("192.168.0.0")), max_value=maxval, size=4, step=1, op='inc'),
-                STLVmWrFlowVar(fv_name = 'dstip', pkt_offset = 'IP.dst'),
-                STLVmFixIpv4(offset = "IP"),
+            for sub in it_sub:
+                for section in self.config.sections():
 
-                STLVmFlowVar('vlanid', min_value=0, max_value=maxval, size=4, step=1, op='inc'),
-                STLVmWrFlowVar(fv_name = 'vlanid', pkt_offset = 19),
-            ])
+                        param_tos = int(self.config[section]['tos']) * 4
+                        param_packet_size = int(self.config[section]['packet_size'])
+                        param_pps = int(self.config[section]['pps'])
+                        param_start = int(self.config[section]['start'])
 
-            for section in self.config.sections():
+                        if sub[0] == 0:
+                            s = STLStream(
+                                packet=STLPktBuilder(
+                                    pkt=get_packet(sub[0], sub[1], param_tos, param_packet_size)
+                                ),
+                                isg = param_start * 1000000,
+                                mode = STLTXCont(),
+                                # flow_stats = STLFlowStats(pg_id=param_tos),
+                            )
+                        else:
+                            s = STLStream(
+                                packet=STLPktBuilder(
+                                    pkt=get_packet(sub[0], sub[1], param_tos, param_packet_size)
+                                ),
+                                isg = param_start * 1000000,
+                                mode = STLTXCont(),
+                            )
 
-                    param_tos = int(self.config[section]['tos']) * 4
-                    param_packet_size = int(self.config[section]['packet_size'])
-                    param_pps = int(self.config[section]['pps'])
-                    param_start = int(self.config[section]['start'])
-
-                    s = STLStream(
-                        packet=STLPktBuilder(
-                            pkt=get_packet(param_tos, param_packet_size),
-                            vm = vm,
-                        ),
-                        isg = param_start * 1000000,
-                        mode = STLTXCont(),
-                        # flow_stats = STLFlowStats(pg_id=param_tos),
-                    )
-                    streams.append(s)
+                        streams.append(s)
 
             return streams
 
