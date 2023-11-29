@@ -2,7 +2,7 @@
 
 RANGE=(1 2 4 8 16 32 64 128 256 512 1024 2048 4096)
 RETRIES=10
-MULT="1gbpsl1"
+MULT="3gbpsl1"
 LABEL="vpp-flow-${MULT}"
 
 for i in "${RANGE[@]}"; do

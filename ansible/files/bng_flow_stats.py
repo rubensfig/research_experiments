@@ -79,7 +79,7 @@ def rx_iteration(c, tx_port, rx_port, duration):
     # c.set_service_mode(ports = 0)
     # capture_id = c.start_capture(rx_ports=0)
 
-    c.start(ports=[tx_port], duration=duration, mult="1gbpsl1")
+    c.start(ports=[tx_port], duration=duration, mult="3gbpsl1")
     c.wait_on_traffic(ports=[tx_port, rx_port])
     # c.stop_capture(capture_id["id"], "/tmp/port_0.pcap")
 
