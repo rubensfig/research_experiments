@@ -11,6 +11,8 @@
     - set_fact:
        packet_size: "{{ packet_size }}"
     - set_fact:
+       mult: "{{ mult }}"
+    - set_fact:
        dest_dir: "../output/{{ label }}/{{ subscribers }}/{{ packet_size }}/{{ measure_id }}/"
 
     - name: restart trex-server
@@ -26,7 +28,7 @@
 
     - name: start traffic
       # TOS=> DSCP:START:PPS
-      command: "python3 automation/trex_control_plane/interactive/trex/examples/stl/bng_flow_stats.py --results {{ measure_id }} --duration 60 --subscribers {{ subscribers }}"
+      command: "python3 automation/trex_control_plane/interactive/trex/examples/stl/bng_flow_stats.py --results {{ measure_id }} --duration 60 --subscribers {{ subscribers }} --mult {{ mult }}"
       args:
         chdir: /opt/trex/v3.02/
 

@@ -13,7 +13,6 @@
         dest:  /opt/trex/v3.02/
       vars:
         packet_size:  "{{ packet_size }}"
-        mult: "{{ mult }}"
 
 - hosts: vpp_data_plane
   become: yes
