@@ -73,13 +73,13 @@ def output_results(c, measurement_id, subscribers):
 
 
 # RX one iteration
-def rx_iteration(c, tx_port, rx_port, duration):
+def rx_iteration(c, tx_port, rx_port, duration, traffic_mult):
     c.clear_stats()
 
     # c.set_service_mode(ports = 0)
     # capture_id = c.start_capture(rx_ports=0)
 
-    c.start(ports=[tx_port], duration=duration, mult="3gbpsl1")
+    c.start(ports=[tx_port], duration=duration, mult=traffic_mult)
     c.wait_on_traffic(ports=[tx_port, rx_port])
     # c.stop_capture(capture_id["id"], "/tmp/port_0.pcap")
 
@@ -105,6 +105,7 @@ def get_args(argv=None):
     )
     parser.add_argument("--ncustomer", type=int, default=1, help="Num customers")
     parser.add_argument("--verbose", action="store_true", help="Be verbose")
+    parser.add_argument("--mult", type=str, help="Set multiplier")
     parser.add_argument(
         "--ignore-seq-err", action="store_true", help="Ignore Sequence errors."
     )
@@ -191,6 +192,7 @@ def register():
 def rx_example(tx_port, rx_port, **kwargs):
     duration = kwargs['duration']
     results_label = kwargs['results_label']
+    mult = kwargs['mult']
 
     # create client
     c = STLClient()
@@ -207,7 +209,7 @@ def rx_example(tx_port, rx_port, **kwargs):
     # add streams to port
     c.add_streams(streams, ports=[tx_port])
 
-    rx_iteration(c, tx_port, rx_port, duration)
+    rx_iteration(c, tx_port, rx_port, duration, mult)
 
     subscribers = int(kwargs['subscribers'])
     output_results(c, results_label, subscribers)
@@ -230,6 +232,7 @@ def main():
         results_label=args["results_label"],
         duration=args["duration"],
         subscribers=args["subscribers"],
+        mult=args["mult"],
     )
 
 
