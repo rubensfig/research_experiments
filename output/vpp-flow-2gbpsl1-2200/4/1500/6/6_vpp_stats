@@ -1,6 +1,6 @@
-16.00 /sys/heartbeat
+10.00 /sys/heartbeat
 0.00 /sys/last_stats_clear
-1701250212.00 /sys/boottime
+1702776343.00 /sys/boottime
 [0 @ 0]: 1073737680 packets /mem/stat segment
 [1 @ 0]: 971392 packets /mem/stat segment
 [2 @ 0]: 1072766288 packets /mem/stat segment
@@ -11,19 +11,19 @@
 [0 @ 0]: 971392 packets /mem/stat segment/used
 [0 @ 0]: 1073737680 packets /mem/stat segment/total
 [0 @ 0]: 1072766288 packets /mem/stat segment/free
-2.00 /sys/vector_rate
+3.00 /sys/vector_rate
 [0 @ 0]: 0 packets /sys/vector_rate_per_worker
 [1 @ 0]: 0 packets /sys/vector_rate_per_worker
-[2 @ 0]: 4 packets /sys/vector_rate_per_worker
-[0 @ 0]: 1054747 packets /sys/loops_per_worker
+[2 @ 0]: 6 packets /sys/vector_rate_per_worker
+[0 @ 0]: 991231 packets /sys/loops_per_worker
 [1 @ 0]: 0 packets /sys/loops_per_worker
-[2 @ 0]: 8427285 packets /sys/loops_per_worker
+[2 @ 0]: 8576554 packets /sys/loops_per_worker
 0.00 /buffer-pools/default-numa-0/cached
 0.00 /buffer-pools/default-numa-0/used
 128520.00 /buffer-pools/default-numa-0/available
 540.00 /buffer-pools/default-numa-1/cached
-4096.00 /buffer-pools/default-numa-1/used
-123884.00 /buffer-pools/default-numa-1/available
+3928.00 /buffer-pools/default-numa-1/used
+124052.00 /buffer-pools/default-numa-1/available
 2.00 /sys/num_worker_threads
 [0 @ 0]: 0 packets /node/errors
 [1 @ 0]: 0 packets /node/errors
@@ -8472,7 +8472,7 @@
 [2746 @ 2]: 0 packets /node/errors
 [2747 @ 2]: 0 packets /node/errors
 [2748 @ 2]: 0 packets /node/errors
-[2749 @ 2]: 9842520 packets /node/errors
+[2749 @ 2]: 9842521 packets /node/errors
 [2750 @ 2]: 0 packets /node/errors
 [2751 @ 2]: 0 packets /node/errors
 [2752 @ 2]: 0 packets /node/errors
@@ -8487,7 +8487,7 @@
 [2761 @ 2]: 0 packets /node/errors
 [2762 @ 2]: 0 packets /node/errors
 [2763 @ 2]: 0 packets /node/errors
-[2764 @ 2]: 9842520 packets /node/errors
+[2764 @ 2]: 9842521 packets /node/errors
 [2765 @ 2]: 0 packets /node/errors
 [2766 @ 2]: 0 packets /node/errors
 [2767 @ 2]: 0 packets /node/errors
@@ -16821,7 +16821,7 @@
 [0 @ 2]: 0 packets /err/l2-output-bad-intf/L2 output to interface not in L2 mode or deleted
 [0 @ 0]: 0 packets /err/l2-output/L2 output packets
 [0 @ 1]: 0 packets /err/l2-output/L2 output packets
-[0 @ 2]: 9842520 packets /err/l2-output/L2 output packets
+[0 @ 2]: 9842521 packets /err/l2-output/L2 output packets
 [0 @ 0]: 0 packets /err/l2-output/L2 EFP filter pre-rewrite drops
 [0 @ 1]: 0 packets /err/l2-output/L2 EFP filter pre-rewrite drops
 [0 @ 2]: 0 packets /err/l2-output/L2 EFP filter pre-rewrite drops
@@ -16866,7 +16866,7 @@
 [0 @ 2]: 0 packets /err/l2-input-vtr/L2 input tag rewrite drops
 [0 @ 0]: 0 packets /err/l2-input/L2 input packets
 [0 @ 1]: 0 packets /err/l2-input/L2 input packets
-[0 @ 2]: 9842520 packets /err/l2-input/L2 input packets
+[0 @ 2]: 9842521 packets /err/l2-input/L2 input packets
 [0 @ 0]: 0 packets /err/l2-input/L2 input drops
 [0 @ 1]: 0 packets /err/l2-input/L2 input drops
 [0 @ 2]: 0 packets /err/l2-input/L2 input drops
@@ -17086,8 +17086,8 @@
 [0 @ 0]: 0 packets /err/handoff_trace/Warning: packets sent to the handoff trace node!
 [0 @ 1]: 0 packets /err/handoff_trace/Warning: packets sent to the handoff trace node!
 [0 @ 2]: 0 packets /err/handoff_trace/Warning: packets sent to the handoff trace node!
-151.00 /sys/last_update
-151534.00 /sys/input_rate
+91.00 /sys/last_update
+151361.00 /sys/input_rate
 [0 @ 0]: 0 packets, 0 bytes /net/route/to
 [1 @ 0]: 0 packets, 0 bytes /net/route/to
 [2 @ 0]: 0 packets, 0 bytes /net/route/to
@@ -17243,7 +17243,7 @@
 [2 @ 1]: 0 packets, 0 bytes /if/rx
 [0 @ 2]: 0 packets, 0 bytes /if/rx
 [1 @ 2]: 19685040 packets, 29527560000 bytes /if/rx
-[2 @ 2]: 0 packets, 0 bytes /if/rx
+[2 @ 2]: 1 packets, 70 bytes /if/rx
 [0 @ 0]: 0 packets, 0 bytes /if/rx-unicast
 [1 @ 0]: 0 packets, 0 bytes /if/rx-unicast
 [2 @ 0]: 0 packets, 0 bytes /if/rx-unicast
@@ -17278,7 +17278,7 @@
 [1 @ 1]: 0 packets, 0 bytes /if/tx
 [2 @ 1]: 0 packets, 0 bytes /if/tx
 [0 @ 2]: 0 packets, 0 bytes /if/tx
-[1 @ 2]: 0 packets, 0 bytes /if/tx
+[1 @ 2]: 1 packets, 70 bytes /if/tx
 [2 @ 2]: 9842520 packets, 14763780000 bytes /if/tx
 [0 @ 0]: 0 packets, 0 bytes /if/tx-unicast
 [1 @ 0]: 0 packets, 0 bytes /if/tx-unicast
@@ -17496,15 +17496,15 @@
 [3 @ 2]: 0 packets, 0 bytes /net/punt
 [4 @ 2]: 0 packets, 0 bytes /net/punt
 [0 @ 0]: 524287952 packets /mem/main heap
-[1 @ 0]: 93974112 packets /mem/main heap
-[2 @ 0]: 430313840 packets /mem/main heap
+[1 @ 0]: 93975328 packets /mem/main heap
+[2 @ 0]: 430312624 packets /mem/main heap
 [3 @ 0]: 0 packets /mem/main heap
 [4 @ 0]: 524287952 packets /mem/main heap
-[5 @ 0]: 139 packets /mem/main heap
-[6 @ 0]: 429861120 packets /mem/main heap
-[0 @ 0]: 93974112 packets /mem/main heap/used
+[5 @ 0]: 183 packets /mem/main heap
+[6 @ 0]: 429859968 packets /mem/main heap
+[0 @ 0]: 93975328 packets /mem/main heap/used
 [0 @ 0]: 524287952 packets /mem/main heap/total
-[0 @ 0]: 430313840 packets /mem/main heap/free
+[0 @ 0]: 430312624 packets /mem/main heap/free
 [0 @ 0]: 0 packets /err/dev0-output/interface is down
 [0 @ 1]: 0 packets /err/dev0-output/interface is down
 [0 @ 2]: 0 packets /err/dev0-output/interface is down
@@ -17558,7 +17558,7 @@
 [0 @ 2]: 0 packets, 0 bytes /interfaces/dev0/rx-broadcast
 [0 @ 0]: 0 packets, 0 bytes /interfaces/dev0/tx
 [0 @ 1]: 0 packets, 0 bytes /interfaces/dev0/tx
-[0 @ 2]: 0 packets, 0 bytes /interfaces/dev0/tx
+[0 @ 2]: 1 packets, 70 bytes /interfaces/dev0/tx
 [0 @ 0]: 0 packets, 0 bytes /interfaces/dev0/tx-unicast
 [0 @ 1]: 0 packets, 0 bytes /interfaces/dev0/tx-unicast
 [0 @ 2]: 0 packets, 0 bytes /interfaces/dev0/tx-unicast
@@ -17609,7 +17609,7 @@
 [0 @ 2]: 0 packets /interfaces/dev1/mpls
 [0 @ 0]: 0 packets, 0 bytes /interfaces/dev1/rx
 [0 @ 1]: 0 packets, 0 bytes /interfaces/dev1/rx
-[0 @ 2]: 0 packets, 0 bytes /interfaces/dev1/rx
+[0 @ 2]: 1 packets, 70 bytes /interfaces/dev1/rx
 [0 @ 0]: 0 packets, 0 bytes /interfaces/dev1/rx-unicast
 [0 @ 1]: 0 packets, 0 bytes /interfaces/dev1/rx-unicast
 [0 @ 2]: 0 packets, 0 bytes /interfaces/dev1/rx-unicast
@@ -18037,20 +18037,20 @@
 [403]: dev1-output /sys/node/names
 [0 @ 0]: 0 packets /sys/node/clocks
 [1 @ 0]: 0 packets /sys/node/clocks
-[2 @ 0]: 188908998 packets /sys/node/clocks
-[3 @ 0]: 11082 packets /sys/node/clocks
+[2 @ 0]: 119094388 packets /sys/node/clocks
+[3 @ 0]: 10354 packets /sys/node/clocks
 [4 @ 0]: 0 packets /sys/node/clocks
-[5 @ 0]: 9254034 packets /sys/node/clocks
-[6 @ 0]: 12016 packets /sys/node/clocks
-[7 @ 0]: 161802 packets /sys/node/clocks
-[8 @ 0]: 6032 packets /sys/node/clocks
+[5 @ 0]: 9151056 packets /sys/node/clocks
+[6 @ 0]: 12534 packets /sys/node/clocks
+[7 @ 0]: 90010 packets /sys/node/clocks
+[8 @ 0]: 5432 packets /sys/node/clocks
 [9 @ 0]: 0 packets /sys/node/clocks
 [10 @ 0]: 0 packets /sys/node/clocks
 [11 @ 0]: 0 packets /sys/node/clocks
 [12 @ 0]: 0 packets /sys/node/clocks
 [13 @ 0]: 0 packets /sys/node/clocks
 [14 @ 0]: 0 packets /sys/node/clocks
-[15 @ 0]: 109820 packets /sys/node/clocks
+[15 @ 0]: 80190 packets /sys/node/clocks
 [16 @ 0]: 0 packets /sys/node/clocks
 [17 @ 0]: 0 packets /sys/node/clocks
 [18 @ 0]: 0 packets /sys/node/clocks
@@ -18133,7 +18133,7 @@
 [95 @ 0]: 0 packets /sys/node/clocks
 [96 @ 0]: 0 packets /sys/node/clocks
 [97 @ 0]: 0 packets /sys/node/clocks
-[98 @ 0]: 332400 packets /sys/node/clocks
+[98 @ 0]: 211466 packets /sys/node/clocks
 [99 @ 0]: 0 packets /sys/node/clocks
 [100 @ 0]: 0 packets /sys/node/clocks
 [101 @ 0]: 0 packets /sys/node/clocks
@@ -18155,7 +18155,7 @@
 [117 @ 0]: 0 packets /sys/node/clocks
 [118 @ 0]: 0 packets /sys/node/clocks
 [119 @ 0]: 0 packets /sys/node/clocks
-[120 @ 0]: 5556 packets /sys/node/clocks
+[120 @ 0]: 5390 packets /sys/node/clocks
 [121 @ 0]: 0 packets /sys/node/clocks
 [122 @ 0]: 0 packets /sys/node/clocks
 [123 @ 0]: 0 packets /sys/node/clocks
@@ -18259,7 +18259,7 @@
 [221 @ 0]: 0 packets /sys/node/clocks
 [222 @ 0]: 0 packets /sys/node/clocks
 [223 @ 0]: 0 packets /sys/node/clocks
-[224 @ 0]: 7126 packets /sys/node/clocks
+[224 @ 0]: 6726 packets /sys/node/clocks
 [225 @ 0]: 0 packets /sys/node/clocks
 [226 @ 0]: 0 packets /sys/node/clocks
 [227 @ 0]: 0 packets /sys/node/clocks
@@ -18268,9 +18268,9 @@
 [230 @ 0]: 0 packets /sys/node/clocks
 [231 @ 0]: 0 packets /sys/node/clocks
 [232 @ 0]: 0 packets /sys/node/clocks
-[233 @ 0]: 5452 packets /sys/node/clocks
-[234 @ 0]: 6420 packets /sys/node/clocks
-[235 @ 0]: 4994 packets /sys/node/clocks
+[233 @ 0]: 5730 packets /sys/node/clocks
+[234 @ 0]: 6456 packets /sys/node/clocks
+[235 @ 0]: 5120 packets /sys/node/clocks
 [236 @ 0]: 0 packets /sys/node/clocks
 [237 @ 0]: 0 packets /sys/node/clocks
 [238 @ 0]: 0 packets /sys/node/clocks
@@ -18293,7 +18293,7 @@
 [255 @ 0]: 0 packets /sys/node/clocks
 [256 @ 0]: 0 packets /sys/node/clocks
 [257 @ 0]: 0 packets /sys/node/clocks
-[258 @ 0]: 70636 packets /sys/node/clocks
+[258 @ 0]: 54830 packets /sys/node/clocks
 [259 @ 0]: 0 packets /sys/node/clocks
 [260 @ 0]: 0 packets /sys/node/clocks
 [261 @ 0]: 0 packets /sys/node/clocks
@@ -18301,7 +18301,7 @@
 [263 @ 0]: 0 packets /sys/node/clocks
 [264 @ 0]: 0 packets /sys/node/clocks
 [265 @ 0]: 0 packets /sys/node/clocks
-[266 @ 0]: 1388956 packets /sys/node/clocks
+[266 @ 0]: 871216 packets /sys/node/clocks
 [267 @ 0]: 0 packets /sys/node/clocks
 [268 @ 0]: 0 packets /sys/node/clocks
 [269 @ 0]: 0 packets /sys/node/clocks
@@ -18330,7 +18330,7 @@
 [292 @ 0]: 0 packets /sys/node/clocks
 [293 @ 0]: 0 packets /sys/node/clocks
 [294 @ 0]: 0 packets /sys/node/clocks
-[295 @ 0]: 49464 packets /sys/node/clocks
+[295 @ 0]: 40032 packets /sys/node/clocks
 [296 @ 0]: 0 packets /sys/node/clocks
 [297 @ 0]: 0 packets /sys/node/clocks
 [298 @ 0]: 0 packets /sys/node/clocks
@@ -18340,7 +18340,7 @@
 [302 @ 0]: 0 packets /sys/node/clocks
 [303 @ 0]: 0 packets /sys/node/clocks
 [304 @ 0]: 0 packets /sys/node/clocks
-[305 @ 0]: 1396030 packets /sys/node/clocks
+[305 @ 0]: 839842 packets /sys/node/clocks
 [306 @ 0]: 0 packets /sys/node/clocks
 [307 @ 0]: 0 packets /sys/node/clocks
 [308 @ 0]: 0 packets /sys/node/clocks
@@ -18374,7 +18374,7 @@
 [336 @ 0]: 0 packets /sys/node/clocks
 [337 @ 0]: 0 packets /sys/node/clocks
 [338 @ 0]: 0 packets /sys/node/clocks
-[339 @ 0]: 5804 packets /sys/node/clocks
+[339 @ 0]: 6840 packets /sys/node/clocks
 [340 @ 0]: 0 packets /sys/node/clocks
 [341 @ 0]: 0 packets /sys/node/clocks
 [342 @ 0]: 0 packets /sys/node/clocks
@@ -18397,12 +18397,12 @@
 [359 @ 0]: 0 packets /sys/node/clocks
 [360 @ 0]: 0 packets /sys/node/clocks
 [361 @ 0]: 0 packets /sys/node/clocks
-[362 @ 0]: 5938 packets /sys/node/clocks
+[362 @ 0]: 5554 packets /sys/node/clocks
 [363 @ 0]: 0 packets /sys/node/clocks
 [364 @ 0]: 0 packets /sys/node/clocks
 [365 @ 0]: 0 packets /sys/node/clocks
 [366 @ 0]: 0 packets /sys/node/clocks
-[367 @ 0]: 4924 packets /sys/node/clocks
+[367 @ 0]: 5908 packets /sys/node/clocks
 [368 @ 0]: 0 packets /sys/node/clocks
 [369 @ 0]: 0 packets /sys/node/clocks
 [370 @ 0]: 0 packets /sys/node/clocks
@@ -18422,13 +18422,13 @@
 [384 @ 0]: 0 packets /sys/node/clocks
 [385 @ 0]: 0 packets /sys/node/clocks
 [386 @ 0]: 0 packets /sys/node/clocks
-[387 @ 0]: 15180 packets /sys/node/clocks
+[387 @ 0]: 14316 packets /sys/node/clocks
 [388 @ 0]: 0 packets /sys/node/clocks
 [389 @ 0]: 0 packets /sys/node/clocks
-[390 @ 0]: 96048030 packets /sys/node/clocks
-[391 @ 0]: 327337385336 packets /sys/node/clocks
+[390 @ 0]: 104990814 packets /sys/node/clocks
+[391 @ 0]: 196357622974 packets /sys/node/clocks
 [392 @ 0]: 0 packets /sys/node/clocks
-[393 @ 0]: 22022138 packets /sys/node/clocks
+[393 @ 0]: 16415422 packets /sys/node/clocks
 [394 @ 0]: 0 packets /sys/node/clocks
 [395 @ 0]: 0 packets /sys/node/clocks
 [396 @ 0]: 0 packets /sys/node/clocks
@@ -18844,7 +18844,7 @@
 [402 @ 1]: 0 packets /sys/node/clocks
 [403 @ 1]: 0 packets /sys/node/clocks
 [0 @ 2]: 0 packets /sys/node/clocks
-[1 @ 2]: 168677822270 packets /sys/node/clocks
+[1 @ 2]: 98985722018 packets /sys/node/clocks
 [2 @ 2]: 0 packets /sys/node/clocks
 [3 @ 2]: 0 packets /sys/node/clocks
 [4 @ 2]: 0 packets /sys/node/clocks
@@ -19199,10 +19199,10 @@
 [353 @ 2]: 0 packets /sys/node/clocks
 [354 @ 2]: 0 packets /sys/node/clocks
 [355 @ 2]: 0 packets /sys/node/clocks
-[356 @ 2]: 578112160 packets /sys/node/clocks
+[356 @ 2]: 426716616 packets /sys/node/clocks
 [357 @ 2]: 0 packets /sys/node/clocks
 [358 @ 2]: 0 packets /sys/node/clocks
-[359 @ 2]: 575171832 packets /sys/node/clocks
+[359 @ 2]: 445947554 packets /sys/node/clocks
 [360 @ 2]: 0 packets /sys/node/clocks
 [361 @ 2]: 0 packets /sys/node/clocks
 [362 @ 2]: 0 packets /sys/node/clocks
@@ -19215,7 +19215,7 @@
 [369 @ 2]: 0 packets /sys/node/clocks
 [370 @ 2]: 0 packets /sys/node/clocks
 [371 @ 2]: 0 packets /sys/node/clocks
-[372 @ 2]: 1845502948 packets /sys/node/clocks
+[372 @ 2]: 1520065974 packets /sys/node/clocks
 [373 @ 2]: 0 packets /sys/node/clocks
 [374 @ 2]: 0 packets /sys/node/clocks
 [375 @ 2]: 0 packets /sys/node/clocks
@@ -19234,7 +19234,7 @@
 [388 @ 2]: 0 packets /sys/node/clocks
 [389 @ 2]: 0 packets /sys/node/clocks
 [390 @ 2]: 0 packets /sys/node/clocks
-[391 @ 2]: 658114512 packets /sys/node/clocks
+[391 @ 2]: 395332014 packets /sys/node/clocks
 [392 @ 2]: 0 packets /sys/node/clocks
 [393 @ 2]: 0 packets /sys/node/clocks
 [394 @ 2]: 0 packets /sys/node/clocks
@@ -19245,8 +19245,8 @@
 [399 @ 2]: 0 packets /sys/node/clocks
 [400 @ 2]: 0 packets /sys/node/clocks
 [401 @ 2]: 0 packets /sys/node/clocks
-[402 @ 2]: 675297810 packets /sys/node/clocks
-[403 @ 2]: 505599722 packets /sys/node/clocks
+[402 @ 2]: 555252216 packets /sys/node/clocks
+[403 @ 2]: 345083746 packets /sys/node/clocks
 [0 @ 3]: 0 packets /sys/node/clocks
 [1 @ 3]: 0 packets /sys/node/clocks
 [2 @ 3]: 0 packets /sys/node/clocks
@@ -20460,7 +20460,7 @@
 [402 @ 1]: 0 packets /sys/node/vectors
 [403 @ 1]: 0 packets /sys/node/vectors
 [0 @ 2]: 0 packets /sys/node/vectors
-[1 @ 2]: 9675737 packets /sys/node/vectors
+[1 @ 2]: 9370784 packets /sys/node/vectors
 [2 @ 2]: 0 packets /sys/node/vectors
 [3 @ 2]: 0 packets /sys/node/vectors
 [4 @ 2]: 0 packets /sys/node/vectors
@@ -20815,10 +20815,10 @@
 [353 @ 2]: 0 packets /sys/node/vectors
 [354 @ 2]: 0 packets /sys/node/vectors
 [355 @ 2]: 0 packets /sys/node/vectors
-[356 @ 2]: 9308488 packets /sys/node/vectors
+[356 @ 2]: 9370784 packets /sys/node/vectors
 [357 @ 2]: 0 packets /sys/node/vectors
 [358 @ 2]: 0 packets /sys/node/vectors
-[359 @ 2]: 9308488 packets /sys/node/vectors
+[359 @ 2]: 9370784 packets /sys/node/vectors
 [360 @ 2]: 0 packets /sys/node/vectors
 [361 @ 2]: 0 packets /sys/node/vectors
 [362 @ 2]: 0 packets /sys/node/vectors
@@ -20831,7 +20831,7 @@
 [369 @ 2]: 0 packets /sys/node/vectors
 [370 @ 2]: 0 packets /sys/node/vectors
 [371 @ 2]: 0 packets /sys/node/vectors
-[372 @ 2]: 9308488 packets /sys/node/vectors
+[372 @ 2]: 9370784 packets /sys/node/vectors
 [373 @ 2]: 0 packets /sys/node/vectors
 [374 @ 2]: 0 packets /sys/node/vectors
 [375 @ 2]: 0 packets /sys/node/vectors
@@ -20861,8 +20861,8 @@
 [399 @ 2]: 0 packets /sys/node/vectors
 [400 @ 2]: 0 packets /sys/node/vectors
 [401 @ 2]: 0 packets /sys/node/vectors
-[402 @ 2]: 9308488 packets /sys/node/vectors
-[403 @ 2]: 9308488 packets /sys/node/vectors
+[402 @ 2]: 9370784 packets /sys/node/vectors
+[403 @ 2]: 9370784 packets /sys/node/vectors
 [0 @ 3]: 0 packets /sys/node/vectors
 [1 @ 3]: 0 packets /sys/node/vectors
 [2 @ 3]: 0 packets /sys/node/vectors
@@ -21658,7 +21658,7 @@
 [388 @ 0]: 0 packets /sys/node/calls
 [389 @ 0]: 0 packets /sys/node/calls
 [390 @ 0]: 1 packets /sys/node/calls
-[391 @ 0]: 9823979 packets /sys/node/calls
+[391 @ 0]: 5790376 packets /sys/node/calls
 [392 @ 0]: 0 packets /sys/node/calls
 [393 @ 0]: 0 packets /sys/node/calls
 [394 @ 0]: 0 packets /sys/node/calls
@@ -22076,7 +22076,7 @@
 [402 @ 1]: 0 packets /sys/node/calls
 [403 @ 1]: 0 packets /sys/node/calls
 [0 @ 2]: 0 packets /sys/node/calls
-[1 @ 2]: 1343985515 packets /sys/node/calls
+[1 @ 2]: 792071403 packets /sys/node/calls
 [2 @ 2]: 0 packets /sys/node/calls
 [3 @ 2]: 0 packets /sys/node/calls
 [4 @ 2]: 0 packets /sys/node/calls
@@ -22431,10 +22431,10 @@
 [353 @ 2]: 0 packets /sys/node/calls
 [354 @ 2]: 0 packets /sys/node/calls
 [355 @ 2]: 0 packets /sys/node/calls
-[356 @ 2]: 2166328 packets /sys/node/calls
+[356 @ 2]: 1485056 packets /sys/node/calls
 [357 @ 2]: 0 packets /sys/node/calls
 [358 @ 2]: 0 packets /sys/node/calls
-[359 @ 2]: 2166328 packets /sys/node/calls
+[359 @ 2]: 1485056 packets /sys/node/calls
 [360 @ 2]: 0 packets /sys/node/calls
 [361 @ 2]: 0 packets /sys/node/calls
 [362 @ 2]: 0 packets /sys/node/calls
@@ -22447,7 +22447,7 @@
 [369 @ 2]: 0 packets /sys/node/calls
 [370 @ 2]: 0 packets /sys/node/calls
 [371 @ 2]: 0 packets /sys/node/calls
-[372 @ 2]: 2166328 packets /sys/node/calls
+[372 @ 2]: 1485056 packets /sys/node/calls
 [373 @ 2]: 0 packets /sys/node/calls
 [374 @ 2]: 0 packets /sys/node/calls
 [375 @ 2]: 0 packets /sys/node/calls
@@ -22466,7 +22466,7 @@
 [388 @ 2]: 0 packets /sys/node/calls
 [389 @ 2]: 0 packets /sys/node/calls
 [390 @ 2]: 0 packets /sys/node/calls
-[391 @ 2]: 1292767 packets /sys/node/calls
+[391 @ 2]: 772755 packets /sys/node/calls
 [392 @ 2]: 0 packets /sys/node/calls
 [393 @ 2]: 0 packets /sys/node/calls
 [394 @ 2]: 0 packets /sys/node/calls
@@ -22477,8 +22477,8 @@
 [399 @ 2]: 0 packets /sys/node/calls
 [400 @ 2]: 0 packets /sys/node/calls
 [401 @ 2]: 0 packets /sys/node/calls
-[402 @ 2]: 2166328 packets /sys/node/calls
-[403 @ 2]: 2166328 packets /sys/node/calls
+[402 @ 2]: 1485056 packets /sys/node/calls
+[403 @ 2]: 1485056 packets /sys/node/calls
 [0 @ 3]: 0 packets /sys/node/calls
 [1 @ 3]: 0 packets /sys/node/calls
 [2 @ 3]: 0 packets /sys/node/calls
@@ -22885,12 +22885,12 @@
 [403 @ 3]: 0 packets /sys/node/calls
 [0 @ 0]: 0 packets /sys/node/suspends
 [1 @ 0]: 0 packets /sys/node/suspends
-[2 @ 0]: 50 packets /sys/node/suspends
+[2 @ 0]: 30 packets /sys/node/suspends
 [3 @ 0]: 1 packets /sys/node/suspends
 [4 @ 0]: 0 packets /sys/node/suspends
-[5 @ 0]: 11 packets /sys/node/suspends
+[5 @ 0]: 8 packets /sys/node/suspends
 [6 @ 0]: 1 packets /sys/node/suspends
-[7 @ 0]: 150 packets /sys/node/suspends
+[7 @ 0]: 90 packets /sys/node/suspends
 [8 @ 0]: 1 packets /sys/node/suspends
 [9 @ 0]: 0 packets /sys/node/suspends
 [10 @ 0]: 0 packets /sys/node/suspends
@@ -22898,7 +22898,7 @@
 [12 @ 0]: 0 packets /sys/node/suspends
 [13 @ 0]: 0 packets /sys/node/suspends
 [14 @ 0]: 0 packets /sys/node/suspends
-[15 @ 0]: 150 packets /sys/node/suspends
+[15 @ 0]: 90 packets /sys/node/suspends
 [16 @ 0]: 0 packets /sys/node/suspends
 [17 @ 0]: 0 packets /sys/node/suspends
 [18 @ 0]: 0 packets /sys/node/suspends
@@ -22981,7 +22981,7 @@
 [95 @ 0]: 0 packets /sys/node/suspends
 [96 @ 0]: 0 packets /sys/node/suspends
 [97 @ 0]: 0 packets /sys/node/suspends
-[98 @ 0]: 75 packets /sys/node/suspends
+[98 @ 0]: 45 packets /sys/node/suspends
 [99 @ 0]: 0 packets /sys/node/suspends
 [100 @ 0]: 0 packets /sys/node/suspends
 [101 @ 0]: 0 packets /sys/node/suspends
@@ -23141,7 +23141,7 @@
 [255 @ 0]: 0 packets /sys/node/suspends
 [256 @ 0]: 0 packets /sys/node/suspends
 [257 @ 0]: 0 packets /sys/node/suspends
-[258 @ 0]: 16 packets /sys/node/suspends
+[258 @ 0]: 10 packets /sys/node/suspends
 [259 @ 0]: 0 packets /sys/node/suspends
 [260 @ 0]: 0 packets /sys/node/suspends
 [261 @ 0]: 0 packets /sys/node/suspends
@@ -23149,7 +23149,7 @@
 [263 @ 0]: 0 packets /sys/node/suspends
 [264 @ 0]: 0 packets /sys/node/suspends
 [265 @ 0]: 0 packets /sys/node/suspends
-[266 @ 0]: 2999 packets /sys/node/suspends
+[266 @ 0]: 1799 packets /sys/node/suspends
 [267 @ 0]: 0 packets /sys/node/suspends
 [268 @ 0]: 0 packets /sys/node/suspends
 [269 @ 0]: 0 packets /sys/node/suspends
@@ -23178,7 +23178,7 @@
 [292 @ 0]: 0 packets /sys/node/suspends
 [293 @ 0]: 0 packets /sys/node/suspends
 [294 @ 0]: 0 packets /sys/node/suspends
-[295 @ 0]: 16 packets /sys/node/suspends
+[295 @ 0]: 10 packets /sys/node/suspends
 [296 @ 0]: 0 packets /sys/node/suspends
 [297 @ 0]: 0 packets /sys/node/suspends
 [298 @ 0]: 0 packets /sys/node/suspends
@@ -23188,7 +23188,7 @@
 [302 @ 0]: 0 packets /sys/node/suspends
 [303 @ 0]: 0 packets /sys/node/suspends
 [304 @ 0]: 0 packets /sys/node/suspends
-[305 @ 0]: 2999 packets /sys/node/suspends
+[305 @ 0]: 1799 packets /sys/node/suspends
 [306 @ 0]: 0 packets /sys/node/suspends
 [307 @ 0]: 0 packets /sys/node/suspends
 [308 @ 0]: 0 packets /sys/node/suspends
@@ -23276,7 +23276,7 @@
 [390 @ 0]: 1 packets /sys/node/suspends
 [391 @ 0]: 0 packets /sys/node/suspends
 [392 @ 0]: 0 packets /sys/node/suspends
-[393 @ 0]: 15 packets /sys/node/suspends
+[393 @ 0]: 9 packets /sys/node/suspends
 [394 @ 0]: 0 packets /sys/node/suspends
 [395 @ 0]: 0 packets /sys/node/suspends
 [396 @ 0]: 0 packets /sys/node/suspends
@@ -24517,21 +24517,21 @@
 [0 @ 3]: 0 packets /nodes/null-node/suspends
 [0 @ 0]: 0 packets /nodes/dpdk-input/clocks
 [0 @ 1]: 0 packets /nodes/dpdk-input/clocks
-[0 @ 2]: 168677822270 packets /nodes/dpdk-input/clocks
+[0 @ 2]: 98985722018 packets /nodes/dpdk-input/clocks
 [0 @ 3]: 0 packets /nodes/dpdk-input/clocks
 [0 @ 0]: 0 packets /nodes/dpdk-input/vectors
 [0 @ 1]: 0 packets /nodes/dpdk-input/vectors
-[0 @ 2]: 9675737 packets /nodes/dpdk-input/vectors
+[0 @ 2]: 9370784 packets /nodes/dpdk-input/vectors
 [0 @ 3]: 0 packets /nodes/dpdk-input/vectors
 [0 @ 0]: 0 packets /nodes/dpdk-input/calls
 [0 @ 1]: 0 packets /nodes/dpdk-input/calls
-[0 @ 2]: 1343985515 packets /nodes/dpdk-input/calls
+[0 @ 2]: 792071403 packets /nodes/dpdk-input/calls
 [0 @ 3]: 0 packets /nodes/dpdk-input/calls
 [0 @ 0]: 0 packets /nodes/dpdk-input/suspends
 [0 @ 1]: 0 packets /nodes/dpdk-input/suspends
 [0 @ 2]: 0 packets /nodes/dpdk-input/suspends
 [0 @ 3]: 0 packets /nodes/dpdk-input/suspends
-[0 @ 0]: 188908998 packets /nodes/dpdk-process/clocks
+[0 @ 0]: 119094388 packets /nodes/dpdk-process/clocks
 [0 @ 1]: 0 packets /nodes/dpdk-process/clocks
 [0 @ 2]: 0 packets /nodes/dpdk-process/clocks
 [0 @ 3]: 0 packets /nodes/dpdk-process/clocks
@@ -24543,11 +24543,11 @@
 [0 @ 1]: 0 packets /nodes/dpdk-process/calls
 [0 @ 2]: 0 packets /nodes/dpdk-process/calls
 [0 @ 3]: 0 packets /nodes/dpdk-process/calls
-[0 @ 0]: 50 packets /nodes/dpdk-process/suspends
+[0 @ 0]: 30 packets /nodes/dpdk-process/suspends
 [0 @ 1]: 0 packets /nodes/dpdk-process/suspends
 [0 @ 2]: 0 packets /nodes/dpdk-process/suspends
 [0 @ 3]: 0 packets /nodes/dpdk-process/suspends
-[0 @ 0]: 11082 packets /nodes/admin-up-down-process/clocks
+[0 @ 0]: 10354 packets /nodes/admin-up-down-process/clocks
 [0 @ 1]: 0 packets /nodes/admin-up-down-process/clocks
 [0 @ 2]: 0 packets /nodes/admin-up-down-process/clocks
 [0 @ 3]: 0 packets /nodes/admin-up-down-process/clocks
@@ -24579,7 +24579,7 @@
 [0 @ 1]: 0 packets /nodes/api-rx-from-node/suspends
 [0 @ 2]: 0 packets /nodes/api-rx-from-node/suspends
 [0 @ 3]: 0 packets /nodes/api-rx-from-node/suspends
-[0 @ 0]: 9254034 packets /nodes/api-rx-from-ring/clocks
+[0 @ 0]: 9151056 packets /nodes/api-rx-from-ring/clocks
 [0 @ 1]: 0 packets /nodes/api-rx-from-ring/clocks
 [0 @ 2]: 0 packets /nodes/api-rx-from-ring/clocks
 [0 @ 3]: 0 packets /nodes/api-rx-from-ring/clocks
@@ -24591,11 +24591,11 @@
 [0 @ 1]: 0 packets /nodes/api-rx-from-ring/calls
 [0 @ 2]: 0 packets /nodes/api-rx-from-ring/calls
 [0 @ 3]: 0 packets /nodes/api-rx-from-ring/calls
-[0 @ 0]: 11 packets /nodes/api-rx-from-ring/suspends
+[0 @ 0]: 8 packets /nodes/api-rx-from-ring/suspends
 [0 @ 1]: 0 packets /nodes/api-rx-from-ring/suspends
 [0 @ 2]: 0 packets /nodes/api-rx-from-ring/suspends
 [0 @ 3]: 0 packets /nodes/api-rx-from-ring/suspends
-[0 @ 0]: 12016 packets /nodes/rd-cp-process/clocks
+[0 @ 0]: 12534 packets /nodes/rd-cp-process/clocks
 [0 @ 1]: 0 packets /nodes/rd-cp-process/clocks
 [0 @ 2]: 0 packets /nodes/rd-cp-process/clocks
 [0 @ 3]: 0 packets /nodes/rd-cp-process/clocks
@@ -24611,7 +24611,7 @@
 [0 @ 1]: 0 packets /nodes/rd-cp-process/suspends
 [0 @ 2]: 0 packets /nodes/rd-cp-process/suspends
 [0 @ 3]: 0 packets /nodes/rd-cp-process/suspends
-[0 @ 0]: 161802 packets /nodes/ip6-ra-process/clocks
+[0 @ 0]: 90010 packets /nodes/ip6-ra-process/clocks
 [0 @ 1]: 0 packets /nodes/ip6-ra-process/clocks
 [0 @ 2]: 0 packets /nodes/ip6-ra-process/clocks
 [0 @ 3]: 0 packets /nodes/ip6-ra-process/clocks
@@ -24623,11 +24623,11 @@
 [0 @ 1]: 0 packets /nodes/ip6-ra-process/calls
 [0 @ 2]: 0 packets /nodes/ip6-ra-process/calls
 [0 @ 3]: 0 packets /nodes/ip6-ra-process/calls
-[0 @ 0]: 150 packets /nodes/ip6-ra-process/suspends
+[0 @ 0]: 90 packets /nodes/ip6-ra-process/suspends
 [0 @ 1]: 0 packets /nodes/ip6-ra-process/suspends
 [0 @ 2]: 0 packets /nodes/ip6-ra-process/suspends
 [0 @ 3]: 0 packets /nodes/ip6-ra-process/suspends
-[0 @ 0]: 6032 packets /nodes/ip6-rs-process/clocks
+[0 @ 0]: 5432 packets /nodes/ip6-rs-process/clocks
 [0 @ 1]: 0 packets /nodes/ip6-rs-process/clocks
 [0 @ 2]: 0 packets /nodes/ip6-rs-process/clocks
 [0 @ 3]: 0 packets /nodes/ip6-rs-process/clocks
@@ -24739,7 +24739,7 @@
 [0 @ 1]: 0 packets /nodes/icmp6-neighbor-solicitation/suspends
 [0 @ 2]: 0 packets /nodes/icmp6-neighbor-solicitation/suspends
 [0 @ 3]: 0 packets /nodes/icmp6-neighbor-solicitation/suspends
-[0 @ 0]: 109820 packets /nodes/ip6-mld-process/clocks
+[0 @ 0]: 80190 packets /nodes/ip6-mld-process/clocks
 [0 @ 1]: 0 packets /nodes/ip6-mld-process/clocks
 [0 @ 2]: 0 packets /nodes/ip6-mld-process/clocks
 [0 @ 3]: 0 packets /nodes/ip6-mld-process/clocks
@@ -24751,7 +24751,7 @@
 [0 @ 1]: 0 packets /nodes/ip6-mld-process/calls
 [0 @ 2]: 0 packets /nodes/ip6-mld-process/calls
 [0 @ 3]: 0 packets /nodes/ip6-mld-process/calls
-[0 @ 0]: 150 packets /nodes/ip6-mld-process/suspends
+[0 @ 0]: 90 packets /nodes/ip6-mld-process/suspends
 [0 @ 1]: 0 packets /nodes/ip6-mld-process/suspends
 [0 @ 2]: 0 packets /nodes/ip6-mld-process/suspends
 [0 @ 3]: 0 packets /nodes/ip6-mld-process/suspends
@@ -26067,7 +26067,7 @@
 [0 @ 1]: 0 packets /nodes/adj-midchain-tx/suspends
 [0 @ 2]: 0 packets /nodes/adj-midchain-tx/suspends
 [0 @ 3]: 0 packets /nodes/adj-midchain-tx/suspends
-[0 @ 0]: 332400 packets /nodes/fib-walk/clocks
+[0 @ 0]: 211466 packets /nodes/fib-walk/clocks
 [0 @ 1]: 0 packets /nodes/fib-walk/clocks
 [0 @ 2]: 0 packets /nodes/fib-walk/clocks
 [0 @ 3]: 0 packets /nodes/fib-walk/clocks
@@ -26079,7 +26079,7 @@
 [0 @ 1]: 0 packets /nodes/fib-walk/calls
 [0 @ 2]: 0 packets /nodes/fib-walk/calls
 [0 @ 3]: 0 packets /nodes/fib-walk/calls
-[0 @ 0]: 75 packets /nodes/fib-walk/suspends
+[0 @ 0]: 45 packets /nodes/fib-walk/suspends
 [0 @ 1]: 0 packets /nodes/fib-walk/suspends
 [0 @ 2]: 0 packets /nodes/fib-walk/suspends
 [0 @ 3]: 0 packets /nodes/fib-walk/suspends
@@ -26419,7 +26419,7 @@
 [0 @ 1]: 0 packets /nodes/gso-l2-ip4/suspends
 [0 @ 2]: 0 packets /nodes/gso-l2-ip4/suspends
 [0 @ 3]: 0 packets /nodes/gso-l2-ip4/suspends
-[0 @ 0]: 5556 packets /nodes/flow-report-process/clocks
+[0 @ 0]: 5390 packets /nodes/flow-report-process/clocks
 [0 @ 1]: 0 packets /nodes/flow-report-process/clocks
 [0 @ 2]: 0 packets /nodes/flow-report-process/clocks
 [0 @ 3]: 0 packets /nodes/flow-report-process/clocks
@@ -28083,7 +28083,7 @@
 [0 @ 1]: 0 packets /nodes/crypto-dispatch/suspends
 [0 @ 2]: 0 packets /nodes/crypto-dispatch/suspends
 [0 @ 3]: 0 packets /nodes/crypto-dispatch/suspends
-[0 @ 0]: 7126 packets /nodes/bfd-process/clocks
+[0 @ 0]: 6726 packets /nodes/bfd-process/clocks
 [0 @ 1]: 0 packets /nodes/bfd-process/clocks
 [0 @ 2]: 0 packets /nodes/bfd-process/clocks
 [0 @ 3]: 0 packets /nodes/bfd-process/clocks
@@ -28227,7 +28227,7 @@
 [0 @ 1]: 0 packets /nodes/ip4-arp/suspends
 [0 @ 2]: 0 packets /nodes/ip4-arp/suspends
 [0 @ 3]: 0 packets /nodes/ip4-arp/suspends
-[0 @ 0]: 5452 packets /nodes/ip-neighbor-event/clocks
+[0 @ 0]: 5730 packets /nodes/ip-neighbor-event/clocks
 [0 @ 1]: 0 packets /nodes/ip-neighbor-event/clocks
 [0 @ 2]: 0 packets /nodes/ip-neighbor-event/clocks
 [0 @ 3]: 0 packets /nodes/ip-neighbor-event/clocks
@@ -28243,7 +28243,7 @@
 [0 @ 1]: 0 packets /nodes/ip-neighbor-event/suspends
 [0 @ 2]: 0 packets /nodes/ip-neighbor-event/suspends
 [0 @ 3]: 0 packets /nodes/ip-neighbor-event/suspends
-[0 @ 0]: 6420 packets /nodes/ip6-neighbor-age-process/clocks
+[0 @ 0]: 6456 packets /nodes/ip6-neighbor-age-process/clocks
 [0 @ 1]: 0 packets /nodes/ip6-neighbor-age-process/clocks
 [0 @ 2]: 0 packets /nodes/ip6-neighbor-age-process/clocks
 [0 @ 3]: 0 packets /nodes/ip6-neighbor-age-process/clocks
@@ -28259,7 +28259,7 @@
 [0 @ 1]: 0 packets /nodes/ip6-neighbor-age-process/suspends
 [0 @ 2]: 0 packets /nodes/ip6-neighbor-age-process/suspends
 [0 @ 3]: 0 packets /nodes/ip6-neighbor-age-process/suspends
-[0 @ 0]: 4994 packets /nodes/ip4-neighbor-age-process/clocks
+[0 @ 0]: 5120 packets /nodes/ip4-neighbor-age-process/clocks
 [0 @ 1]: 0 packets /nodes/ip4-neighbor-age-process/clocks
 [0 @ 2]: 0 packets /nodes/ip4-neighbor-age-process/clocks
 [0 @ 3]: 0 packets /nodes/ip4-neighbor-age-process/clocks
@@ -28627,7 +28627,7 @@
 [0 @ 1]: 0 packets /nodes/ip6-sv-reassembly-handoff/suspends
 [0 @ 2]: 0 packets /nodes/ip6-sv-reassembly-handoff/suspends
 [0 @ 3]: 0 packets /nodes/ip6-sv-reassembly-handoff/suspends
-[0 @ 0]: 70636 packets /nodes/ip6-sv-reassembly-expire-walk/clocks
+[0 @ 0]: 54830 packets /nodes/ip6-sv-reassembly-expire-walk/clocks
 [0 @ 1]: 0 packets /nodes/ip6-sv-reassembly-expire-walk/clocks
 [0 @ 2]: 0 packets /nodes/ip6-sv-reassembly-expire-walk/clocks
 [0 @ 3]: 0 packets /nodes/ip6-sv-reassembly-expire-walk/clocks
@@ -28639,7 +28639,7 @@
 [0 @ 1]: 0 packets /nodes/ip6-sv-reassembly-expire-walk/calls
 [0 @ 2]: 0 packets /nodes/ip6-sv-reassembly-expire-walk/calls
 [0 @ 3]: 0 packets /nodes/ip6-sv-reassembly-expire-walk/calls
-[0 @ 0]: 16 packets /nodes/ip6-sv-reassembly-expire-walk/suspends
+[0 @ 0]: 10 packets /nodes/ip6-sv-reassembly-expire-walk/suspends
 [0 @ 1]: 0 packets /nodes/ip6-sv-reassembly-expire-walk/suspends
 [0 @ 2]: 0 packets /nodes/ip6-sv-reassembly-expire-walk/suspends
 [0 @ 3]: 0 packets /nodes/ip6-sv-reassembly-expire-walk/suspends
@@ -28755,7 +28755,7 @@
 [0 @ 1]: 0 packets /nodes/ip6-full-reassembly-handoff/suspends
 [0 @ 2]: 0 packets /nodes/ip6-full-reassembly-handoff/suspends
 [0 @ 3]: 0 packets /nodes/ip6-full-reassembly-handoff/suspends
-[0 @ 0]: 1388956 packets /nodes/ip6-full-reassembly-expire-walk/clocks
+[0 @ 0]: 871216 packets /nodes/ip6-full-reassembly-expire-walk/clocks
 [0 @ 1]: 0 packets /nodes/ip6-full-reassembly-expire-walk/clocks
 [0 @ 2]: 0 packets /nodes/ip6-full-reassembly-expire-walk/clocks
 [0 @ 3]: 0 packets /nodes/ip6-full-reassembly-expire-walk/clocks
@@ -28767,7 +28767,7 @@
 [0 @ 1]: 0 packets /nodes/ip6-full-reassembly-expire-walk/calls
 [0 @ 2]: 0 packets /nodes/ip6-full-reassembly-expire-walk/calls
 [0 @ 3]: 0 packets /nodes/ip6-full-reassembly-expire-walk/calls
-[0 @ 0]: 2999 packets /nodes/ip6-full-reassembly-expire-walk/suspends
+[0 @ 0]: 1799 packets /nodes/ip6-full-reassembly-expire-walk/suspends
 [0 @ 1]: 0 packets /nodes/ip6-full-reassembly-expire-walk/suspends
 [0 @ 2]: 0 packets /nodes/ip6-full-reassembly-expire-walk/suspends
 [0 @ 3]: 0 packets /nodes/ip6-full-reassembly-expire-walk/suspends
@@ -29219,7 +29219,7 @@
 [0 @ 1]: 0 packets /nodes/ip4-sv-reassembly-handoff/suspends
 [0 @ 2]: 0 packets /nodes/ip4-sv-reassembly-handoff/suspends
 [0 @ 3]: 0 packets /nodes/ip4-sv-reassembly-handoff/suspends
-[0 @ 0]: 49464 packets /nodes/ip4-sv-reassembly-expire-walk/clocks
+[0 @ 0]: 40032 packets /nodes/ip4-sv-reassembly-expire-walk/clocks
 [0 @ 1]: 0 packets /nodes/ip4-sv-reassembly-expire-walk/clocks
 [0 @ 2]: 0 packets /nodes/ip4-sv-reassembly-expire-walk/clocks
 [0 @ 3]: 0 packets /nodes/ip4-sv-reassembly-expire-walk/clocks
@@ -29231,7 +29231,7 @@
 [0 @ 1]: 0 packets /nodes/ip4-sv-reassembly-expire-walk/calls
 [0 @ 2]: 0 packets /nodes/ip4-sv-reassembly-expire-walk/calls
 [0 @ 3]: 0 packets /nodes/ip4-sv-reassembly-expire-walk/calls
-[0 @ 0]: 16 packets /nodes/ip4-sv-reassembly-expire-walk/suspends
+[0 @ 0]: 10 packets /nodes/ip4-sv-reassembly-expire-walk/suspends
 [0 @ 1]: 0 packets /nodes/ip4-sv-reassembly-expire-walk/suspends
 [0 @ 2]: 0 packets /nodes/ip4-sv-reassembly-expire-walk/suspends
 [0 @ 3]: 0 packets /nodes/ip4-sv-reassembly-expire-walk/suspends
@@ -29379,7 +29379,7 @@
 [0 @ 1]: 0 packets /nodes/ip4-full-reassembly-handoff/suspends
 [0 @ 2]: 0 packets /nodes/ip4-full-reassembly-handoff/suspends
 [0 @ 3]: 0 packets /nodes/ip4-full-reassembly-handoff/suspends
-[0 @ 0]: 1396030 packets /nodes/ip4-full-reassembly-expire-walk/clocks
+[0 @ 0]: 839842 packets /nodes/ip4-full-reassembly-expire-walk/clocks
 [0 @ 1]: 0 packets /nodes/ip4-full-reassembly-expire-walk/clocks
 [0 @ 2]: 0 packets /nodes/ip4-full-reassembly-expire-walk/clocks
 [0 @ 3]: 0 packets /nodes/ip4-full-reassembly-expire-walk/clocks
@@ -29391,7 +29391,7 @@
 [0 @ 1]: 0 packets /nodes/ip4-full-reassembly-expire-walk/calls
 [0 @ 2]: 0 packets /nodes/ip4-full-reassembly-expire-walk/calls
 [0 @ 3]: 0 packets /nodes/ip4-full-reassembly-expire-walk/calls
-[0 @ 0]: 2999 packets /nodes/ip4-full-reassembly-expire-walk/suspends
+[0 @ 0]: 1799 packets /nodes/ip4-full-reassembly-expire-walk/suspends
 [0 @ 1]: 0 packets /nodes/ip4-full-reassembly-expire-walk/suspends
 [0 @ 2]: 0 packets /nodes/ip4-full-reassembly-expire-walk/suspends
 [0 @ 3]: 0 packets /nodes/ip4-full-reassembly-expire-walk/suspends
@@ -29923,7 +29923,7 @@
 [0 @ 1]: 0 packets /nodes/ip4-classify/suspends
 [0 @ 2]: 0 packets /nodes/ip4-classify/suspends
 [0 @ 3]: 0 packets /nodes/ip4-classify/suspends
-[0 @ 0]: 5804 packets /nodes/bond-process/clocks
+[0 @ 0]: 6840 packets /nodes/bond-process/clocks
 [0 @ 1]: 0 packets /nodes/bond-process/clocks
 [0 @ 2]: 0 packets /nodes/bond-process/clocks
 [0 @ 3]: 0 packets /nodes/bond-process/clocks
@@ -30197,15 +30197,15 @@
 [0 @ 3]: 0 packets /nodes/l2-output-bad-intf/suspends
 [0 @ 0]: 0 packets /nodes/l2-output/clocks
 [0 @ 1]: 0 packets /nodes/l2-output/clocks
-[0 @ 2]: 578112160 packets /nodes/l2-output/clocks
+[0 @ 2]: 426716616 packets /nodes/l2-output/clocks
 [0 @ 3]: 0 packets /nodes/l2-output/clocks
 [0 @ 0]: 0 packets /nodes/l2-output/vectors
 [0 @ 1]: 0 packets /nodes/l2-output/vectors
-[0 @ 2]: 9308488 packets /nodes/l2-output/vectors
+[0 @ 2]: 9370784 packets /nodes/l2-output/vectors
 [0 @ 3]: 0 packets /nodes/l2-output/vectors
 [0 @ 0]: 0 packets /nodes/l2-output/calls
 [0 @ 1]: 0 packets /nodes/l2-output/calls
-[0 @ 2]: 2166328 packets /nodes/l2-output/calls
+[0 @ 2]: 1485056 packets /nodes/l2-output/calls
 [0 @ 3]: 0 packets /nodes/l2-output/calls
 [0 @ 0]: 0 packets /nodes/l2-output/suspends
 [0 @ 1]: 0 packets /nodes/l2-output/suspends
@@ -30245,15 +30245,15 @@
 [0 @ 3]: 0 packets /nodes/l2-input-vtr/suspends
 [0 @ 0]: 0 packets /nodes/l2-input/clocks
 [0 @ 1]: 0 packets /nodes/l2-input/clocks
-[0 @ 2]: 575171832 packets /nodes/l2-input/clocks
+[0 @ 2]: 445947554 packets /nodes/l2-input/clocks
 [0 @ 3]: 0 packets /nodes/l2-input/clocks
 [0 @ 0]: 0 packets /nodes/l2-input/vectors
 [0 @ 1]: 0 packets /nodes/l2-input/vectors
-[0 @ 2]: 9308488 packets /nodes/l2-input/vectors
+[0 @ 2]: 9370784 packets /nodes/l2-input/vectors
 [0 @ 3]: 0 packets /nodes/l2-input/vectors
 [0 @ 0]: 0 packets /nodes/l2-input/calls
 [0 @ 1]: 0 packets /nodes/l2-input/calls
-[0 @ 2]: 2166328 packets /nodes/l2-input/calls
+[0 @ 2]: 1485056 packets /nodes/l2-input/calls
 [0 @ 3]: 0 packets /nodes/l2-input/calls
 [0 @ 0]: 0 packets /nodes/l2-input/suspends
 [0 @ 1]: 0 packets /nodes/l2-input/suspends
@@ -30291,7 +30291,7 @@
 [0 @ 1]: 0 packets /nodes/l2-flood/suspends
 [0 @ 2]: 0 packets /nodes/l2-flood/suspends
 [0 @ 3]: 0 packets /nodes/l2-flood/suspends
-[0 @ 0]: 5938 packets /nodes/l2fib-mac-age-scanner-process/clocks
+[0 @ 0]: 5554 packets /nodes/l2fib-mac-age-scanner-process/clocks
 [0 @ 1]: 0 packets /nodes/l2fib-mac-age-scanner-process/clocks
 [0 @ 2]: 0 packets /nodes/l2fib-mac-age-scanner-process/clocks
 [0 @ 3]: 0 packets /nodes/l2fib-mac-age-scanner-process/clocks
@@ -30371,7 +30371,7 @@
 [0 @ 1]: 0 packets /nodes/arp-term-l2bd/suspends
 [0 @ 2]: 0 packets /nodes/arp-term-l2bd/suspends
 [0 @ 3]: 0 packets /nodes/arp-term-l2bd/suspends
-[0 @ 0]: 4924 packets /nodes/l2-arp-term-publisher/clocks
+[0 @ 0]: 5908 packets /nodes/l2-arp-term-publisher/clocks
 [0 @ 1]: 0 packets /nodes/l2-arp-term-publisher/clocks
 [0 @ 2]: 0 packets /nodes/l2-arp-term-publisher/clocks
 [0 @ 3]: 0 packets /nodes/l2-arp-term-publisher/clocks
@@ -30453,15 +30453,15 @@
 [0 @ 3]: 0 packets /nodes/ethernet-input-type/suspends
 [0 @ 0]: 0 packets /nodes/ethernet-input/clocks
 [0 @ 1]: 0 packets /nodes/ethernet-input/clocks
-[0 @ 2]: 1845502948 packets /nodes/ethernet-input/clocks
+[0 @ 2]: 1520065974 packets /nodes/ethernet-input/clocks
 [0 @ 3]: 0 packets /nodes/ethernet-input/clocks
 [0 @ 0]: 0 packets /nodes/ethernet-input/vectors
 [0 @ 1]: 0 packets /nodes/ethernet-input/vectors
-[0 @ 2]: 9308488 packets /nodes/ethernet-input/vectors
+[0 @ 2]: 9370784 packets /nodes/ethernet-input/vectors
 [0 @ 3]: 0 packets /nodes/ethernet-input/vectors
 [0 @ 0]: 0 packets /nodes/ethernet-input/calls
 [0 @ 1]: 0 packets /nodes/ethernet-input/calls
-[0 @ 2]: 2166328 packets /nodes/ethernet-input/calls
+[0 @ 2]: 1485056 packets /nodes/ethernet-input/calls
 [0 @ 3]: 0 packets /nodes/ethernet-input/calls
 [0 @ 0]: 0 packets /nodes/ethernet-input/suspends
 [0 @ 1]: 0 packets /nodes/ethernet-input/suspends
@@ -30691,7 +30691,7 @@
 [0 @ 1]: 0 packets /nodes/interface-output-template/suspends
 [0 @ 2]: 0 packets /nodes/interface-output-template/suspends
 [0 @ 3]: 0 packets /nodes/interface-output-template/suspends
-[0 @ 0]: 15180 packets /nodes/vpe-link-state-process/clocks
+[0 @ 0]: 14316 packets /nodes/vpe-link-state-process/clocks
 [0 @ 1]: 0 packets /nodes/vpe-link-state-process/clocks
 [0 @ 2]: 0 packets /nodes/vpe-link-state-process/clocks
 [0 @ 3]: 0 packets /nodes/vpe-link-state-process/clocks
@@ -30739,7 +30739,7 @@
 [0 @ 1]: 0 packets /nodes/device-input/suspends
 [0 @ 2]: 0 packets /nodes/device-input/suspends
 [0 @ 3]: 0 packets /nodes/device-input/suspends
-[0 @ 0]: 96048030 packets /nodes/startup-config-process/clocks
+[0 @ 0]: 104990814 packets /nodes/startup-config-process/clocks
 [0 @ 1]: 0 packets /nodes/startup-config-process/clocks
 [0 @ 2]: 0 packets /nodes/startup-config-process/clocks
 [0 @ 3]: 0 packets /nodes/startup-config-process/clocks
@@ -30755,17 +30755,17 @@
 [0 @ 1]: 0 packets /nodes/startup-config-process/suspends
 [0 @ 2]: 0 packets /nodes/startup-config-process/suspends
 [0 @ 3]: 0 packets /nodes/startup-config-process/suspends
-[0 @ 0]: 327337385336 packets /nodes/unix-epoll-input/clocks
+[0 @ 0]: 196357622974 packets /nodes/unix-epoll-input/clocks
 [0 @ 1]: 0 packets /nodes/unix-epoll-input/clocks
-[0 @ 2]: 658114512 packets /nodes/unix-epoll-input/clocks
+[0 @ 2]: 395332014 packets /nodes/unix-epoll-input/clocks
 [0 @ 3]: 0 packets /nodes/unix-epoll-input/clocks
 [0 @ 0]: 0 packets /nodes/unix-epoll-input/vectors
 [0 @ 1]: 0 packets /nodes/unix-epoll-input/vectors
 [0 @ 2]: 0 packets /nodes/unix-epoll-input/vectors
 [0 @ 3]: 0 packets /nodes/unix-epoll-input/vectors
-[0 @ 0]: 9823979 packets /nodes/unix-epoll-input/calls
+[0 @ 0]: 5790376 packets /nodes/unix-epoll-input/calls
 [0 @ 1]: 0 packets /nodes/unix-epoll-input/calls
-[0 @ 2]: 1292767 packets /nodes/unix-epoll-input/calls
+[0 @ 2]: 772755 packets /nodes/unix-epoll-input/calls
 [0 @ 3]: 0 packets /nodes/unix-epoll-input/calls
 [0 @ 0]: 0 packets /nodes/unix-epoll-input/suspends
 [0 @ 1]: 0 packets /nodes/unix-epoll-input/suspends
@@ -30787,7 +30787,7 @@
 [0 @ 1]: 0 packets /nodes/virtual-time-input/suspends
 [0 @ 2]: 0 packets /nodes/virtual-time-input/suspends
 [0 @ 3]: 0 packets /nodes/virtual-time-input/suspends
-[0 @ 0]: 22022138 packets /nodes/statseg-collector-process/clocks
+[0 @ 0]: 16415422 packets /nodes/statseg-collector-process/clocks
 [0 @ 1]: 0 packets /nodes/statseg-collector-process/clocks
 [0 @ 2]: 0 packets /nodes/statseg-collector-process/clocks
 [0 @ 3]: 0 packets /nodes/statseg-collector-process/clocks
@@ -30799,7 +30799,7 @@
 [0 @ 1]: 0 packets /nodes/statseg-collector-process/calls
 [0 @ 2]: 0 packets /nodes/statseg-collector-process/calls
 [0 @ 3]: 0 packets /nodes/statseg-collector-process/calls
-[0 @ 0]: 15 packets /nodes/statseg-collector-process/suspends
+[0 @ 0]: 9 packets /nodes/statseg-collector-process/suspends
 [0 @ 1]: 0 packets /nodes/statseg-collector-process/suspends
 [0 @ 2]: 0 packets /nodes/statseg-collector-process/suspends
 [0 @ 3]: 0 packets /nodes/statseg-collector-process/suspends
@@ -30933,15 +30933,15 @@
 [0 @ 3]: 0 packets /nodes/dev0-output/suspends
 [0 @ 0]: 0 packets /nodes/dev1-tx/clocks
 [0 @ 1]: 0 packets /nodes/dev1-tx/clocks
-[0 @ 2]: 675297810 packets /nodes/dev1-tx/clocks
+[0 @ 2]: 555252216 packets /nodes/dev1-tx/clocks
 [0 @ 3]: 0 packets /nodes/dev1-tx/clocks
 [0 @ 0]: 0 packets /nodes/dev1-tx/vectors
 [0 @ 1]: 0 packets /nodes/dev1-tx/vectors
-[0 @ 2]: 9308488 packets /nodes/dev1-tx/vectors
+[0 @ 2]: 9370784 packets /nodes/dev1-tx/vectors
 [0 @ 3]: 0 packets /nodes/dev1-tx/vectors
 [0 @ 0]: 0 packets /nodes/dev1-tx/calls
 [0 @ 1]: 0 packets /nodes/dev1-tx/calls
-[0 @ 2]: 2166328 packets /nodes/dev1-tx/calls
+[0 @ 2]: 1485056 packets /nodes/dev1-tx/calls
 [0 @ 3]: 0 packets /nodes/dev1-tx/calls
 [0 @ 0]: 0 packets /nodes/dev1-tx/suspends
 [0 @ 1]: 0 packets /nodes/dev1-tx/suspends
@@ -30949,15 +30949,15 @@
 [0 @ 3]: 0 packets /nodes/dev1-tx/suspends
 [0 @ 0]: 0 packets /nodes/dev1-output/clocks
 [0 @ 1]: 0 packets /nodes/dev1-output/clocks
-[0 @ 2]: 505599722 packets /nodes/dev1-output/clocks
+[0 @ 2]: 345083746 packets /nodes/dev1-output/clocks
 [0 @ 3]: 0 packets /nodes/dev1-output/clocks
 [0 @ 0]: 0 packets /nodes/dev1-output/vectors
 [0 @ 1]: 0 packets /nodes/dev1-output/vectors
-[0 @ 2]: 9308488 packets /nodes/dev1-output/vectors
+[0 @ 2]: 9370784 packets /nodes/dev1-output/vectors
 [0 @ 3]: 0 packets /nodes/dev1-output/vectors
 [0 @ 0]: 0 packets /nodes/dev1-output/calls
 [0 @ 1]: 0 packets /nodes/dev1-output/calls
-[0 @ 2]: 2166328 packets /nodes/dev1-output/calls
+[0 @ 2]: 1485056 packets /nodes/dev1-output/calls
 [0 @ 3]: 0 packets /nodes/dev1-output/calls
 [0 @ 0]: 0 packets /nodes/dev1-output/suspends
 [0 @ 1]: 0 packets /nodes/dev1-output/suspends
