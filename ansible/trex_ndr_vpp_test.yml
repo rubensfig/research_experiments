@@ -26,6 +26,13 @@
       pause:
         seconds: 30
 
+    - name: Create dir
+      become: yes
+      file: 
+        path: "/opt/trex/v3.02/results/{{ label }}/{{subscribers }}/{{ packet_size }}/{{ measure_id }}/"
+        state: directory
+        recurse: yes
+
     - name: start traffic
       # TOS=> DSCP:START:PPS
       command: "./ndr --stl --ports 0 1 --profile automation/trex_control_plane/interactive/trex/examples/stl/bng_flow_stats.py  --prof-tun=subscribers={{ subscribers }},results={{ measure_id }} --force-map -o results/{{ label }}/{{subscribers }}/{{ packet_size }}/{{ measure_id }}/trex_ndr.json"
