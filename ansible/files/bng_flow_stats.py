@@ -19,9 +19,9 @@ TRAFFIC_PROFILE = "traffic_profiles.ini"
 
 def get_packet(sub_id, dst_ip, tos, size):
     # pkt = Ether(src="02:00:00:00:00:01",dst="00:00:00:01:00:01") / IP(src="10.0.0.2", tos=tos) / UDP(sport=4444, dport=4444)
-    s_vlan = 2
-    if sub_id < 255:
-        s_vlan = 3
+
+    s_vlan = int(sub_id / 256.0) + 2
+
     pkt = (
         Ether(src="02:00:00:00:00:01", dst="00:00:00:01:00:01")
         / Dot1Q(vlan = s_vlan)

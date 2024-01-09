@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RANGE=(1)
+RANGE=(64)
 RETRIES=10
 FREQ=2200
 

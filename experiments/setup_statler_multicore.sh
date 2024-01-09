@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RANGE=(1 2 4 8 16 32 64 128 256 512 1024 2048 4096)
+RANGE=(1 2 4 8 16 32 64 128 256 512 1024 2048)
 RETRIES=10
 OFFERED_LOAD=("1gbpsl1" "2gbpsl1" "3gbpsl1" "4gbpsl1" "5gbpsl1" "6gbpsl1")
 FREQ=2200
