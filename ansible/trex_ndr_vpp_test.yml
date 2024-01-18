@@ -35,7 +35,8 @@
 
     - name: start traffic
       # TOS=> DSCP:START:PPS
-      command: "./ndr --stl --ports 0 1 --profile automation/trex_control_plane/interactive/trex/examples/stl/bng_flow_stats.py  --prof-tun=subscribers={{ subscribers }},results={{ measure_id }} --force-map -o results/{{ label }}/{{subscribers }}/{{ packet_size }}/{{ measure_id }}/trex_ndr.json"
+      # command: "./ndr --stl --ports 0 1 --profile automation/trex_control_plane/interactive/trex/examples/stl/bng_flow_stats.py  --prof-tun=subscribers={{ subscribers }},results={{ measure_id }} --force-map -o results/{{ label }}/{{subscribers }}/{{ packet_size }}/{{ measure_id }}/trex_ndr.json"
+      command: "./ndr --stl --ports 0 1 --profile stl/udp_for_benchmarks.py  --prof-tun=packet_len={{ packet_size }} --force-map -o results/{{ label }}/{{subscribers }}/{{ packet_size }}/{{ measure_id }}/trex_ndr.json"
       args:
         chdir: /opt/trex/v3.02/
 
@@ -61,7 +62,7 @@
        dest_dir: "../output/{{ label }}/{{ subscribers }}/{{ packet_size }}/{{ measure_id }}/"
 
     - name: print vpp stats after test
-      command: /root/bisdn-vpp/build-root/build-vpp-native/vpp/bin/vpp_get_stats dump
+      command: /root/vpp/build-root/build-vpp-native/vpp/bin/vpp_get_stats dump
       register: vppstats
 
     - name: create stats file

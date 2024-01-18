@@ -37,7 +37,7 @@ traffic_gen:
   hosts:
     waldorf.labshared.bisdn.de:		
   vars:
-    ansible_user: centos
+    ansible_user: ubuntu
 pasta:
   hosts:
     s9180.labshared.bisdn.de:		
