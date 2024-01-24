@@ -1,6 +1,6 @@
 11.00 /sys/heartbeat
 0.00 /sys/last_stats_clear
-1706110254.00 /sys/boottime
+1706116063.00 /sys/boottime
 [0 @ 0]: 1073737680 packets /mem/stat segment
 [1 @ 0]: 633712 packets /mem/stat segment
 [2 @ 0]: 1073103968 packets /mem/stat segment
@@ -15,15 +15,15 @@
 [0 @ 0]: 0 packets /sys/vector_rate_per_worker
 [1 @ 0]: 0 packets /sys/vector_rate_per_worker
 [2 @ 0]: 256 packets /sys/vector_rate_per_worker
-[0 @ 0]: 925973 packets /sys/loops_per_worker
+[0 @ 0]: 616893 packets /sys/loops_per_worker
 [1 @ 0]: 0 packets /sys/loops_per_worker
-[2 @ 0]: 36220 packets /sys/loops_per_worker
+[2 @ 0]: 44131 packets /sys/loops_per_worker
 0.00 /buffer-pools/default-numa-0/cached
 0.00 /buffer-pools/default-numa-0/used
 430184.00 /buffer-pools/default-numa-0/available
-553.00 /buffer-pools/default-numa-1/cached
-17621.00 /buffer-pools/default-numa-1/used
-412010.00 /buffer-pools/default-numa-1/available
+529.00 /buffer-pools/default-numa-1/cached
+21007.00 /buffer-pools/default-numa-1/used
+408648.00 /buffer-pools/default-numa-1/available
 2.00 /sys/num_worker_threads
 [0 @ 0]: 0 packets /node/errors
 [1 @ 0]: 0 packets /node/errors
@@ -8526,7 +8526,7 @@
 [2764 @ 2]: 0 packets /node/errors
 [2765 @ 2]: 0 packets /node/errors
 [2766 @ 2]: 0 packets /node/errors
-[2767 @ 2]: 560397436 packets /node/errors
+[2767 @ 2]: 683869675 packets /node/errors
 [2768 @ 2]: 0 packets /node/errors
 [2769 @ 2]: 0 packets /node/errors
 [2770 @ 2]: 0 packets /node/errors
@@ -8541,7 +8541,7 @@
 [2779 @ 2]: 0 packets /node/errors
 [2780 @ 2]: 0 packets /node/errors
 [2781 @ 2]: 0 packets /node/errors
-[2782 @ 2]: 560397436 packets /node/errors
+[2782 @ 2]: 683869675 packets /node/errors
 [2783 @ 2]: 0 packets /node/errors
 [2784 @ 2]: 0 packets /node/errors
 [2785 @ 2]: 0 packets /node/errors
@@ -8625,7 +8625,7 @@
 [2863 @ 2]: 0 packets /node/errors
 [2864 @ 2]: 0 packets /node/errors
 [2865 @ 2]: 0 packets /node/errors
-[2866 @ 2]: 147457877 packets /node/errors
+[2866 @ 2]: 331253249 packets /node/errors
 [0 @ 0]: 0 packets /err/null-node/blackholed packets
 [0 @ 1]: 0 packets /err/null-node/blackholed packets
 [0 @ 2]: 0 packets /err/null-node/blackholed packets
@@ -16929,7 +16929,7 @@
 [0 @ 2]: 0 packets /err/l2-output-bad-intf/L2 output to interface not in L2 mode or deleted
 [0 @ 0]: 0 packets /err/l2-output/L2 output packets
 [0 @ 1]: 0 packets /err/l2-output/L2 output packets
-[0 @ 2]: 560397436 packets /err/l2-output/L2 output packets
+[0 @ 2]: 683869675 packets /err/l2-output/L2 output packets
 [0 @ 0]: 0 packets /err/l2-output/L2 EFP filter pre-rewrite drops
 [0 @ 1]: 0 packets /err/l2-output/L2 EFP filter pre-rewrite drops
 [0 @ 2]: 0 packets /err/l2-output/L2 EFP filter pre-rewrite drops
@@ -16974,7 +16974,7 @@
 [0 @ 2]: 0 packets /err/l2-input-vtr/L2 input tag rewrite drops
 [0 @ 0]: 0 packets /err/l2-input/L2 input packets
 [0 @ 1]: 0 packets /err/l2-input/L2 input packets
-[0 @ 2]: 560397436 packets /err/l2-input/L2 input packets
+[0 @ 2]: 683869675 packets /err/l2-input/L2 input packets
 [0 @ 0]: 0 packets /err/l2-input/L2 input drops
 [0 @ 1]: 0 packets /err/l2-input/L2 input drops
 [0 @ 2]: 0 packets /err/l2-input/L2 input drops
@@ -17195,7 +17195,7 @@
 [0 @ 1]: 0 packets /err/handoff_trace/Warning: packets sent to the handoff trace node!
 [0 @ 2]: 0 packets /err/handoff_trace/Warning: packets sent to the handoff trace node!
 102.00 /sys/last_update
-8781154.00 /sys/input_rate
+10692493.99 /sys/input_rate
 [0 @ 0]: 0 packets, 0 bytes /net/route/to
 [1 @ 0]: 0 packets, 0 bytes /net/route/to
 [2 @ 0]: 0 packets, 0 bytes /net/route/to
@@ -17308,7 +17308,7 @@
 [1 @ 2]: 0 packets /if/rx-no-buf
 [2 @ 2]: 0 packets /if/rx-no-buf
 [0 @ 0]: 0 packets /if/rx-miss
-[1 @ 0]: 150829721 packets /if/rx-miss
+[1 @ 0]: 33929216 packets /if/rx-miss
 [2 @ 0]: 0 packets /if/rx-miss
 [0 @ 1]: 0 packets /if/rx-miss
 [1 @ 1]: 0 packets /if/rx-miss
@@ -17333,7 +17333,7 @@
 [2 @ 1]: 0 packets /if/tx-error
 [0 @ 2]: 0 packets /if/tx-error
 [1 @ 2]: 0 packets /if/tx-error
-[2 @ 2]: 147457877 packets /if/tx-error
+[2 @ 2]: 331253249 packets /if/tx-error
 [0 @ 0]: 0 packets /if/mpls
 [1 @ 0]: 0 packets /if/mpls
 [2 @ 0]: 0 packets /if/mpls
@@ -17350,7 +17350,7 @@
 [1 @ 1]: 0 packets, 0 bytes /if/rx
 [2 @ 1]: 0 packets, 0 bytes /if/rx
 [0 @ 2]: 0 packets, 0 bytes /if/rx
-[1 @ 2]: 1120794872 packets, 71730871808 bytes /if/rx
+[1 @ 2]: 1367739350 packets, 87535318400 bytes /if/rx
 [2 @ 2]: 0 packets, 0 bytes /if/rx
 [0 @ 0]: 0 packets, 0 bytes /if/rx-unicast
 [1 @ 0]: 0 packets, 0 bytes /if/rx-unicast
@@ -17387,7 +17387,7 @@
 [2 @ 1]: 0 packets, 0 bytes /if/tx
 [0 @ 2]: 0 packets, 0 bytes /if/tx
 [1 @ 2]: 0 packets, 0 bytes /if/tx
-[2 @ 2]: 560397436 packets, 35865435904 bytes /if/tx
+[2 @ 2]: 683869675 packets, 43767659200 bytes /if/tx
 [0 @ 0]: 0 packets, 0 bytes /if/tx-unicast
 [1 @ 0]: 0 packets, 0 bytes /if/tx-unicast
 [2 @ 0]: 0 packets, 0 bytes /if/tx-unicast
@@ -17604,15 +17604,15 @@
 [3 @ 2]: 0 packets, 0 bytes /net/punt
 [4 @ 2]: 0 packets, 0 bytes /net/punt
 [0 @ 0]: 1073741776 packets /mem/main heap
-[1 @ 0]: 96326976 packets /mem/main heap
-[2 @ 0]: 977414800 packets /mem/main heap
+[1 @ 0]: 96326352 packets /mem/main heap
+[2 @ 0]: 977415424 packets /mem/main heap
 [3 @ 0]: 0 packets /mem/main heap
 [4 @ 0]: 1073741776 packets /mem/main heap
-[5 @ 0]: 56 packets /mem/main heap
-[6 @ 0]: 976952912 packets /mem/main heap
-[0 @ 0]: 96326976 packets /mem/main heap/used
+[5 @ 0]: 51 packets /mem/main heap
+[6 @ 0]: 976954896 packets /mem/main heap
+[0 @ 0]: 96326352 packets /mem/main heap/used
 [0 @ 0]: 1073741776 packets /mem/main heap/total
-[0 @ 0]: 977414800 packets /mem/main heap/free
+[0 @ 0]: 977415424 packets /mem/main heap/free
 [0 @ 0]: 0 packets /err/dev0-output/interface is down
 [0 @ 1]: 0 packets /err/dev0-output/interface is down
 [0 @ 2]: 0 packets /err/dev0-output/interface is down
@@ -17640,7 +17640,7 @@
 [0 @ 0]: 0 packets /interfaces/dev0/rx-no-buf
 [0 @ 1]: 0 packets /interfaces/dev0/rx-no-buf
 [0 @ 2]: 0 packets /interfaces/dev0/rx-no-buf
-[0 @ 0]: 150829721 packets /interfaces/dev0/rx-miss
+[0 @ 0]: 33929216 packets /interfaces/dev0/rx-miss
 [0 @ 1]: 0 packets /interfaces/dev0/rx-miss
 [0 @ 2]: 0 packets /interfaces/dev0/rx-miss
 [0 @ 0]: 0 packets /interfaces/dev0/rx-error
@@ -17654,7 +17654,7 @@
 [0 @ 2]: 0 packets /interfaces/dev0/mpls
 [0 @ 0]: 0 packets, 0 bytes /interfaces/dev0/rx
 [0 @ 1]: 0 packets, 0 bytes /interfaces/dev0/rx
-[0 @ 2]: 1120794872 packets, 71730871808 bytes /interfaces/dev0/rx
+[0 @ 2]: 1367739350 packets, 87535318400 bytes /interfaces/dev0/rx
 [0 @ 0]: 0 packets, 0 bytes /interfaces/dev0/rx-unicast
 [0 @ 1]: 0 packets, 0 bytes /interfaces/dev0/rx-unicast
 [0 @ 2]: 0 packets, 0 bytes /interfaces/dev0/rx-unicast
@@ -17687,7 +17687,7 @@
 [0 @ 2]: 0 packets /err/dev1-output/no tx queue available
 [0 @ 0]: 0 packets /err/dev1-tx/Tx packet drops (dpdk tx failure)
 [0 @ 1]: 0 packets /err/dev1-tx/Tx packet drops (dpdk tx failure)
-[0 @ 2]: 147457877 packets /err/dev1-tx/Tx packet drops (dpdk tx failure)
+[0 @ 2]: 331253249 packets /err/dev1-tx/Tx packet drops (dpdk tx failure)
 [0 @ 0]: 0 packets /interfaces/dev1/drops
 [0 @ 1]: 0 packets /interfaces/dev1/drops
 [0 @ 2]: 0 packets /interfaces/dev1/drops
@@ -17711,7 +17711,7 @@
 [0 @ 2]: 0 packets /interfaces/dev1/rx-error
 [0 @ 0]: 0 packets /interfaces/dev1/tx-error
 [0 @ 1]: 0 packets /interfaces/dev1/tx-error
-[0 @ 2]: 147457877 packets /interfaces/dev1/tx-error
+[0 @ 2]: 331253249 packets /interfaces/dev1/tx-error
 [0 @ 0]: 0 packets /interfaces/dev1/mpls
 [0 @ 1]: 0 packets /interfaces/dev1/mpls
 [0 @ 2]: 0 packets /interfaces/dev1/mpls
@@ -17729,7 +17729,7 @@
 [0 @ 2]: 0 packets, 0 bytes /interfaces/dev1/rx-broadcast
 [0 @ 0]: 0 packets, 0 bytes /interfaces/dev1/tx
 [0 @ 1]: 0 packets, 0 bytes /interfaces/dev1/tx
-[0 @ 2]: 560397436 packets, 35865435904 bytes /interfaces/dev1/tx
+[0 @ 2]: 683869675 packets, 43767659200 bytes /interfaces/dev1/tx
 [0 @ 0]: 0 packets, 0 bytes /interfaces/dev1/tx-unicast
 [0 @ 1]: 0 packets, 0 bytes /interfaces/dev1/tx-unicast
 [0 @ 2]: 0 packets, 0 bytes /interfaces/dev1/tx-unicast
