@@ -1,6 +1,6 @@
 33.00 /sys/heartbeat
 0.00 /sys/last_stats_clear
-1706708372.00 /sys/boottime
+1706709702.00 /sys/boottime
 [0 @ 0]: 1073737680 packets /mem/stat segment
 [1 @ 0]: 635072 packets /mem/stat segment
 [2 @ 0]: 1073102608 packets /mem/stat segment
@@ -11,19 +11,19 @@
 [0 @ 0]: 635072 packets /mem/stat segment/used
 [0 @ 0]: 1073737680 packets /mem/stat segment/total
 [0 @ 0]: 1073102608 packets /mem/stat segment/free
-53.00 /sys/vector_rate
+58.99 /sys/vector_rate
 [0 @ 0]: 0 packets /sys/vector_rate_per_worker
 [1 @ 0]: 0 packets /sys/vector_rate_per_worker
-[2 @ 0]: 106 packets /sys/vector_rate_per_worker
-[0 @ 0]: 1030384 packets /sys/loops_per_worker
+[2 @ 0]: 118 packets /sys/vector_rate_per_worker
+[0 @ 0]: 989491 packets /sys/loops_per_worker
 [1 @ 0]: 0 packets /sys/loops_per_worker
-[2 @ 0]: 137620 packets /sys/loops_per_worker
+[2 @ 0]: 86959 packets /sys/loops_per_worker
 0.00 /buffer-pools/default-numa-0/cached
 0.00 /buffer-pools/default-numa-0/used
 430184.00 /buffer-pools/default-numa-0/available
 527.00 /buffer-pools/default-numa-1/cached
-12372.00 /buffer-pools/default-numa-1/used
-417285.00 /buffer-pools/default-numa-1/available
+13221.00 /buffer-pools/default-numa-1/used
+416436.00 /buffer-pools/default-numa-1/available
 2.00 /sys/num_worker_threads
 [0 @ 0]: 0 packets /node/errors
 [1 @ 0]: 0 packets /node/errors
@@ -17195,7 +17195,7 @@
 [0 @ 1]: 0 packets /err/handoff_trace/Warning: packets sent to the handoff trace node!
 [0 @ 2]: 0 packets /err/handoff_trace/Warning: packets sent to the handoff trace node!
 322.00 /sys/last_update
-10151370.00 /sys/input_rate
+9114722.00 /sys/input_rate
 [0 @ 0]: 0 packets, 0 bytes /net/route/to
 [1 @ 0]: 0 packets, 0 bytes /net/route/to
 [2 @ 0]: 0 packets, 0 bytes /net/route/to
@@ -17237,7 +17237,7 @@
 [10 @ 2]: 0 packets, 0 bytes /net/route/to
 [11 @ 2]: 0 packets, 0 bytes /net/route/to
 [12 @ 2]: 0 packets, 0 bytes /net/route/to
-[13 @ 2]: 1740523629 packets, 80064086934 bytes /net/route/to
+[13 @ 2]: 1534184399 packets, 70572482354 bytes /net/route/to
 [0 @ 0]: 0 packets, 0 bytes /net/route/via
 [1 @ 0]: 0 packets, 0 bytes /net/route/via
 [2 @ 0]: 0 packets, 0 bytes /net/route/via
@@ -17323,7 +17323,7 @@
 [1 @ 1]: 0 packets /if/ip4
 [2 @ 1]: 0 packets /if/ip4
 [0 @ 2]: 0 packets /if/ip4
-[1 @ 2]: 1740523629 packets /if/ip4
+[1 @ 2]: 1534184399 packets /if/ip4
 [2 @ 2]: 0 packets /if/ip4
 [0 @ 0]: 0 packets /if/ip6
 [1 @ 0]: 0 packets /if/ip6
@@ -17344,7 +17344,7 @@
 [1 @ 2]: 0 packets /if/rx-no-buf
 [2 @ 2]: 0 packets /if/rx-no-buf
 [0 @ 0]: 0 packets /if/rx-miss
-[1 @ 0]: 2025708285 packets /if/rx-miss
+[1 @ 0]: 2057008043 packets /if/rx-miss
 [2 @ 0]: 0 packets /if/rx-miss
 [0 @ 1]: 0 packets /if/rx-miss
 [1 @ 1]: 0 packets /if/rx-miss
@@ -17386,7 +17386,7 @@
 [1 @ 1]: 0 packets, 0 bytes /if/rx
 [2 @ 1]: 0 packets, 0 bytes /if/rx
 [0 @ 2]: 0 packets, 0 bytes /if/rx
-[1 @ 2]: 1740523629 packets, 104431417740 bytes /if/rx
+[1 @ 2]: 1534184399 packets, 92051063940 bytes /if/rx
 [2 @ 2]: 0 packets, 0 bytes /if/rx
 [0 @ 0]: 0 packets, 0 bytes /if/rx-unicast
 [1 @ 0]: 0 packets, 0 bytes /if/rx-unicast
@@ -17423,7 +17423,7 @@
 [2 @ 1]: 0 packets, 0 bytes /if/tx
 [0 @ 2]: 0 packets, 0 bytes /if/tx
 [1 @ 2]: 0 packets, 0 bytes /if/tx
-[2 @ 2]: 1740523629 packets, 104431417740 bytes /if/tx
+[2 @ 2]: 1534184399 packets, 92051063940 bytes /if/tx
 [0 @ 0]: 0 packets, 0 bytes /if/tx-unicast
 [1 @ 0]: 0 packets, 0 bytes /if/tx-unicast
 [2 @ 0]: 0 packets, 0 bytes /if/tx-unicast
@@ -17640,15 +17640,15 @@
 [3 @ 2]: 0 packets, 0 bytes /net/punt
 [4 @ 2]: 0 packets, 0 bytes /net/punt
 [0 @ 0]: 1073741776 packets /mem/main heap
-[1 @ 0]: 64911008 packets /mem/main heap
-[2 @ 0]: 1008830768 packets /mem/main heap
+[1 @ 0]: 64909472 packets /mem/main heap
+[2 @ 0]: 1008832304 packets /mem/main heap
 [3 @ 0]: 0 packets /mem/main heap
 [4 @ 0]: 1073741776 packets /mem/main heap
-[5 @ 0]: 71 packets /mem/main heap
-[6 @ 0]: 1008300656 packets /mem/main heap
-[0 @ 0]: 64911008 packets /mem/main heap/used
+[5 @ 0]: 50 packets /mem/main heap
+[6 @ 0]: 1008432592 packets /mem/main heap
+[0 @ 0]: 64909472 packets /mem/main heap/used
 [0 @ 0]: 1073741776 packets /mem/main heap/total
-[0 @ 0]: 1008830768 packets /mem/main heap/free
+[0 @ 0]: 1008832304 packets /mem/main heap/free
 [0 @ 0]: 0 packets /err/dev0-output/interface is down
 [0 @ 1]: 0 packets /err/dev0-output/interface is down
 [0 @ 2]: 0 packets /err/dev0-output/interface is down
@@ -17669,14 +17669,14 @@
 [0 @ 2]: 0 packets /interfaces/dev0/punt
 [0 @ 0]: 0 packets /interfaces/dev0/ip4
 [0 @ 1]: 0 packets /interfaces/dev0/ip4
-[0 @ 2]: 1740523629 packets /interfaces/dev0/ip4
+[0 @ 2]: 1534184399 packets /interfaces/dev0/ip4
 [0 @ 0]: 0 packets /interfaces/dev0/ip6
 [0 @ 1]: 0 packets /interfaces/dev0/ip6
 [0 @ 2]: 0 packets /interfaces/dev0/ip6
 [0 @ 0]: 0 packets /interfaces/dev0/rx-no-buf
 [0 @ 1]: 0 packets /interfaces/dev0/rx-no-buf
 [0 @ 2]: 0 packets /interfaces/dev0/rx-no-buf
-[0 @ 0]: 2025708285 packets /interfaces/dev0/rx-miss
+[0 @ 0]: 2057008043 packets /interfaces/dev0/rx-miss
 [0 @ 1]: 0 packets /interfaces/dev0/rx-miss
 [0 @ 2]: 0 packets /interfaces/dev0/rx-miss
 [0 @ 0]: 0 packets /interfaces/dev0/rx-error
@@ -17690,7 +17690,7 @@
 [0 @ 2]: 0 packets /interfaces/dev0/mpls
 [0 @ 0]: 0 packets, 0 bytes /interfaces/dev0/rx
 [0 @ 1]: 0 packets, 0 bytes /interfaces/dev0/rx
-[0 @ 2]: 1740523629 packets, 104431417740 bytes /interfaces/dev0/rx
+[0 @ 2]: 1534184399 packets, 92051063940 bytes /interfaces/dev0/rx
 [0 @ 0]: 0 packets, 0 bytes /interfaces/dev0/rx-unicast
 [0 @ 1]: 0 packets, 0 bytes /interfaces/dev0/rx-unicast
 [0 @ 2]: 0 packets, 0 bytes /interfaces/dev0/rx-unicast
@@ -17765,7 +17765,7 @@
 [0 @ 2]: 0 packets, 0 bytes /interfaces/dev1/rx-broadcast
 [0 @ 0]: 1 packets, 42 bytes /interfaces/dev1/tx
 [0 @ 1]: 0 packets, 0 bytes /interfaces/dev1/tx
-[0 @ 2]: 1740523629 packets, 104431417740 bytes /interfaces/dev1/tx
+[0 @ 2]: 1534184399 packets, 92051063940 bytes /interfaces/dev1/tx
 [0 @ 0]: 0 packets, 0 bytes /interfaces/dev1/tx-unicast
 [0 @ 1]: 0 packets, 0 bytes /interfaces/dev1/tx-unicast
 [0 @ 2]: 0 packets, 0 bytes /interfaces/dev1/tx-unicast
