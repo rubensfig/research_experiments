@@ -163,7 +163,7 @@
         setOpenlink(false)
       };
 
-      const all_metrics = [{"metrics": "metric_CPU operating frequency (in GHz)", "0": 2.199999983}, {"metrics": "metric_CPU utilization %", "0": 8.985203600500002}, {"metrics": "metric_CPU utilization% in kernel mode", "0": 0.023652398499999998}, {"metrics": "metric_CPI", "0": 0.40898298349999995}, {"metrics": "metric_kernel_CPI", "0": 1.4337768304999998}, {"metrics": "metric_IPC", "0": 2.5208190880000005}, {"metrics": "metric_locks retired per instr", "0": 4.42675e-05}, {"metrics": "metric_L1D MPI (includes data+rfo w/ prefetches)", "0": 0.0145198335}, {"metrics": "metric_L1D demand data read hits per instr", "0": 0.3187183395}, {"metrics": "metric_L1-I code read misses (w/ prefetches) per instr", "0": 0.003174955499999999}, {"metrics": "metric_L2 demand data read hits per instr", "0": 0.0050538515}, {"metrics": "metric_L2 MPI (includes code+data+rfo w/ prefetches)", "0": 0.006203205999999999}, {"metrics": "metric_L2 demand data read MPI", "0": 0.001140662}, {"metrics": "metric_L2 demand code MPI", "0": 4.36965e-05}, {"metrics": "metric_ITLB MPI", "0": 3.7869999999999995e-06}, {"metrics": "metric_ITLB large page MPI", "0": 5e-10}, {"metrics": "metric_DTLB load MPI", "0": 5.3499999999999996e-08}, {"metrics": "metric_DTLB 4KB page load MPI", "0": 6.049999999999999e-08}, {"metrics": "metric_DTLB 2MB large page load MPI", "0": 5e-09}, {"metrics": "metric_DTLB 1GB large page load MPI", "0": 2e-09}, {"metrics": "metric_DTLB store MPI", "0": 4.499999999999999e-09}, {"metrics": "metric_DTLB load miss latency (in core clks)", "0": 218.417540241}, {"metrics": "metric_DTLB store miss latency (in core clks)", "0": 160.06701816750004}, {"metrics": "metric_ITLB miss latency (in core clks)", "0": 58.91614257000001}, {"metrics": "metric_core c6 residency %", "0": 0.0}, {"metrics": "metric_package c6 residency %", "0": 0.0}, {"metrics": "metric_% Uops delivered from decoded Icache (DSB)", "0": 41.804479917500004}, {"metrics": "metric_% Uops delivered from legacy decode pipeline (MITE)", "0": 52.123420427}, {"metrics": "metric_core % cycles in non AVX license", "0": 100.0}, {"metrics": "metric_core % cycles in AVX2 license", "0": 0.0}, {"metrics": "metric_core % cycles in AVX-512 license", "0": 0.0}, {"metrics": "metric_TMA_Frontend_Bound(%)", "0": 16.104861262500002}, {"metrics": "metric_TMA_....ICache_Misses(%)", "0": 0.31807707300000004}, {"metrics": "metric_TMA_....ITLB_Misses(%)", "0": 0.0246832995}, {"metrics": "metric_TMA_....Branch_Resteers(%)", "0": 0.5885142465}, {"metrics": "metric_TMA_......Mispredicts_Resteers(%)", "0": 0.4859586429999999}, {"metrics": "metric_TMA_......Clears_Resteers(%)", "0": 0.07211470449999999}, {"metrics": "metric_TMA_......Unknown_Branches_Resteers(%)", "0": 0.03045650900000001}, {"metrics": "metric_TMA_....MITE(%)", "0": 12.975787391}, {"metrics": "metric_TMA_....DSB(%)", "0": 2.792586751499999}, {"metrics": "metric_TMA_Bad_Speculation(%)", "0": 1.9510221785}, {"metrics": "metric_TMA_..Branch_Mispredicts(%)", "0": 1.7111073565000001}, {"metrics": "metric_TMA_..Machine_Clears(%)", "0": 0.23991482199999994}, {"metrics": "metric_TMA_Backend_Bound(%)", "0": 15.660623605500001}, {"metrics": "metric_TMA_..Memory_Bound(%)", "0": 4.5393486265}, {"metrics": "metric_TMA_....L1_Bound(%)", "0": 4.8738432225000015}, {"metrics": "metric_TMA_......DTLB_Load(%)", "0": 0.0}, {"metrics": "metric_TMA_......Lock_Latency(%)", "0": 0.008438722}, {"metrics": "metric_TMA_....L2_Bound(%)", "0": 0.6721675314999999}, {"metrics": "metric_TMA_....L3_Bound(%)", "0": 1.5394126469999998}, {"metrics": "metric_TMA_....MEM_Bound(%)", "0": 0.44582199749999996}, {"metrics": "metric_TMA_......MEM_Bandwidth(%)", "0": 0.000683234}, {"metrics": "metric_TMA_......MEM_Latency(%)", "0": 0.7082705710000001}, {"metrics": "metric_TMA_....Store_Bound(%)", "0": 1.5656703579999998}, {"metrics": "metric_TMA_..Core_Bound(%)", "0": 11.1212749785}, {"metrics": "metric_TMA_....Ports_Utilization(%)", "0": 23.436666186999997}, {"metrics": "metric_TMA_......Ports_Utilized_3m(%)", "0": 60.624399505999996}, {"metrics": "metric_TMA_Retiring(%)", "0": 66.28435405249999}, {"metrics": "metric_TMA_..Light_Operations(%)", "0": 57.802376811}, {"metrics": "metric_TMA_....FP_Arith(%)", "0": 0.17049381300000002}, {"metrics": "metric_TMA_......FP_Scalar(%)", "0": 0.10493956550000001}, {"metrics": "metric_TMA_......FP_Vector(%)", "0": 0.05216089300000001}, {"metrics": "metric_TMA_..Heavy_Operations(%)", "0": 8.481977240500001}]
+      const all_metrics = [{"metrics": "metric_CPU operating frequency (in GHz)", "0": 2.1999998489999997}, {"metrics": "metric_CPU utilization %", "0": 3.6298533180000008}, {"metrics": "metric_CPU utilization% in kernel mode", "0": 0.054331005}, {"metrics": "metric_CPI", "0": 0.45805622099999993}, {"metrics": "metric_kernel_CPI", "0": 1.248757289}, {"metrics": "metric_IPC", "0": 2.3027875535}, {"metrics": "metric_locks retired per instr", "0": 0.000120026}, {"metrics": "metric_L1D MPI (includes data+rfo w/ prefetches)", "0": 0.026476937}, {"metrics": "metric_L1D demand data read hits per instr", "0": 0.33878812849999995}, {"metrics": "metric_L1-I code read misses (w/ prefetches) per instr", "0": 0.0006139924999999999}, {"metrics": "metric_L2 demand data read hits per instr", "0": 0.0061078239999999995}, {"metrics": "metric_L2 MPI (includes code+data+rfo w/ prefetches)", "0": 0.010005286499999998}, {"metrics": "metric_L2 demand data read MPI", "0": 0.001185985}, {"metrics": "metric_L2 demand code MPI", "0": 2.87955e-05}, {"metrics": "metric_ITLB MPI", "0": 5.333e-06}, {"metrics": "metric_ITLB large page MPI", "0": 5e-10}, {"metrics": "metric_DTLB load MPI", "0": 1.55e-08}, {"metrics": "metric_DTLB 4KB page load MPI", "0": 1.6e-08}, {"metrics": "metric_DTLB 2MB large page load MPI", "0": 3.0000000000000004e-09}, {"metrics": "metric_DTLB 1GB large page load MPI", "0": 5e-10}, {"metrics": "metric_DTLB store MPI", "0": 1.55e-08}, {"metrics": "metric_DTLB load miss latency (in core clks)", "0": 1717.221811262}, {"metrics": "metric_DTLB store miss latency (in core clks)", "0": 119.38578398700001}, {"metrics": "metric_ITLB miss latency (in core clks)", "0": 34.573269322}, {"metrics": "metric_core c6 residency %", "0": 0.0}, {"metrics": "metric_package c6 residency %", "0": 0.0}, {"metrics": "metric_% Uops delivered from decoded Icache (DSB)", "0": 53.132561153000005}, {"metrics": "metric_% Uops delivered from legacy decode pipeline (MITE)", "0": 37.090243195}, {"metrics": "metric_core % cycles in non AVX license", "0": 100.0}, {"metrics": "metric_core % cycles in AVX2 license", "0": 0.0}, {"metrics": "metric_core % cycles in AVX-512 license", "0": 0.0}, {"metrics": "metric_TMA_Frontend_Bound(%)", "0": 14.6472563605}, {"metrics": "metric_TMA_....ICache_Misses(%)", "0": 0.10168019550000003}, {"metrics": "metric_TMA_....ITLB_Misses(%)", "0": 0.25283475250000004}, {"metrics": "metric_TMA_....Branch_Resteers(%)", "0": 0.5756549625}, {"metrics": "metric_TMA_......Mispredicts_Resteers(%)", "0": 0.5192799635}, {"metrics": "metric_TMA_......Clears_Resteers(%)", "0": 0.0199000685}, {"metrics": "metric_TMA_......Unknown_Branches_Resteers(%)", "0": 0.036475978}, {"metrics": "metric_TMA_....MITE(%)", "0": 10.216083340999997}, {"metrics": "metric_TMA_....DSB(%)", "0": 2.953460324000001}, {"metrics": "metric_TMA_Bad_Speculation(%)", "0": 3.237936240999999}, {"metrics": "metric_TMA_..Branch_Mispredicts(%)", "0": 3.1113453049999995}, {"metrics": "metric_TMA_..Machine_Clears(%)", "0": 0.126590936}, {"metrics": "metric_TMA_Backend_Bound(%)", "0": 19.6997921475}, {"metrics": "metric_TMA_..Memory_Bound(%)", "0": 5.746272450499999}, {"metrics": "metric_TMA_....L1_Bound(%)", "0": 5.401232048499999}, {"metrics": "metric_TMA_......DTLB_Load(%)", "0": 0.0}, {"metrics": "metric_TMA_......Lock_Latency(%)", "0": 0.022579143500000003}, {"metrics": "metric_TMA_....L2_Bound(%)", "0": 0.6775095365000001}, {"metrics": "metric_TMA_....L3_Bound(%)", "0": 1.189003976}, {"metrics": "metric_TMA_....MEM_Bound(%)", "0": 0.099473639}, {"metrics": "metric_TMA_......MEM_Bandwidth(%)", "0": 0.0}, {"metrics": "metric_TMA_......MEM_Latency(%)", "0": 0.14986605349999998}, {"metrics": "metric_TMA_....Store_Bound(%)", "0": 2.1236539814999995}, {"metrics": "metric_TMA_..Core_Bound(%)", "0": 13.953519695}, {"metrics": "metric_TMA_....Ports_Utilization(%)", "0": 24.162642904000002}, {"metrics": "metric_TMA_......Ports_Utilized_3m(%)", "0": 58.229741966000006}, {"metrics": "metric_TMA_Retiring(%)", "0": 62.411728998499996}, {"metrics": "metric_TMA_..Light_Operations(%)", "0": 52.596635669499996}, {"metrics": "metric_TMA_....FP_Arith(%)", "0": 0.132756125}, {"metrics": "metric_TMA_......FP_Scalar(%)", "0": 0.05641580599999999}, {"metrics": "metric_TMA_......FP_Vector(%)", "0": 0.027825069499999994}, {"metrics": "metric_TMA_..Heavy_Operations(%)", "0": 9.815093329}]
       const [current_metrics, setCurrent_metrics] = React.useState(JSON.parse(JSON.stringify(all_metrics)));
       const meta_data = [["SYSTEM_TSC_FREQ (MHz)", "2200"], ["CORES_PER_SOCKET", "28"], ["SOCKET_COUNT", "2"], ["HYPERTHREADING_ON", "False"], ["IMC count", "6"], ["CHAS_PER_SOCKET", "28"], ["UPI count", "3"], ["Architecture", "cascadelake"], ["Model", "Intel(R) Xeon(R) Gold 6238R CPU @ 2.20GHz"], ["kernel version", "Linux version 5.4.0-170-generic (buildd@lcy02-amd64-059) (gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2))"], ["PerfSpect version", "1.3.11"]]
       const description = {
@@ -279,7 +279,7 @@
         series: [
           {
             type: 'line',
-            data: [[5.0, 8.9790444], [10.0, 8.9883275], [15.0, 8.98904941], [20.0, 8.98856377], [25.0, 8.98832964], [30.0, 8.9883149], [35.0, 8.98678644], [40.0, 8.98782877], [45.0, 8.98699592], [50.0, 8.98796338], [55.0, 8.98711353], [60.0, 8.98761656], [65.0, 8.98686498], [70.0, 8.98873331], [75.0, 8.97959705], [80.0, 8.96007193], [85.0, 8.9775706], [90.0, 8.98843277], [95.0, 8.98806275], [100.0, 8.9888044]],
+            data: [[5.0, 3.61014147], [10.0, 3.62787016], [15.0, 3.63178108], [20.0, 3.63134105], [25.0, 3.63072832], [30.0, 3.63186957], [35.0, 3.63156135], [40.0, 3.63177886], [45.0, 3.63116538], [50.0, 3.63117169], [55.0, 3.63194008], [60.0, 3.63178572], [65.0, 3.63117292], [70.0, 3.6260977], [75.0, 3.62979571], [80.0, 3.63101953], [85.0, 3.63135161], [90.0, 3.63162129], [95.0, 3.63153993], [100.0, 3.63133294]],
           }
         ]
       }
@@ -289,7 +289,7 @@
         series: [
           {
             type: 'line',
-            data: [[5.0, 0.32578552], [10.0, 0.3221413], [15.0, 0.32216942], [20.0, 0.32198148], [25.0, 0.32213306], [30.0, 0.37973255], [35.0, 0.46629671], [40.0, 0.46581545], [45.0, 0.46417606], [50.0, 0.46409784], [55.0, 0.46636144], [60.0, 0.46631118], [65.0, 0.46079893], [70.0, 0.46111277], [75.0, 0.47160649], [80.0, 0.50160077], [85.0, 0.47356058], [90.0, 0.3794664], [95.0, 0.32234569], [100.0, 0.32216603]],
+            data: [[5.0, 0.41160856], [10.0, 0.33583635], [15.0, 0.32343617], [20.0, 0.32305521], [25.0, 0.32321859], [30.0, 0.39778905], [35.0, 0.52583471], [40.0, 0.52603359], [45.0, 0.52574688], [50.0, 0.52590157], [55.0, 0.54827983], [60.0, 0.55053249], [65.0, 0.55277908], [70.0, 0.56945445], [75.0, 0.55888397], [80.0, 0.5543429], [85.0, 0.55452607], [90.0, 0.40830138], [95.0, 0.3227426], [100.0, 0.32282097]],
           }
         ]
       }
@@ -299,7 +299,7 @@
         series: [
           {
             type: 'line',
-            data: [[5.0, 2.19999945], [10.0, 2.19999999], [15.0, 2.19999998], [20.0, 2.19999991], [25.0, 2.19999997], [30.0, 2.19999996], [35.0, 2.20000008], [40.0, 2.19999991], [45.0, 2.20000017], [50.0, 2.19999974], [55.0, 2.20000006], [60.0, 2.19999998], [65.0, 2.19999962], [70.0, 2.19999996], [75.0, 2.20000059], [80.0, 2.20000018], [85.0, 2.20000041], [90.0, 2.19999997], [95.0, 2.19999993], [100.0, 2.1999998]],
+            data: [[5.0, 2.19999742], [10.0, 2.19999928], [15.0, 2.19999981], [20.0, 2.20000055], [25.0, 2.19999986], [30.0, 2.20000027], [35.0, 2.19999947], [40.0, 2.19999982], [45.0, 2.19999982], [50.0, 2.20000075], [55.0, 2.19999986], [60.0, 2.19999909], [65.0, 2.20000119], [70.0, 2.19999867], [75.0, 2.19999908], [80.0, 2.20000156], [85.0, 2.20000019], [90.0, 2.19999985], [95.0, 2.2000002], [100.0, 2.20000024]],
           }
         ]
       }
@@ -320,12 +320,12 @@
           {
             name: "L1D",
             type: 'line',
-            data: [[5.0, 1.028e-05], [10.0, 8.8e-07], [15.0, 9.7e-07], [20.0, 9e-07], [25.0, 9.6e-07], [30.0, 0.01064475], [35.0, 0.02630369], [40.0, 0.02626352], [45.0, 0.02612655], [50.0, 0.02610583], [55.0, 0.02629719], [60.0, 0.02629327], [65.0, 0.02371831], [70.0, 0.02354679], [75.0, 0.02271078], [80.0, 0.02029214], [85.0, 0.02240351], [90.0, 0.00967243], [95.0, 2.86e-06], [100.0, 1.06e-06]],
+            data: [[5.0, 0.0001728], [10.0, 3.343e-05], [15.0, 8.5e-07], [20.0, 2.9e-06], [25.0, 2.16e-06], [30.0, 0.01737344], [35.0, 0.04713863], [40.0, 0.04717627], [45.0, 0.04716719], [50.0, 0.047157], [55.0, 0.0448279], [60.0, 0.04471226], [65.0, 0.04452434], [70.0, 0.04074973], [75.0, 0.0433747], [80.0, 0.04439429], [85.0, 0.04438744], [90.0, 0.01634149], [95.0, 8.1e-07], [100.0, 1.11e-06]],
           },
           {
             name: "L2",
             type: 'line',
-            data: [[5.0, 6.2e-07], [10.0, 7.6e-07], [15.0, 6.5e-07], [20.0, 6e-07], [25.0, 7.6e-07], [30.0, 0.00464701], [35.0, 0.0113842], [40.0, 0.01136617], [45.0, 0.01139104], [50.0, 0.01133941], [55.0, 0.01137286], [60.0, 0.01138708], [65.0, 0.00971562], [70.0, 0.00939123], [75.0, 0.00940024], [80.0, 0.00939592], [85.0, 0.0094024], [90.0, 0.00386616], [95.0, 6.4e-07], [100.0, 7.5e-07]],
+            data: [[5.0, 5.6e-07], [10.0, 5.7e-07], [15.0, 4.9e-07], [20.0, 5.5e-07], [25.0, 5e-07], [30.0, 0.00753192], [35.0, 0.01977028], [40.0, 0.01978508], [45.0, 0.01897126], [50.0, 0.01920686], [55.0, 0.01601382], [60.0, 0.01607977], [65.0, 0.01563147], [70.0, 0.01530487], [75.0, 0.01545845], [80.0, 0.01524261], [85.0, 0.01542488], [90.0, 0.00568033], [95.0, 8.7e-07], [100.0, 5.9e-07]],
           },
           {
             name: "LLC Data",
@@ -492,27 +492,27 @@
                       data: [
                         {
                           name: "Bad Speculation",
-                          value: Math.round(1.9510221785 * 10) / 10,
+                          value: Math.round(3.237936240999999 * 10) / 10,
                         },
                         {
                           name: "Retiring",
-                          value: Math.round(66.28435405249999 * 10) / 10,
+                          value: Math.round(62.411728998499996 * 10) / 10,
                         },
                         {
                           name: "Frontend",
-                          value: Math.round(16.104861262500002 * 10) / 10,
+                          value: Math.round(14.6472563605 * 10) / 10,
                         },
                         {
                           name: "Backend",
-                          value: Math.round(15.660623605500001 * 10) / 10,
+                          value: Math.round(19.6997921475 * 10) / 10,
                           children: [
                             {
                               name: "Core",
-                              value: Math.round(11.1212749785 * 10) / 10,
+                              value: Math.round(13.953519695 * 10) / 10,
                             },
                             {
                               name: "Memory",
-                              value: Math.round(4.5393486265 * 10) / 10,
+                              value: Math.round(5.746272450499999 * 10) / 10,
                             },
                           ],
                         },
