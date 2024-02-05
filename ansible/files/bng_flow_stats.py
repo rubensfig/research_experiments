@@ -17,16 +17,15 @@ TREX_DIR = f"/opt/trex/{TREX_VERSION}/"
 TRAFFIC_PROFILE = "traffic_profiles.ini"
 
 
-def get_packet(sub_id, dst_ip, tos, size):
+def get_packet(tos, mac_dst, size):
     # pkt = Ether(src="02:00:00:00:00:01",dst="00:00:00:01:00:01") / IP(src="10.0.0.2", tos=tos) / UDP(sport=4444, dport=4444)
 
-    s_vlan = int(sub_id / 256.0) + 2
-
     pkt = (
-        Ether(src="02:00:00:00:00:01", dst="00:00:00:01:00:01")
-        / Dot1Q(vlan = s_vlan)
-        / Dot1Q(vlan = sub_id)
-        / IP(src="10.0.0.2", dst=ip_address(dst_ip), tos=tos)
+        Ether(src="11:11:11:11:11:11", dst=mac_dst)
+        # Ether(dst="11:11:11:11:11:11")
+        # / Dot1AD(vlan=0)
+        # / Dot1Q(vlan=0)
+        / IP(src="192.168.0.0", dst="10.0.0.0", tos=tos)
         / UDP(sport=4444, dport=4444)
     )
     pad = max(0, size - len(pkt)) * "x"
@@ -52,18 +51,11 @@ class Subscribers:
         return (self.current, self.base_ip + self.current)
 
 
-
 def output_results(c, measurement_id, subscribers):
     stats = c.get_stats()
     print(stats)
     stats_dict = json.dumps(
-        {
-            0: stats[0],
-            1: stats[1],
-        },
-        indent=4,
-        separators=(",", ": "),
-        sort_keys=True,
+        {0: stats[0], 1: stats[1]}, indent=4, separators=(",", ": "), sort_keys=True
     )
 
     output_dir = f"{TREX_DIR}/results/"
@@ -141,39 +133,126 @@ class BNGProfile(object):
         self.config.read(TREX_DIR + TRAFFIC_PROFILE)
 
     def _make_streams(self, **kwargs):
-        subscribers = int(kwargs['subscribers'])
+        subscribers = int(kwargs["subscribers"]) 
+
+        vm = STLScVmRaw(
+            [
+                STLVmFlowVar(
+                    name="dstip",
+                    min_value=0x0A000001,
+                    max_value=0x0A000001 + subscribers,
+                    size=4,
+                    step=1,
+                    op="inc",
+                ),
+                STLVmWrFlowVar(fv_name="dstip", pkt_offset="IP.dst"),
+                STLVmFixIpv4(offset="IP"),
+            ],
+        )
+        vm2 = STLScVmRaw(
+            [
+                STLVmFlowVar(
+                    name="dstip",
+                    min_value=0x0A010000,
+                    max_value=0x0A010000 + subscribers,
+                    size=4,
+                    step=1,
+                    op="inc",
+                ),
+                STLVmWrFlowVar(fv_name="dstip", pkt_offset="IP.dst"),
+                STLVmFixIpv4(offset="IP"),
+            ],
+        )
+        vm3 = STLScVmRaw(
+            [
+                STLVmFlowVar(
+                    name="dstip",
+                    min_value=0x0A020000,
+                    max_value=0x0A020000 + subscribers,
+                    size=4,
+                    step=1,
+                    op="inc",
+                ),
+                STLVmWrFlowVar(fv_name="dstip", pkt_offset="IP.dst"),
+                STLVmFixIpv4(offset="IP"),
+            ],
+        )
+        vm4 = STLScVmRaw(
+            [
+                STLVmFlowVar(
+                    name="dstip",
+                    min_value=0x0A030000,
+                    max_value=0x0A030000 + subscribers,
+                    size=4,
+                    step=1,
+                    op="inc",
+                ),
+                STLVmWrFlowVar(fv_name="dstip", pkt_offset="IP.dst"),
+                STLVmFixIpv4(offset="IP"),
+            ],
+        )
 
         try:
             streams = []
             it_sub = Subscribers(subscribers)
+            for section in self.config.sections():
 
-            for sub in it_sub:
-                for section in self.config.sections():
+                param_tos = int(self.config[section]['tos']) * 4
+                param_packet_size = int(self.config[section]['packet_size'])
+                param_start = int(self.config[section]['start'])
 
-                        param_tos = int(self.config[section]['tos']) * 4
-                        param_packet_size = int(self.config[section]['packet_size'])
-                        param_pps = int(self.config[section]['pps'])
-                        param_start = int(self.config[section]['start'])
+                s = STLStream(
+                    packet=STLPktBuilder(
+                        pkt=get_packet(param_tos,"00:00:00:01:00:01" , param_packet_size),
+                        vm=vm,
+                    ),
+                    isg=param_start * 1000000,
+                    mode=STLTXCont(),
+                    # flow_stats = STLFlowStats(pg_id=param_tos),
+                )
+                streams.append(s)
 
-                        if sub[0] == 0:
-                            s = STLStream(
-                                packet=STLPktBuilder(
-                                    pkt=get_packet(sub[0], sub[1], param_tos, param_packet_size)
-                                ),
-                                isg = param_start * 1000000,
-                                mode = STLTXCont(),
-                                # flow_stats = STLFlowStats(pg_id=param_tos),
-                            )
-                        else:
-                            s = STLStream(
-                                packet=STLPktBuilder(
-                                    pkt=get_packet(sub[0], sub[1], param_tos, param_packet_size)
-                                ),
-                                isg = param_start * 1000000,
-                                mode = STLTXCont(),
-                            )
+                s2 = STLStream(
+                    packet=STLPktBuilder(
+                        pkt=get_packet(param_tos,"00:00:00:01:00:03" , param_packet_size),
+                        vm=vm2,
+                    ),
+                    isg=param_start * 1000000,
+                    mode=STLTXCont(),
+                    # flow_stats = STLFlowStats(pg_id=param_tos),
+                )
+                streams.append(s2)
 
-                        streams.append(s)
+                s3 = STLStream(
+                    packet=STLPktBuilder(
+                        pkt=get_packet(param_tos,"00:00:00:01:00:05" , param_packet_size),
+                        vm=vm3,
+                    ),
+                    isg=param_start * 1000000,
+                    mode=STLTXCont(),
+                    # flow_stats = STLFlowStats(pg_id=param_tos),
+                )
+                streams.append(s3)
+
+                s4 = STLStream(
+                    packet=STLPktBuilder(
+                        pkt=get_packet(param_tos,"00:00:00:01:00:07" , param_packet_size),
+                        vm=vm4,
+                    ),
+                    isg=param_start * 1000000,
+                    mode=STLTXCont(),
+                    # flow_stats = STLFlowStats(pg_id=param_tos),
+                )
+                streams.append(s4)
+
+            latency = True
+            if latency :
+                str_latency = STLStream(
+                    packet=STLPktBuilder(pkt=get_packet(0, "00:00:00:01:00:01" , param_packet_size)), 
+                    mode = STLTXCont(pps=100),
+                    flow_stats = STLFlowLatencyStats(pg_id = param_tos))
+
+                streams.append(str_latency)
 
             return streams
 
@@ -193,9 +272,9 @@ def register():
 
 
 def rx_example(tx_port, rx_port, **kwargs):
-    duration = kwargs['duration']
-    results_label = kwargs['results_label']
-    mult = kwargs['mult']
+    duration = kwargs["duration"]
+    results_label = kwargs["results_label"]
+    mult = kwargs["mult"]
 
     # create client
     c = STLClient()
@@ -214,7 +293,7 @@ def rx_example(tx_port, rx_port, **kwargs):
 
     rx_iteration(c, tx_port, rx_port, duration, mult)
 
-    subscribers = int(kwargs['subscribers'])
+    subscribers = int(kwargs["subscribers"])
     output_results(c, results_label, subscribers)
 
 
