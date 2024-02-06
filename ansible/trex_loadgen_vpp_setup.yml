@@ -20,6 +20,17 @@
     - name: init VPP
       command: make run-release
       environment:
-        STARTUP_CONF: /etc/vpp/startup.conf
+        STARTUP_CONF: /etc/vpp/startup.conf.st
       args:
         chdir: /root/vpp
+
+    - name: let vpp start
+      pause:
+        seconds: 10
+
+    - name: init perfcollect
+      shell: "./perf-collect -p `pgrep vpp` -o /root/perf_hqos/{{ label }}_{{ packet_size }}_{{ measure_id }}.csv &"
+      async: 1000000
+      poll: 0
+      args:
+        chdir: /root/perfspect

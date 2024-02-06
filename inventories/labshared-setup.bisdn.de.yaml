@@ -6,7 +6,8 @@ vpp_control_plane:
     ansible_user: ubuntu
 vpp_data_plane:
   hosts:
-    statler.labshared.bisdn.de:		
+    # statler.labshared.bisdn.de:		
+    172.16.102.44:		
   vars:
     ansible_user: ubuntu
 tof_data_plane:
@@ -35,7 +36,8 @@ hw_traffic_gen:
     ansible_password: ubuntu
 traffic_gen:
   hosts:
-    waldorf.labshared.bisdn.de:		
+    # waldorf.labshared.bisdn.de:		
+    172.16.102.34:		
   vars:
     ansible_user: ubuntu
 pasta:

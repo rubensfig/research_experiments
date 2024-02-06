@@ -2,11 +2,63 @@
 - hosts: vpp_data_plane
   become: yes
   tasks:
+    - set_fact:
+       measure_id: "{{ measure_id }}"    
+    - set_fact:
+       subscribers: "{{ range }}"
+    - set_fact:
+       label: "{{ label }}"
+    - set_fact:
+       packet_size: "{{ packet_size }}"
+    - set_fact:
+       dest_dir: "../output/{{ label }}/{{ subscribers }}/{{ packet_size }}/{{ measure_id }}/"
+
+    - name: get perf process
+      command: "pidof perf"
+      register: perf
+
+    - name: kill perf process
+      shell: "kill -s 2 {{ perf.stdout }}"
+
+    - name: let trex start
+      pause:
+        seconds: 10
+
+    - name: post process data
+      shell: "/root/perfspect/perf-postprocess -r /root/perf_hqos/{{ label }}_{{ packet_size }}_{{ measure_id }}.csv -o  /root/perf_hqos/{{ label }}_{{ packet_size }}_{{ measure_id }}"
+
+    - name: let postprocess
+      pause:
+        seconds: 5
+
+    - name: copy stats file
+      fetch:
+        src: "/root/perf_hqos/{{ label }}_{{ packet_size }}_{{ measure_id }}.csv"
+        dest: "{{ dest_dir }}"
+        flat: yes
+
+    - name: copy stats file
+      fetch:
+        src: "/root/perf_hqos/{{ label }}_{{ packet_size }}_{{ measure_id }}.sys.csv"
+        dest: "{{ dest_dir }}"
+        flat: yes
+
+    - name: copy stats file
+      fetch:
+        src: "/root/perf_hqos/{{ label }}_{{ packet_size }}_{{ measure_id }}.sys.average.csv"
+        dest: "{{ dest_dir }}"
+        flat: yes
+
+    - name: copy html file
+      fetch:
+        src: "/root/perf_hqos/{{ label }}_{{ packet_size }}_{{ measure_id }}.html"
+        dest: "{{ dest_dir }}"
+        flat: yes
+
     - name: get vpp process
       command: "pgrep vpp"
       register: vpp
 
     - name: kill vpp process
       command: "kill {{ vpp.stdout }}"
-
 
