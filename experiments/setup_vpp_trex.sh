@@ -2,8 +2,8 @@
 
 RANGE=(1 64 128 256 512 1024 2048 4096)
 RETRIES=3
-MULT="30mpps"
-LABEL="l3fwd-4th-hqos-6.1mbps"
+MULT="95gbpsl1"
+LABEL="l3fwd-4th-hqos-6_1mbps"
 
 for i in "${RANGE[@]}"; do
     for measure in $(seq 1 $RETRIES); do
