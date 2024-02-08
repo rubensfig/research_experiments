@@ -1,6 +1,6 @@
 11.00 /sys/heartbeat
 0.00 /sys/last_stats_clear
-1707301919.00 /sys/boottime
+1707387756.00 /sys/boottime
 [0 @ 0]: 1073737680 packets /mem/stat segment
 [1 @ 0]: 901200 packets /mem/stat segment
 [2 @ 0]: 1072836480 packets /mem/stat segment
@@ -20,22 +20,22 @@
 [5 @ 0]: 1 packets /sys/vector_rate_per_worker
 [6 @ 0]: 3 packets /sys/vector_rate_per_worker
 [7 @ 0]: 3 packets /sys/vector_rate_per_worker
-[8 @ 0]: 4 packets /sys/vector_rate_per_worker
-[0 @ 0]: 953852 packets /sys/loops_per_worker
+[8 @ 0]: 5 packets /sys/vector_rate_per_worker
+[0 @ 0]: 961302 packets /sys/loops_per_worker
 [1 @ 0]: 0 packets /sys/loops_per_worker
 [2 @ 0]: 0 packets /sys/loops_per_worker
 [3 @ 0]: 0 packets /sys/loops_per_worker
 [4 @ 0]: 0 packets /sys/loops_per_worker
-[5 @ 0]: 5599430 packets /sys/loops_per_worker
-[6 @ 0]: 3720308 packets /sys/loops_per_worker
-[7 @ 0]: 3434380 packets /sys/loops_per_worker
-[8 @ 0]: 3450530 packets /sys/loops_per_worker
+[5 @ 0]: 5552131 packets /sys/loops_per_worker
+[6 @ 0]: 3801534 packets /sys/loops_per_worker
+[7 @ 0]: 3497472 packets /sys/loops_per_worker
+[8 @ 0]: 3440932 packets /sys/loops_per_worker
 0.00 /buffer-pools/default-numa-0/cached
 0.00 /buffer-pools/default-numa-0/used
 430184.00 /buffer-pools/default-numa-0/available
-2655.00 /buffer-pools/default-numa-1/cached
-50880.00 /buffer-pools/default-numa-1/used
-376649.00 /buffer-pools/default-numa-1/available
+2481.00 /buffer-pools/default-numa-1/cached
+50152.00 /buffer-pools/default-numa-1/used
+377551.00 /buffer-pools/default-numa-1/available
 8.00 /sys/num_worker_threads
 [0 @ 0]: 0 packets /node/errors
 [1 @ 0]: 0 packets /node/errors
@@ -14524,7 +14524,7 @@
 [29 @ 5]: 0 packets /node/errors
 [30 @ 5]: 0 packets /node/errors
 [31 @ 5]: 0 packets /node/errors
-[32 @ 5]: 119482 packets /node/errors
+[32 @ 5]: 119428 packets /node/errors
 [33 @ 5]: 0 packets /node/errors
 [34 @ 5]: 0 packets /node/errors
 [35 @ 5]: 0 packets /node/errors
@@ -17415,7 +17415,7 @@
 [29 @ 6]: 0 packets /node/errors
 [30 @ 6]: 0 packets /node/errors
 [31 @ 6]: 0 packets /node/errors
-[32 @ 6]: 119482 packets /node/errors
+[32 @ 6]: 119428 packets /node/errors
 [33 @ 6]: 0 packets /node/errors
 [34 @ 6]: 0 packets /node/errors
 [35 @ 6]: 0 packets /node/errors
@@ -20306,7 +20306,7 @@
 [29 @ 7]: 0 packets /node/errors
 [30 @ 7]: 0 packets /node/errors
 [31 @ 7]: 0 packets /node/errors
-[32 @ 7]: 119482 packets /node/errors
+[32 @ 7]: 119428 packets /node/errors
 [33 @ 7]: 0 packets /node/errors
 [34 @ 7]: 0 packets /node/errors
 [35 @ 7]: 0 packets /node/errors
@@ -23197,7 +23197,7 @@
 [29 @ 8]: 0 packets /node/errors
 [30 @ 8]: 0 packets /node/errors
 [31 @ 8]: 0 packets /node/errors
-[32 @ 8]: 59748 packets /node/errors
+[32 @ 8]: 59721 packets /node/errors
 [33 @ 8]: 0 packets /node/errors
 [34 @ 8]: 0 packets /node/errors
 [35 @ 8]: 0 packets /node/errors
@@ -24711,10 +24711,10 @@
 [1543 @ 8]: 0 packets /node/errors
 [1544 @ 8]: 0 packets /node/errors
 [1545 @ 8]: 0 packets /node/errors
-[1546 @ 8]: 59940267 packets /node/errors
+[1546 @ 8]: 59940294 packets /node/errors
 [1547 @ 8]: 0 packets /node/errors
 [1548 @ 8]: 0 packets /node/errors
-[1549 @ 8]: 59733 packets /node/errors
+[1549 @ 8]: 59706 packets /node/errors
 [1550 @ 8]: 0 packets /node/errors
 [1551 @ 8]: 0 packets /node/errors
 [1552 @ 8]: 0 packets /node/errors
@@ -26349,10 +26349,10 @@
 [0 @ 2]: 0 packets /err/arp-reply/l3_src_address_is_local
 [0 @ 3]: 0 packets /err/arp-reply/l3_src_address_is_local
 [0 @ 4]: 0 packets /err/arp-reply/l3_src_address_is_local
-[0 @ 5]: 119482 packets /err/arp-reply/l3_src_address_is_local
-[0 @ 6]: 119482 packets /err/arp-reply/l3_src_address_is_local
-[0 @ 7]: 119482 packets /err/arp-reply/l3_src_address_is_local
-[0 @ 8]: 59748 packets /err/arp-reply/l3_src_address_is_local
+[0 @ 5]: 119428 packets /err/arp-reply/l3_src_address_is_local
+[0 @ 6]: 119428 packets /err/arp-reply/l3_src_address_is_local
+[0 @ 7]: 119428 packets /err/arp-reply/l3_src_address_is_local
+[0 @ 8]: 59721 packets /err/arp-reply/l3_src_address_is_local
 [0 @ 0]: 0 packets /err/arp-reply/l3_src_address_learned
 [0 @ 1]: 0 packets /err/arp-reply/l3_src_address_learned
 [0 @ 2]: 0 packets /err/arp-reply/l3_src_address_learned
@@ -39978,7 +39978,7 @@
 [0 @ 5]: 0 packets /err/ip4-arp/throttled
 [0 @ 6]: 0 packets /err/ip4-arp/throttled
 [0 @ 7]: 0 packets /err/ip4-arp/throttled
-[0 @ 8]: 59940267 packets /err/ip4-arp/throttled
+[0 @ 8]: 59940294 packets /err/ip4-arp/throttled
 [0 @ 0]: 0 packets /err/ip4-arp/resolved
 [0 @ 1]: 0 packets /err/ip4-arp/resolved
 [0 @ 2]: 0 packets /err/ip4-arp/resolved
@@ -40005,7 +40005,7 @@
 [0 @ 5]: 0 packets /err/ip4-arp/request_sent
 [0 @ 6]: 0 packets /err/ip4-arp/request_sent
 [0 @ 7]: 0 packets /err/ip4-arp/request_sent
-[0 @ 8]: 59733 packets /err/ip4-arp/request_sent
+[0 @ 8]: 59706 packets /err/ip4-arp/request_sent
 [0 @ 0]: 0 packets /err/ip4-arp/non_arp_adj
 [0 @ 1]: 0 packets /err/ip4-arp/non_arp_adj
 [0 @ 2]: 0 packets /err/ip4-arp/non_arp_adj
@@ -51761,7 +51761,7 @@
 [0 @ 7]: 0 packets /err/handoff_trace/Warning: packets sent to the handoff trace node!
 [0 @ 8]: 0 packets /err/handoff_trace/Warning: packets sent to the handoff trace node!
 104.00 /sys/last_update
-3099742.00 /sys/input_rate
+3086316.00 /sys/input_rate
 [0 @ 0]: 0 packets, 0 bytes /net/route/to
 [1 @ 0]: 0 packets, 0 bytes /net/route/to
 [2 @ 0]: 0 packets, 0 bytes /net/route/to
@@ -52222,8 +52222,8 @@
 [7 @ 4]: 0 packets /if/drops
 [8 @ 4]: 0 packets /if/drops
 [0 @ 5]: 0 packets /if/drops
-[1 @ 5]: 59741 packets /if/drops
-[2 @ 5]: 59741 packets /if/drops
+[1 @ 5]: 59714 packets /if/drops
+[2 @ 5]: 59714 packets /if/drops
 [3 @ 5]: 0 packets /if/drops
 [4 @ 5]: 0 packets /if/drops
 [5 @ 5]: 0 packets /if/drops
@@ -52233,8 +52233,8 @@
 [0 @ 6]: 0 packets /if/drops
 [1 @ 6]: 0 packets /if/drops
 [2 @ 6]: 0 packets /if/drops
-[3 @ 6]: 59741 packets /if/drops
-[4 @ 6]: 59741 packets /if/drops
+[3 @ 6]: 59714 packets /if/drops
+[4 @ 6]: 59714 packets /if/drops
 [5 @ 6]: 0 packets /if/drops
 [6 @ 6]: 0 packets /if/drops
 [7 @ 6]: 0 packets /if/drops
@@ -52244,8 +52244,8 @@
 [2 @ 7]: 0 packets /if/drops
 [3 @ 7]: 0 packets /if/drops
 [4 @ 7]: 0 packets /if/drops
-[5 @ 7]: 59741 packets /if/drops
-[6 @ 7]: 59741 packets /if/drops
+[5 @ 7]: 59714 packets /if/drops
+[6 @ 7]: 59714 packets /if/drops
 [7 @ 7]: 0 packets /if/drops
 [8 @ 7]: 0 packets /if/drops
 [0 @ 8]: 0 packets /if/drops
@@ -52255,7 +52255,7 @@
 [4 @ 8]: 0 packets /if/drops
 [5 @ 8]: 0 packets /if/drops
 [6 @ 8]: 0 packets /if/drops
-[7 @ 8]: 60059741 packets /if/drops
+[7 @ 8]: 60059714 packets /if/drops
 [8 @ 8]: 7 packets /if/drops
 [0 @ 0]: 0 packets /if/punt
 [1 @ 0]: 0 packets /if/punt
@@ -52951,8 +52951,8 @@
 [7 @ 4]: 0 packets, 0 bytes /if/rx
 [8 @ 4]: 0 packets, 0 bytes /if/rx
 [0 @ 5]: 0 packets, 0 bytes /if/rx
-[1 @ 5]: 6065741 packets, 3078656460 bytes /if/rx
-[2 @ 5]: 59741 packets, 3584460 bytes /if/rx
+[1 @ 5]: 6065714 packets, 3078654840 bytes /if/rx
+[2 @ 5]: 59714 packets, 3582840 bytes /if/rx
 [3 @ 5]: 0 packets, 0 bytes /if/rx
 [4 @ 5]: 0 packets, 0 bytes /if/rx
 [5 @ 5]: 0 packets, 0 bytes /if/rx
@@ -52962,8 +52962,8 @@
 [0 @ 6]: 0 packets, 0 bytes /if/rx
 [1 @ 6]: 0 packets, 0 bytes /if/rx
 [2 @ 6]: 0 packets, 0 bytes /if/rx
-[3 @ 6]: 60059741 packets, 30723584460 bytes /if/rx
-[4 @ 6]: 59741 packets, 3584460 bytes /if/rx
+[3 @ 6]: 60059714 packets, 30723582840 bytes /if/rx
+[4 @ 6]: 59714 packets, 3582840 bytes /if/rx
 [5 @ 6]: 0 packets, 0 bytes /if/rx
 [6 @ 6]: 0 packets, 0 bytes /if/rx
 [7 @ 6]: 0 packets, 0 bytes /if/rx
@@ -52973,8 +52973,8 @@
 [2 @ 7]: 0 packets, 0 bytes /if/rx
 [3 @ 7]: 0 packets, 0 bytes /if/rx
 [4 @ 7]: 0 packets, 0 bytes /if/rx
-[5 @ 7]: 60059741 packets, 30723584460 bytes /if/rx
-[6 @ 7]: 59741 packets, 3584460 bytes /if/rx
+[5 @ 7]: 60059714 packets, 30723582840 bytes /if/rx
+[6 @ 7]: 59714 packets, 3582840 bytes /if/rx
 [7 @ 7]: 0 packets, 0 bytes /if/rx
 [8 @ 7]: 0 packets, 0 bytes /if/rx
 [0 @ 8]: 0 packets, 0 bytes /if/rx
@@ -52984,7 +52984,7 @@
 [4 @ 8]: 0 packets, 0 bytes /if/rx
 [5 @ 8]: 0 packets, 0 bytes /if/rx
 [6 @ 8]: 0 packets, 0 bytes /if/rx
-[7 @ 8]: 60059741 packets, 30723584460 bytes /if/rx
+[7 @ 8]: 60059714 packets, 30723582840 bytes /if/rx
 [8 @ 8]: 7 packets, 420 bytes /if/rx
 [0 @ 0]: 0 packets, 0 bytes /if/rx-unicast
 [1 @ 0]: 0 packets, 0 bytes /if/rx-unicast
@@ -53309,7 +53309,7 @@
 [5 @ 8]: 0 packets, 0 bytes /if/tx
 [6 @ 8]: 0 packets, 0 bytes /if/tx
 [7 @ 8]: 0 packets, 0 bytes /if/tx
-[8 @ 8]: 59733 packets, 2508786 bytes /if/tx
+[8 @ 8]: 59706 packets, 2507652 bytes /if/tx
 [0 @ 0]: 0 packets, 0 bytes /if/tx-unicast
 [1 @ 0]: 0 packets, 0 bytes /if/tx-unicast
 [2 @ 0]: 0 packets, 0 bytes /if/tx-unicast
@@ -53984,7 +53984,7 @@
 [5 @ 8]: 0 packets /net/arp/tx/requests
 [6 @ 8]: 0 packets /net/arp/tx/requests
 [7 @ 8]: 0 packets /net/arp/tx/requests
-[8 @ 8]: 59733 packets /net/arp/tx/requests
+[8 @ 8]: 59706 packets /net/arp/tx/requests
 [0 @ 0]: 0 packets /net/arp/tx/gratuitous
 [1 @ 0]: 0 packets /net/arp/tx/gratuitous
 [2 @ 0]: 0 packets /net/arp/tx/gratuitous
@@ -54762,15 +54762,15 @@
 [3 @ 8]: 0 packets, 0 bytes /net/punt
 [4 @ 8]: 0 packets, 0 bytes /net/punt
 [0 @ 0]: 1073741776 packets /mem/main heap
-[1 @ 0]: 111986144 packets /mem/main heap
-[2 @ 0]: 961755632 packets /mem/main heap
+[1 @ 0]: 111980336 packets /mem/main heap
+[2 @ 0]: 961761440 packets /mem/main heap
 [3 @ 0]: 0 packets /mem/main heap
 [4 @ 0]: 1073741776 packets /mem/main heap
-[5 @ 0]: 389 packets /mem/main heap
-[6 @ 0]: 959662064 packets /mem/main heap
-[0 @ 0]: 111986144 packets /mem/main heap/used
+[5 @ 0]: 392 packets /mem/main heap
+[6 @ 0]: 959817776 packets /mem/main heap
+[0 @ 0]: 111980336 packets /mem/main heap/used
 [0 @ 0]: 1073741776 packets /mem/main heap/total
-[0 @ 0]: 961755632 packets /mem/main heap/free
+[0 @ 0]: 961761440 packets /mem/main heap/free
 [0 @ 0]: 0 packets /err/dev0-output/interface is down
 [0 @ 1]: 0 packets /err/dev0-output/interface is down
 [0 @ 2]: 0 packets /err/dev0-output/interface is down
@@ -54812,7 +54812,7 @@
 [0 @ 2]: 0 packets /interfaces/dev0/drops
 [0 @ 3]: 0 packets /interfaces/dev0/drops
 [0 @ 4]: 0 packets /interfaces/dev0/drops
-[0 @ 5]: 59741 packets /interfaces/dev0/drops
+[0 @ 5]: 59714 packets /interfaces/dev0/drops
 [0 @ 6]: 0 packets /interfaces/dev0/drops
 [0 @ 7]: 0 packets /interfaces/dev0/drops
 [0 @ 8]: 0 packets /interfaces/dev0/drops
@@ -54893,7 +54893,7 @@
 [0 @ 2]: 0 packets, 0 bytes /interfaces/dev0/rx
 [0 @ 3]: 0 packets, 0 bytes /interfaces/dev0/rx
 [0 @ 4]: 0 packets, 0 bytes /interfaces/dev0/rx
-[0 @ 5]: 6065741 packets, 3078656460 bytes /interfaces/dev0/rx
+[0 @ 5]: 6065714 packets, 3078654840 bytes /interfaces/dev0/rx
 [0 @ 6]: 0 packets, 0 bytes /interfaces/dev0/rx
 [0 @ 7]: 0 packets, 0 bytes /interfaces/dev0/rx
 [0 @ 8]: 0 packets, 0 bytes /interfaces/dev0/rx
@@ -55001,7 +55001,7 @@
 [0 @ 2]: 0 packets /interfaces/dev1/drops
 [0 @ 3]: 0 packets /interfaces/dev1/drops
 [0 @ 4]: 0 packets /interfaces/dev1/drops
-[0 @ 5]: 59741 packets /interfaces/dev1/drops
+[0 @ 5]: 59714 packets /interfaces/dev1/drops
 [0 @ 6]: 0 packets /interfaces/dev1/drops
 [0 @ 7]: 0 packets /interfaces/dev1/drops
 [0 @ 8]: 0 packets /interfaces/dev1/drops
@@ -55082,7 +55082,7 @@
 [0 @ 2]: 0 packets, 0 bytes /interfaces/dev1/rx
 [0 @ 3]: 0 packets, 0 bytes /interfaces/dev1/rx
 [0 @ 4]: 0 packets, 0 bytes /interfaces/dev1/rx
-[0 @ 5]: 59741 packets, 3584460 bytes /interfaces/dev1/rx
+[0 @ 5]: 59714 packets, 3582840 bytes /interfaces/dev1/rx
 [0 @ 6]: 0 packets, 0 bytes /interfaces/dev1/rx
 [0 @ 7]: 0 packets, 0 bytes /interfaces/dev1/rx
 [0 @ 8]: 0 packets, 0 bytes /interfaces/dev1/rx
@@ -55191,7 +55191,7 @@
 [0 @ 3]: 0 packets /interfaces/dev2/drops
 [0 @ 4]: 0 packets /interfaces/dev2/drops
 [0 @ 5]: 0 packets /interfaces/dev2/drops
-[0 @ 6]: 59741 packets /interfaces/dev2/drops
+[0 @ 6]: 59714 packets /interfaces/dev2/drops
 [0 @ 7]: 0 packets /interfaces/dev2/drops
 [0 @ 8]: 0 packets /interfaces/dev2/drops
 [0 @ 0]: 0 packets /interfaces/dev2/punt
@@ -55272,7 +55272,7 @@
 [0 @ 3]: 0 packets, 0 bytes /interfaces/dev2/rx
 [0 @ 4]: 0 packets, 0 bytes /interfaces/dev2/rx
 [0 @ 5]: 0 packets, 0 bytes /interfaces/dev2/rx
-[0 @ 6]: 60059741 packets, 30723584460 bytes /interfaces/dev2/rx
+[0 @ 6]: 60059714 packets, 30723582840 bytes /interfaces/dev2/rx
 [0 @ 7]: 0 packets, 0 bytes /interfaces/dev2/rx
 [0 @ 8]: 0 packets, 0 bytes /interfaces/dev2/rx
 [0 @ 0]: 0 packets, 0 bytes /interfaces/dev2/rx-unicast
@@ -55380,7 +55380,7 @@
 [0 @ 3]: 0 packets /interfaces/dev3/drops
 [0 @ 4]: 0 packets /interfaces/dev3/drops
 [0 @ 5]: 0 packets /interfaces/dev3/drops
-[0 @ 6]: 59741 packets /interfaces/dev3/drops
+[0 @ 6]: 59714 packets /interfaces/dev3/drops
 [0 @ 7]: 0 packets /interfaces/dev3/drops
 [0 @ 8]: 0 packets /interfaces/dev3/drops
 [0 @ 0]: 0 packets /interfaces/dev3/punt
@@ -55461,7 +55461,7 @@
 [0 @ 3]: 0 packets, 0 bytes /interfaces/dev3/rx
 [0 @ 4]: 0 packets, 0 bytes /interfaces/dev3/rx
 [0 @ 5]: 0 packets, 0 bytes /interfaces/dev3/rx
-[0 @ 6]: 59741 packets, 3584460 bytes /interfaces/dev3/rx
+[0 @ 6]: 59714 packets, 3582840 bytes /interfaces/dev3/rx
 [0 @ 7]: 0 packets, 0 bytes /interfaces/dev3/rx
 [0 @ 8]: 0 packets, 0 bytes /interfaces/dev3/rx
 [0 @ 0]: 0 packets, 0 bytes /interfaces/dev3/rx-unicast
@@ -55570,7 +55570,7 @@
 [0 @ 4]: 0 packets /interfaces/dev4/drops
 [0 @ 5]: 0 packets /interfaces/dev4/drops
 [0 @ 6]: 0 packets /interfaces/dev4/drops
-[0 @ 7]: 59741 packets /interfaces/dev4/drops
+[0 @ 7]: 59714 packets /interfaces/dev4/drops
 [0 @ 8]: 0 packets /interfaces/dev4/drops
 [0 @ 0]: 0 packets /interfaces/dev4/punt
 [0 @ 1]: 0 packets /interfaces/dev4/punt
@@ -55651,7 +55651,7 @@
 [0 @ 4]: 0 packets, 0 bytes /interfaces/dev4/rx
 [0 @ 5]: 0 packets, 0 bytes /interfaces/dev4/rx
 [0 @ 6]: 0 packets, 0 bytes /interfaces/dev4/rx
-[0 @ 7]: 60059741 packets, 30723584460 bytes /interfaces/dev4/rx
+[0 @ 7]: 60059714 packets, 30723582840 bytes /interfaces/dev4/rx
 [0 @ 8]: 0 packets, 0 bytes /interfaces/dev4/rx
 [0 @ 0]: 0 packets, 0 bytes /interfaces/dev4/rx-unicast
 [0 @ 1]: 0 packets, 0 bytes /interfaces/dev4/rx-unicast
@@ -55759,7 +55759,7 @@
 [0 @ 4]: 0 packets /interfaces/dev5/drops
 [0 @ 5]: 0 packets /interfaces/dev5/drops
 [0 @ 6]: 0 packets /interfaces/dev5/drops
-[0 @ 7]: 59741 packets /interfaces/dev5/drops
+[0 @ 7]: 59714 packets /interfaces/dev5/drops
 [0 @ 8]: 0 packets /interfaces/dev5/drops
 [0 @ 0]: 0 packets /interfaces/dev5/punt
 [0 @ 1]: 0 packets /interfaces/dev5/punt
@@ -55840,7 +55840,7 @@
 [0 @ 4]: 0 packets, 0 bytes /interfaces/dev5/rx
 [0 @ 5]: 0 packets, 0 bytes /interfaces/dev5/rx
 [0 @ 6]: 0 packets, 0 bytes /interfaces/dev5/rx
-[0 @ 7]: 59741 packets, 3584460 bytes /interfaces/dev5/rx
+[0 @ 7]: 59714 packets, 3582840 bytes /interfaces/dev5/rx
 [0 @ 8]: 0 packets, 0 bytes /interfaces/dev5/rx
 [0 @ 0]: 0 packets, 0 bytes /interfaces/dev5/rx-unicast
 [0 @ 1]: 0 packets, 0 bytes /interfaces/dev5/rx-unicast
@@ -55949,7 +55949,7 @@
 [0 @ 5]: 0 packets /interfaces/dev6/drops
 [0 @ 6]: 0 packets /interfaces/dev6/drops
 [0 @ 7]: 0 packets /interfaces/dev6/drops
-[0 @ 8]: 60059741 packets /interfaces/dev6/drops
+[0 @ 8]: 60059714 packets /interfaces/dev6/drops
 [0 @ 0]: 0 packets /interfaces/dev6/punt
 [0 @ 1]: 0 packets /interfaces/dev6/punt
 [0 @ 2]: 0 packets /interfaces/dev6/punt
@@ -56030,7 +56030,7 @@
 [0 @ 5]: 0 packets, 0 bytes /interfaces/dev6/rx
 [0 @ 6]: 0 packets, 0 bytes /interfaces/dev6/rx
 [0 @ 7]: 0 packets, 0 bytes /interfaces/dev6/rx
-[0 @ 8]: 60059741 packets, 30723584460 bytes /interfaces/dev6/rx
+[0 @ 8]: 60059714 packets, 30723582840 bytes /interfaces/dev6/rx
 [0 @ 0]: 0 packets, 0 bytes /interfaces/dev6/rx-unicast
 [0 @ 1]: 0 packets, 0 bytes /interfaces/dev6/rx-unicast
 [0 @ 2]: 0 packets, 0 bytes /interfaces/dev6/rx-unicast
@@ -56255,7 +56255,7 @@
 [0 @ 5]: 0 packets, 0 bytes /interfaces/dev7/tx
 [0 @ 6]: 0 packets, 0 bytes /interfaces/dev7/tx
 [0 @ 7]: 0 packets, 0 bytes /interfaces/dev7/tx
-[0 @ 8]: 59733 packets, 2508786 bytes /interfaces/dev7/tx
+[0 @ 8]: 59706 packets, 2507652 bytes /interfaces/dev7/tx
 [0 @ 0]: 0 packets, 0 bytes /interfaces/dev7/tx-unicast
 [0 @ 1]: 0 packets, 0 bytes /interfaces/dev7/tx-unicast
 [0 @ 2]: 0 packets, 0 bytes /interfaces/dev7/tx-unicast

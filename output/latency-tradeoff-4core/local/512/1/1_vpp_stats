@@ -1,6 +1,6 @@
 11.00 /sys/heartbeat
 0.00 /sys/last_stats_clear
-1707301547.00 /sys/boottime
+1707387385.00 /sys/boottime
 [0 @ 0]: 1073737680 packets /mem/stat segment
 [1 @ 0]: 901200 packets /mem/stat segment
 [2 @ 0]: 1072836480 packets /mem/stat segment
@@ -17,25 +17,25 @@
 [2 @ 0]: 0 packets /sys/vector_rate_per_worker
 [3 @ 0]: 0 packets /sys/vector_rate_per_worker
 [4 @ 0]: 0 packets /sys/vector_rate_per_worker
-[5 @ 0]: 13 packets /sys/vector_rate_per_worker
+[5 @ 0]: 14 packets /sys/vector_rate_per_worker
 [6 @ 0]: 0 packets /sys/vector_rate_per_worker
 [7 @ 0]: 0 packets /sys/vector_rate_per_worker
 [8 @ 0]: 0 packets /sys/vector_rate_per_worker
-[0 @ 0]: 950098 packets /sys/loops_per_worker
+[0 @ 0]: 926130 packets /sys/loops_per_worker
 [1 @ 0]: 0 packets /sys/loops_per_worker
 [2 @ 0]: 0 packets /sys/loops_per_worker
 [3 @ 0]: 0 packets /sys/loops_per_worker
 [4 @ 0]: 0 packets /sys/loops_per_worker
-[5 @ 0]: 2383855 packets /sys/loops_per_worker
-[6 @ 0]: 6126023 packets /sys/loops_per_worker
-[7 @ 0]: 6124392 packets /sys/loops_per_worker
-[8 @ 0]: 8864301 packets /sys/loops_per_worker
+[5 @ 0]: 2375643 packets /sys/loops_per_worker
+[6 @ 0]: 6122281 packets /sys/loops_per_worker
+[7 @ 0]: 6123027 packets /sys/loops_per_worker
+[8 @ 0]: 8849785 packets /sys/loops_per_worker
 0.00 /buffer-pools/default-numa-0/cached
 0.00 /buffer-pools/default-numa-0/used
 430184.00 /buffer-pools/default-numa-0/available
 598.00 /buffer-pools/default-numa-1/cached
-37089.00 /buffer-pools/default-numa-1/used
-392497.00 /buffer-pools/default-numa-1/available
+37540.00 /buffer-pools/default-numa-1/used
+392046.00 /buffer-pools/default-numa-1/available
 8.00 /sys/num_worker_threads
 [0 @ 0]: 0 packets /node/errors
 [1 @ 0]: 0 packets /node/errors
@@ -51761,7 +51761,7 @@
 [0 @ 7]: 0 packets /err/handoff_trace/Warning: packets sent to the handoff trace node!
 [0 @ 8]: 0 packets /err/handoff_trace/Warning: packets sent to the handoff trace node!
 104.00 /sys/last_update
-3091485.99 /sys/input_rate
+3081757.00 /sys/input_rate
 [0 @ 0]: 0 packets, 0 bytes /net/route/to
 [1 @ 0]: 0 packets, 0 bytes /net/route/to
 [2 @ 0]: 0 packets, 0 bytes /net/route/to
@@ -54762,15 +54762,15 @@
 [3 @ 8]: 0 packets, 0 bytes /net/punt
 [4 @ 8]: 0 packets, 0 bytes /net/punt
 [0 @ 0]: 1073741776 packets /mem/main heap
-[1 @ 0]: 111975968 packets /mem/main heap
-[2 @ 0]: 961765808 packets /mem/main heap
+[1 @ 0]: 111975776 packets /mem/main heap
+[2 @ 0]: 961766000 packets /mem/main heap
 [3 @ 0]: 0 packets /mem/main heap
 [4 @ 0]: 1073741776 packets /mem/main heap
-[5 @ 0]: 372 packets /mem/main heap
-[6 @ 0]: 959872368 packets /mem/main heap
-[0 @ 0]: 111975968 packets /mem/main heap/used
+[5 @ 0]: 397 packets /mem/main heap
+[6 @ 0]: 959507408 packets /mem/main heap
+[0 @ 0]: 111975776 packets /mem/main heap/used
 [0 @ 0]: 1073741776 packets /mem/main heap/total
-[0 @ 0]: 961765808 packets /mem/main heap/free
+[0 @ 0]: 961766000 packets /mem/main heap/free
 [0 @ 0]: 0 packets /err/dev0-output/interface is down
 [0 @ 1]: 0 packets /err/dev0-output/interface is down
 [0 @ 2]: 0 packets /err/dev0-output/interface is down
