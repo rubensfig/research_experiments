@@ -51,7 +51,7 @@ class Subscribers:
         return (self.current, self.base_ip + self.current)
 
 
-def output_results(c, measurement_id, subscribers):
+def output_results(c, measurement_id):
     stats = c.get_stats()
     print(stats)
     stats_dict = json.dumps(
@@ -74,7 +74,11 @@ def rx_iteration(c, tx_port, rx_port, duration, traffic_mult):
     # c.set_service_mode(ports = 0)
     # capture_id = c.start_capture(rx_ports=0)
 
-    c.start(ports=[tx_port], duration=duration)
+    if traffic_mult == "":
+        c.start(ports=[tx_port], duration=duration)
+    else:
+        c.start(ports=[tx_port], duration=duration, mult=traffic_mult)
+
     c.wait_on_traffic(ports=[tx_port, rx_port])
     # c.stop_capture(capture_id["id"], "/tmp/port_0.pcap")
 
@@ -100,7 +104,7 @@ def get_args(argv=None):
     )
     parser.add_argument("--ncustomer", type=int, default=1, help="Num customers")
     parser.add_argument("--verbose", action="store_true", help="Be verbose")
-    parser.add_argument("--mult", type=str, help="Set multiplier", default=None)
+    parser.add_argument("--mult", type=str, help="Set multiplier", default="")
     parser.add_argument(
         "--ignore-seq-err", action="store_true", help="Ignore Sequence errors."
     )
@@ -135,55 +139,155 @@ class BNGProfile(object):
         self.config.read(TREX_DIR + TRAFFIC_PROFILE)
 
     def _make_streams(self, **kwargs):
-        subscribers = int(kwargs["subscribers"]) 
+        # subscribers = int(kwargs["subscribers"]) 
         test_type = kwargs["test_type"]
-        packet_size = 512
+        mult = kwargs["mult"]
+        packet_size = 1500
         streams = []
+
+        vm = STLScVmRaw(
+            [
+                STLVmFlowVar(
+                    name="dstip",
+                    min_value=0x0A000001,
+                    max_value=0x0A000001 + 4095,
+                    size=4,
+                    step=1,
+                    op="inc",
+                ),
+                STLVmWrFlowVar(fv_name="dstip", pkt_offset="IP.dst"),
+                STLVmFixIpv4(offset="IP"),
+            ],
+        )
 
         s = STLStream(
             packet=STLPktBuilder(
-                pkt=get_packet(0,"00:00:00:01:00:01", "10.0.0.0", packet_size),
+                pkt=get_packet(0,"00:00:00:01:00:01", "10.0.0.0", 512),
+                vm = vm,
             ),
             isg=0 * 1000000,
-            mode=STLTXCont(pps=100),
+            mode=STLTXCont(pps=10**6),
             flow_stats = STLFlowLatencyStats(pg_id = 0)
             # flow_stats = STLFlowStats(pg_id=param_tos),
         )
         streams.append(s)
 
-        s2 = STLStream(
-            packet=STLPktBuilder(
-                pkt=get_packet(4,"00:00:00:01:00:01", "10.0.0.0", packet_size),
-            ),
-            isg=0 * 1000000,
-            mode=STLTXCont(pps = 100000),
-            # flow_stats = STLFlowLatencyStats(pg_id = 1)
-            # flow_stats = STLFlowStats(pg_id=param_tos),
-        )
-        streams.append(s2)
+        if test_type == 'local-1stream':
+            for i in [4]:
+                s3 = STLStream(
+                    packet=STLPktBuilder(
+                        pkt=get_packet(i,"00:00:00:01:00:01", "10.0.0.2", packet_size),
+                        vm = vm
+                    ),
+                    isg=0 * 1000000,
+                    mode=STLTXCont(pps=100000),
+                )
+                streams.append(s3)
 
-        if test_type == 'local':
-            s3 = STLStream(
-                packet=STLPktBuilder(
-                    pkt=get_packet(8,"00:00:00:01:00:01", "10.0.0.1", packet_size),
-                ),
-                isg=0 * 1000000,
-                mode=STLTXCont(pps = 1000000),
-                # flow_stats = STLFlowLatencyStats(pg_id = 1)
-                # flow_stats = STLFlowStats(pg_id=param_tos),
+        elif test_type == 'local-2stream':
+            for i in [4,8]:
+                s3 = STLStream(
+                    packet=STLPktBuilder(
+                        pkt=get_packet(i,"00:00:00:01:00:01", "10.0.0.2", packet_size),
+                        vm = vm
+                    ),
+                    isg=0 * 1000000,
+                    mode=STLTXCont(pps=100000),
+                )
+                streams.append(s3)
+        elif test_type == 'local-3stream':
+            for i in [4,8,12]:
+                s3 = STLStream(
+                    packet=STLPktBuilder(
+                        pkt=get_packet(i,"00:00:00:01:00:01", "10.0.0.2", packet_size),
+                        vm = vm
+                    ),
+                    isg=0 * 1000000,
+                    mode=STLTXCont(pps=100000),
+                )
+                streams.append(s3)
+
+        elif test_type == 'remote':
+            vm2 = STLScVmRaw(
+                [
+                    STLVmFlowVar(
+                        name="dstip",
+                        min_value=0x0A010000,
+                        max_value=0x0A010000 + 4095,
+                        size=4,
+                        step=1,
+                        op="inc",
+                    ),
+                    STLVmWrFlowVar(fv_name="dstip", pkt_offset="IP.dst"),
+                    STLVmFixIpv4(offset="IP"),
+                ],
             )
-        else:
-            s3 = STLStream(
-                packet=STLPktBuilder(
-                    pkt=get_packet(8,"00:00:00:01:00:03", "10.1.0.1", packet_size),
-                ),
-                isg=0 * 1000000,
-                mode=STLTXCont(pps = 1000000),
-                # flow_stats = STLFlowLatencyStats(pg_id = 1)
-                # flow_stats = STLFlowStats(pg_id=param_tos),
+            vm3 = STLScVmRaw(
+                [
+                    STLVmFlowVar(
+                        name="dstip",
+                        min_value=0x0A020000,
+                        max_value=0x0A020000 + 4095,
+                        size=4,
+                        step=1,
+                        op="inc",
+                    ),
+                    STLVmWrFlowVar(fv_name="dstip", pkt_offset="IP.dst"),
+                    STLVmFixIpv4(offset="IP"),
+                ],
+            )
+            vm4 = STLScVmRaw(
+                [
+                    STLVmFlowVar(
+                        name="dstip",
+                        min_value=0x0A030000,
+                        max_value=0x0A030000 + 4095,
+                        size=4,
+                        step=1,
+                        op="inc",
+                    ),
+                    STLVmWrFlowVar(fv_name="dstip", pkt_offset="IP.dst"),
+                    STLVmFixIpv4(offset="IP"),
+                ],
             )
 
-        streams.append(s3)
+
+            for i in [4,8,12]:
+                s3 = STLStream(
+                    packet=STLPktBuilder(
+                        pkt=get_packet(i,"00:00:00:01:00:03", "10.1.0.1", packet_size),
+                        vm=vm2,
+                    ),
+                    isg=0 * 1000000,
+                    mode=STLTXCont(pps = 1000000),
+                )
+                streams.append(s3)
+
+                s4 = STLStream(
+                    packet=STLPktBuilder(
+                        pkt=get_packet(i,"00:00:00:01:00:05", "10.1.0.1", packet_size),
+                        vm=vm3,
+                    ),
+                    isg=0 * 1000000,
+                    mode=STLTXCont(pps = 1000000),
+                )
+
+                if mult == '50gbpsl1':
+                    streams.append(s4)
+
+                s5 = STLStream(
+                    packet=STLPktBuilder(
+                        pkt=get_packet(i,"00:00:00:01:00:07", "10.1.0.1", packet_size),
+                        vm=vm4,
+                    ),
+                    isg=0 * 1000000,
+                    mode=STLTXCont(pps = 1000000),
+                )
+
+                if mult == '75gbpsl1':
+                    streams.append(s5)
+        elif test_type == 'single':
+            pass
 
         return streams
 
@@ -220,8 +324,7 @@ def rx_example(tx_port, rx_port, **kwargs):
 
     rx_iteration(c, tx_port, rx_port, duration, mult)
 
-    subscribers = int(kwargs["subscribers"])
-    output_results(c, results_label, subscribers)
+    output_results(c, results_label)
 
 
 def main():

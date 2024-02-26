@@ -36,7 +36,7 @@
     - name: start traffic
       # TOS=> DSCP:START:PPS
       # command: "./ndr --stl --ports 0 1 --profile automation/trex_control_plane/interactive/trex/examples/stl/bng_flow_stats.py  --prof-tun=subscribers={{ subscribers }},results={{ measure_id }} --force-map -o results/{{ label }}/{{subscribers }}/{{ packet_size }}/{{ measure_id }}/trex_ndr.json"
-      command: "./ndr --stl --ports 0 1 --profile stl/udp_for_benchmarks.py  --prof-tun=packet_len={{ packet_size }},stream_count={{ subscribers }} --force-map -o results/{{ label }}/{{subscribers }}/{{ packet_size }}/{{ measure_id }}/trex_ndr.json"
+      command: "./ndr --stl --ports 0 1 -p 0.05 --profile stl/udp_for_benchmarks.py  --prof-tun=packet_len={{ packet_size }},stream_count={{ subscribers }} --force-map -o results/{{ label }}/{{subscribers }}/{{ packet_size }}/{{ measure_id }}/trex_ndr.json"
       args:
         chdir: /opt/trex/v3.02/
 
@@ -62,18 +62,18 @@
        dest_dir: "../output/{{ label }}/{{ subscribers }}/{{ packet_size }}/{{ measure_id }}/"
 
     - name: print vpp stats after test
-      command: /root/vpp/build-root/build-vpp-native/vpp/bin/vpp_get_stats dump
+      command: /home/ubuntu/bisdn-vpp/build-root/build-vpp-native/vpp/bin/vpp_get_stats dump
       register: vppstats
 
     - name: create stats file
       file: 
         state: touch
-        path: /home/ubuntu/vpp/results/{{ measure_id }}_vpp_stats
+        path: /home/ubuntu/vpp-stats/results/{{ measure_id }}_vpp_stats
 
     - name: output results
       copy:
         content: "{{ vppstats.stdout }}"
-        dest: /home/ubuntu/vpp/results/{{ measure_id }}_vpp_stats
+        dest: /home/ubuntu/vpp-stats/results/{{ measure_id }}_vpp_stats
 
     - name: pause stats
       pause:
@@ -82,7 +82,7 @@
     - name: copy stats file
       become: yes
       fetch: 
-        src: "/home/ubuntu/vpp/results/{{ measure_id }}_vpp_stats"
+        src: "/home/ubuntu/vpp-stats/results/{{ measure_id }}_vpp_stats"
         dest: "{{ dest_dir }}"
         flat: yes
 

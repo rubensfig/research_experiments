@@ -5,7 +5,7 @@
     - set_fact:
        measure_id: "{{ measure_id }}"    
     - set_fact:
-       subscribers: "{{ range }}"
+       test_type: "{{ range }}"
     - set_fact:
        label: "{{ label }}"
     - set_fact:
@@ -13,7 +13,7 @@
     - set_fact:
        mult: "{{ mult }}"
     - set_fact:
-       dest_dir: "../output/{{ label }}/{{ subscribers }}/{{ packet_size }}/{{ measure_id }}/"
+       dest_dir: "../output/{{ label }}/{{ test_type }}/{{ packet_size }}/{{ measure_id }}/"
 
     - name: restart trex-server
       systemd:
@@ -27,7 +27,7 @@
         seconds: 30
 
     - name: "start traffic"
-      command: "python3 automation/trex_control_plane/interactive/trex/examples/stl/incorrect_delay.py --results {{ measure_id }} --duration 60 --subscribers {{ subscribers }} --test_type {{ label }}"
+      command: "python3 automation/trex_control_plane/interactive/trex/examples/stl/incorrect_delay.py --results {{ measure_id }} --duration 60 --test_type {{ test_type }} --mult '25gbpsl1'"
       args:
         chdir: /opt/trex/v3.02/
 
@@ -45,13 +45,13 @@
     - set_fact:
        measure_id: "{{ measure_id }}"    
     - set_fact:
-       subscribers: "{{ range }}"
+       test_type: "{{ range }}"
     - set_fact:
        label: "{{ label }}"
     - set_fact:
        packet_size: "{{ packet_size }}"
     - set_fact:
-       dest_dir: "../output/{{ label }}/{{ subscribers }}/{{ packet_size }}/{{ measure_id }}/"
+       dest_dir: "../output/{{ label }}/{{ test_type }}/{{ packet_size }}/{{ measure_id }}/"
 
     - name: print vpp stats after test
       command: /root/vpp/build-root/build-vpp-native/vpp/bin/vpp_get_stats dump

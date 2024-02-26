@@ -149,48 +149,6 @@ class BNGProfile(object):
                 STLVmFixIpv4(offset="IP"),
             ],
         )
-        vm2 = STLScVmRaw(
-            [
-                STLVmFlowVar(
-                    name="dstip",
-                    min_value=0x0A010000,
-                    max_value=0x0A010000 + subscribers,
-                    size=4,
-                    step=1,
-                    op="inc",
-                ),
-                STLVmWrFlowVar(fv_name="dstip", pkt_offset="IP.dst"),
-                STLVmFixIpv4(offset="IP"),
-            ],
-        )
-        vm3 = STLScVmRaw(
-            [
-                STLVmFlowVar(
-                    name="dstip",
-                    min_value=0x0A020000,
-                    max_value=0x0A020000 + subscribers,
-                    size=4,
-                    step=1,
-                    op="inc",
-                ),
-                STLVmWrFlowVar(fv_name="dstip", pkt_offset="IP.dst"),
-                STLVmFixIpv4(offset="IP"),
-            ],
-        )
-        vm4 = STLScVmRaw(
-            [
-                STLVmFlowVar(
-                    name="dstip",
-                    min_value=0x0A030000,
-                    max_value=0x0A030000 + subscribers,
-                    size=4,
-                    step=1,
-                    op="inc",
-                ),
-                STLVmWrFlowVar(fv_name="dstip", pkt_offset="IP.dst"),
-                STLVmFixIpv4(offset="IP"),
-            ],
-        )
 
         try:
             streams = []
@@ -211,39 +169,6 @@ class BNGProfile(object):
                     # flow_stats = STLFlowStats(pg_id=param_tos),
                 )
                 streams.append(s)
-
-                s2 = STLStream(
-                    packet=STLPktBuilder(
-                        pkt=get_packet(param_tos,"00:00:00:01:00:03" , param_packet_size),
-                        vm=vm2,
-                    ),
-                    isg=param_start * 1000000,
-                    mode=STLTXCont(),
-                    # flow_stats = STLFlowStats(pg_id=param_tos),
-                )
-                streams.append(s2)
-
-                s3 = STLStream(
-                    packet=STLPktBuilder(
-                        pkt=get_packet(param_tos,"00:00:00:01:00:05" , param_packet_size),
-                        vm=vm3,
-                    ),
-                    isg=param_start * 1000000,
-                    mode=STLTXCont(),
-                    # flow_stats = STLFlowStats(pg_id=param_tos),
-                )
-                streams.append(s3)
-
-                s4 = STLStream(
-                    packet=STLPktBuilder(
-                        pkt=get_packet(param_tos,"00:00:00:01:00:07" , param_packet_size),
-                        vm=vm4,
-                    ),
-                    isg=param_start * 1000000,
-                    mode=STLTXCont(),
-                    # flow_stats = STLFlowStats(pg_id=param_tos),
-                )
-                streams.append(s4)
 
             latency = True
             if latency :
