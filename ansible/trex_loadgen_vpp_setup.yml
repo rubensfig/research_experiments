@@ -4,6 +4,11 @@
   tasks:
     - name: Copy test file to server
       copy:
+        src: shaping_error.py
+        dest:  /opt/trex/v3.02/automation/trex_control_plane/interactive/trex/examples/stl/
+
+    - name: Copy test file to server
+      copy:
         src: incorrect_delay.py
         dest:  /opt/trex/v3.02/automation/trex_control_plane/interactive/trex/examples/stl/
 
