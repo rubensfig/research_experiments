@@ -1,0 +1,5 @@
+"Tx Port","Rx Port","Traffic Item","Tx Frames","Rx Frames","Frames Delta","Loss %","Tx Frame Rate","Rx Frame Rate","Tx L1 Rate (bps)","Tx Rate (Bps)","Tx Rate (bps)","Tx Rate (Kbps)","Tx Rate (Mbps)","Avg Delay Variation (ns)","Min Delay Variation (ns)","Max Delay Variation (ns)","Short Term Avg Delay Variation (ns)","Total Sequence Errors","Last Sequence Number","Cut-Through Avg Latency (ns)","Cut-Through Min Latency (ns)","Cut-Through Max Latency (ns)","First TimeStamp","Last TimeStamp"
+"Ethernet - 001","Ethernet - 001","Traffic Item 1",42280379,42280066,313,0.001,704887.000,704898.000,2999999072.000,360902144.000,2887217152.000,2887217.152,2887.217,38575,7,364197,38455,41615173,42280063,313182,125557,511385,"00:00:00.092","00:01:00.073"
+"Ethernet - 001","Ethernet - 001","Traffic Item 2",0,0,0,0,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"","","","","",0,"","","","",""
+"Ethernet - 001","Ethernet - 001","Traffic Item 3",0,0,0,0,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"","","","","",0,"","","","",""
+"Ethernet - 001","Ethernet - 001","Traffic Item 4",0,0,0,0,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"","","","","",0,"","","","",""

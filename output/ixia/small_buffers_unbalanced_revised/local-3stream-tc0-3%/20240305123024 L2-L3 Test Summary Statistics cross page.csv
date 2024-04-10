@@ -1,0 +1,2 @@
+"Tx Frames Count","Rx Frames Count","Tx Frame Rate","Rx Frame Rate","Tx L1 Rate (bps)","Tx L2 Throughput (Bps)","Tx L2 Throughput (bps)","Tx L2 Throughput (Kbps)","Tx L2 Throughput (Mbps)","Cut-Through Avg Latency (ns)","Cut-Through Min Latency (ns)","Cut-Through Max Latency (ns)"
+177105627,177105148,3054511.000,3054508.500,12999998816.000,1563909632.000,12511277056.000,12511277.056,12511.277,150861,80735,278477

@@ -1,0 +1,5 @@
+"Tx Port","Rx Port","Traffic Item","Tx Frames","Rx Frames","Frames Delta","Loss %","Tx Frame Rate","Rx Frame Rate","Tx L1 Rate (bps)","Rx L1 Rate (bps)","Rx Bytes","Tx Rate (Bps)","Rx Rate (Bps)","Tx Rate (bps)","Rx Rate (bps)","Tx Rate (Kbps)","Rx Rate (Kbps)","Tx Rate (Mbps)","Rx Rate (Mbps)","Cut-Through Avg Latency (ns)","Cut-Through Min Latency (ns)","Cut-Through Max Latency (ns)","First TimeStamp","Last TimeStamp"
+"Ethernet - 001","Ethernet - 001","Traffic Item 1",58244819,58244819,0,0.000,0.000,0.000,0.000,0.000,29821347328,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,378249,99807,1079957,"00:00:00.147","00:01:02.119"
+"Ethernet - 001","Ethernet - 001","Traffic Item 2",87367230,87367230,0,0.000,0.000,0.000,0.000,0.000,44732021760,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,339261,100072,990687,"00:00:00.147","00:01:02.119"
+"Ethernet - 001","Ethernet - 001","Traffic Item 3",0,0,0,0,0.000,0.000,0.000,0.000,0,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"","","","",""
+"Ethernet - 001","Ethernet - 001","Traffic Item 4",0,0,0,0,0.000,0.000,0.000,0.000,0,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"","","","",""

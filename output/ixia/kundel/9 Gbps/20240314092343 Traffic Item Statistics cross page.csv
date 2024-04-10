@@ -1,0 +1,5 @@
+"Traffic Item","Tx Frames","Rx Frames","Frames Delta","Loss %","Tx Frame Rate","Rx Frame Rate","Tx L1 Rate (bps)","Tx Rate (Bps)","Tx Rate (bps)","Tx Rate (Kbps)","Tx Rate (Mbps)","Avg Delay Variation (ns)","Min Delay Variation (ns)","Max Delay Variation (ns)","Short Term Avg Delay Variation (ns)","Total Sequence Errors","Cut-Through Avg Latency (ns)","Cut-Through Min Latency (ns)","Cut-Through Max Latency (ns)","First TimeStamp","Last TimeStamp"
+"Traffic Item 1",100000,100000,0,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,6158,0,64645,"",0,55429,43902,125712,"00:00:00.099","00:00:50.099"
+"Traffic Item 2",88360493,88360412,81,0.000,1473155.500,1473154.000,4499999000.000,533036765.000,4264294120.000,4264294.120,4264.294,7244,0,47932,10266,86282795,55088,35547,19181200,"00:00:00.099","00:01:00.080"
+"Traffic Item 3",88360493,88360412,81,0.000,1473155.500,1473154.000,4499999000.000,533036765.000,4264294120.000,4264294.120,4264.294,4918,0,44630,10360,86324280,55048,35562,17097140,"00:00:00.099","00:01:00.080"
+"Traffic Item 4",0,0,0,0,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"","","","","","","","","",""
