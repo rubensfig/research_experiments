@@ -1,0 +1,397 @@
+{
+    "SC": {
+        "repetitions": 30,
+        "e1_1": {
+            "latency_bins": {"start": [20, 20, 20,20,20,20],
+                             "stop": [50,50,50,50,50],
+                             "num": 16},
+            "traffic_profiles": {
+                "foreground": {
+                    "levels": [1],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["foreground"],
+                    "frame_size": [178],
+                    "data_rate": [64000],
+                    "priority": [0]
+                },
+                "background": {
+                    "levels": [4096, 8192, 16384, 32768, 65535],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["TC1"],
+                    "frame_size": [512, 1518],
+                    "data_rate": [1562523842,3125047684,6250095368,12500190737,25000000000],
+                    "priority": [1]
+                }
+            }
+        },
+        "e1_2": {
+            "latency_bins": {"start": [20, 20, 20,20,20,20],
+                             "stop": [200,300,600,1000,1000],
+                             "num": 16},
+            "traffic_profiles": {
+                "foreground": {
+                    "levels": [1],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["foreground"],
+                    "frame_size": [178],
+                    "data_rate": [64000],
+                    "priority": [0]
+                },
+                "background": {
+                    "levels": [256, 512, 1024, 2048, 4096],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["TC1"],
+                    "frame_size": [512, 1518],
+                    "data_rate": [1792000000, 3584000000, 7168000000, 14336000000, 28672000000],
+                    "priority": [1]
+                }
+            }
+        },
+        "e1_4_512": {
+            "latency_bins": {"start": [30, 30, 30,30,30,30],
+                             "stop": [80, 100, 180, 100, 100],
+                             "num": 16},
+            "traffic_profiles": {
+                "foreground": {
+                    "levels": [1],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["foreground"],
+                    "frame_size": [178],
+                    "data_rate": [64000],
+                    "priority": [0]
+                },
+                "background": {
+                    "levels": [4096, 8192, 16384, 32768, 65535],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["TC1"],
+                    "frame_size": [512],
+                    "data_rate": [20000000000,20000000000,20000000000,20000000000,20000000000],
+                    "priority": [1]
+                }
+            }
+        },
+        "e1_4_1518_20gbps": {
+            "latency_bins": {"start": [30, 30, 30,30,30,30],
+                             "stop": [50,50,50,50,50],
+                             "num": 16},
+            "traffic_profiles": {
+                "foreground": {
+                    "levels": [1],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["foreground"],
+                    "frame_size": [178],
+                    "data_rate": [64000],
+                    "priority": [0]
+                },
+                "background": {
+                    "levels": [4096, 8192, 16384, 32768, 65535],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["TC1"],
+                    "frame_size": [1518],
+                    "data_rate": [20000000000,20000000000,20000000000,20000000000,20000000000],
+                    "priority": [1]
+                }
+            }
+        },
+        "e1_4_1518_50gbps": {
+            "latency_bins": {"start": [30, 30, 30,30,30,30],
+                             "stop": [50,50,120,150,170],
+                             "num": 10},
+            "traffic_profiles": {
+                "foreground": {
+                    "levels": [1],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["foreground"],
+                    "frame_size": [178],
+                    "data_rate": [64000],
+                    "priority": [0]
+                },
+                "background": {
+                    "levels": [4096, 8192, 16384, 32768, 65535],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["TC1"],
+                    "frame_size": [1518],
+                    "data_rate": [50000000000,50000000000,50000000000,50000000000,50000000000],
+                    "priority": [1]
+                }
+            }
+        },
+        "e2_1_1tc": {
+            "latency_bins": {"start": [30],
+                             "stop": [50],
+                             "num": 10},
+            "traffic_profiles": {
+                "foreground": {
+                    "levels": [1],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["foreground"],
+                    "frame_size": [178],
+                    "data_rate": [64000],
+                    "priority": [0]
+                },
+                "background": {
+                    "levels": [65535],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["TC1"],
+                    "frame_size": [512, 1518],
+                    "data_rate": [20000000000],
+                    "priority": [1]
+                }
+            }
+        },
+        "e2_1_2tc_512": {
+            "latency_bins": {"start": [30],
+                             "stop": [150],
+                             "num": 10},
+            "traffic_profiles": {
+                "foreground": {
+                    "levels": [1],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["foreground"],
+                    "frame_size": [178],
+                    "data_rate": [64000],
+                    "priority": [0]
+                },
+                "background": {
+                    "levels": [65535],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["FG1", "FG2"],
+                    "frame_size": [512],
+                    "data_rate": [9999847412, 9999847412],
+                    "priority": [1,2]
+                }
+            }
+        },
+        "e2_1_2tc_1518": {
+            "latency_bins": {"start": [30],
+                             "stop": [80],
+                             "num": 10},
+            "traffic_profiles": {
+                "foreground": {
+                    "levels": [1],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["foreground"],
+                    "frame_size": [178],
+                    "data_rate": [64000],
+                    "priority": [0]
+                },
+                "background": {
+                    "levels": [65535],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["FG1", "FG2"],
+                    "frame_size": [1518],
+                    "data_rate": [9999847412, 9999847412],
+                    "priority": [1,2]
+                }
+            }
+        },
+        "e2_1_4tc": {
+            "latency_bins": {"start": [30],
+                             "stop": [100],
+                             "num": 10},
+            "traffic_profiles": {
+                "foreground": {
+                    "levels": [1],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["foreground"],
+                    "frame_size": [178],
+                    "data_rate": [64000],
+                    "priority": [0]
+                },
+                "background": {
+                    "levels": [65535],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["FG1", "FG2", "FG3", "FG4"],
+                    "frame_size": [512, 1518],
+                    "data_rate": [4999923706, 4999923706, 4999923706, 4999923706],
+                    "priority": [1,2,3,4]
+                }
+            }
+        },
+        "e2_1_8tc": {
+            "latency_bins": {"start": [30],
+                             "stop": [100],
+                             "num": 10},
+            "traffic_profiles": {
+                "foreground": {
+                    "levels": [1],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["foreground"],
+                    "frame_size": [178],
+                    "data_rate": [64000],
+                    "priority": [0]
+                },
+                "background": {
+                    "levels": [65535],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["FG1", "FG2", "FG3", "FG4", "FG5", "FG6", "FG7", "FG8"],
+                    "frame_size": [512, 1518],
+                    "data_rate": [2499961853, 2499961853,2499961853,2499961853,2499961853,2499961853,2499961853,2499961853],
+                    "priority": [1,2,3,4,5,6,7,8]
+                }
+            }
+        },
+        "e2_1_16tc": {
+            "latency_bins": {"start": [30],
+                             "stop": [130],
+                             "num": 10},
+            "traffic_profiles": {
+                "foreground": {
+                    "levels": [1],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["foreground"],
+                    "frame_size": [178],
+                    "data_rate": [64000],
+                    "priority": [0]
+                },
+                "background": {
+                    "levels": [65535],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["FG1", "FG2", "FG3", "FG4", "FG5", "FG6", "FG7", "FG8", "FG9", "FG10", "FG11", "FG12", "FG13", "FG14", "FG15","FG16"],
+                    "frame_size": [512, 1518],
+                    "data_rate": [1249980926,1249980926,1249980926,1249980926,1249980926,1249980926,1249980926,1249980926,1249980926,1249980926,1249980926,1249980926,1249980926,1249980926,1249980926,1249980926],
+                    "priority": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+                }
+            }
+        },
+        "e2_2_1tc": {
+            "latency_bins": {"start": [30],
+                             "stop": [50],
+                             "num": 10},
+            "traffic_profiles": {
+                "foreground": {
+                    "levels": [1],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["foreground"],
+                    "frame_size": [178],
+                    "data_rate": [64000],
+                    "priority": [0]
+                },
+                "background": {
+                    "levels": [512],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["TC1"],
+                    "frame_size": [512, 1518],
+                    "data_rate": [3584000000],
+                    "priority": [1]
+                }
+            }
+        },
+        "e2_2_2tc_512": {
+            "latency_bins": {"start": [30],
+                             "stop": [150],
+                             "num": 10},
+            "traffic_profiles": {
+                "foreground": {
+                    "levels": [1],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["foreground"],
+                    "frame_size": [178],
+                    "data_rate": [64000],
+                    "priority": [0]
+                },
+                "background": {
+                    "levels": [65535],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["FG1", "FG2"],
+                    "frame_size": [512],
+                    "data_rate": [1792000000, 1792000000],
+                    "priority": [1,2]
+                }
+            }
+        },
+        "e2_2_2tc_1518": {
+            "latency_bins": {"start": [30],
+                             "stop": [80],
+                             "num": 10},
+            "traffic_profiles": {
+                "foreground": {
+                    "levels": [1],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["foreground"],
+                    "frame_size": [178],
+                    "data_rate": [64000],
+                    "priority": [0]
+                },
+                "background": {
+                    "levels": [512],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["FG1", "FG2"],
+                    "frame_size": [1518],
+                    "data_rate": [1792000000, 1792000000],
+                    "priority": [1,2]
+                }
+            }
+        },
+        "e2_2_4tc": {
+            "latency_bins": {"start": [30],
+                             "stop": [100],
+                             "num": 10},
+            "traffic_profiles": {
+                "foreground": {
+                    "levels": [1],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["foreground"],
+                    "frame_size": [178],
+                    "data_rate": [64000],
+                    "priority": [0]
+                },
+                "background": {
+                    "levels": [512],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["FG1", "FG2", "FG3", "FG4"],
+                    "frame_size": [512, 1518],
+                    "data_rate": [896000000, 896000000, 896000000, 896000000],
+                    "priority": [1,2,3,4]
+                }
+            }
+        },
+        "e2_2_8tc": {
+            "latency_bins": {"start": [30],
+                             "stop": [100],
+                             "num": 10},
+            "traffic_profiles": {
+                "foreground": {
+                    "levels": [1],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["foreground"],
+                    "frame_size": [178],
+                    "data_rate": [64000],
+                    "priority": [0]
+                },
+                "background": {
+                    "levels": [512],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["FG1", "FG2", "FG3", "FG4", "FG5", "FG6", "FG7", "FG8"],
+                    "frame_size": [512, 1518],
+                    "data_rate": [448000000, 448000000,448000000,448000000,448000000,448000000,448000000,448000000],
+                    "priority": [1,2,3,4,5,6,7,8]
+                }
+            }
+        },
+        "e2_2_16tc": {
+            "latency_bins": {"start": [30],
+                             "stop": [130],
+                             "num": 10},
+            "traffic_profiles": {
+                "foreground": {
+                    "levels": [1],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["foreground"],
+                    "frame_size": [178],
+                    "data_rate": [64000],
+                    "priority": [0]
+                },
+                "background": {
+                    "levels": [512],
+                    "traffic_items": ["FG1"],
+                    "flow_groups": ["FG1", "FG2", "FG3", "FG4", "FG5", "FG6", "FG7", "FG8", "FG9", "FG10", "FG11", "FG12", "FG13", "FG14", "FG15","FG16"],
+                    "frame_size": [512, 1518],
+                    "data_rate": [224000000,224000000,224000000,224000000,224000000,224000000,224000000,224000000,224000000,224000000,224000000,224000000,224000000,224000000,224000000,224000000],
+                    "priority": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+                }
+            }
+        }
+
+    }
+}
