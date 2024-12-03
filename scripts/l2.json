@@ -255,9 +255,9 @@
             }
         },
         "e2_2_1tc": {
-            "latency_bins": {"start": [30],
-                             "stop": [50],
-                             "num": 10},
+            "latency_bins": {"start": [100],
+                             "stop": [800],
+                             "num": 16},
             "traffic_profiles": {
                 "foreground": {
                     "levels": [1],
@@ -278,9 +278,9 @@
             }
         },
         "e2_2_2tc_512": {
-            "latency_bins": {"start": [30],
-                             "stop": [150],
-                             "num": 10},
+            "latency_bins": {"start": [100],
+                             "stop": [500],
+                             "num": 16},
             "traffic_profiles": {
                 "foreground": {
                     "levels": [1],
@@ -291,7 +291,7 @@
                     "priority": [0]
                 },
                 "background": {
-                    "levels": [65535],
+                    "levels": [512],
                     "traffic_items": ["FG1"],
                     "flow_groups": ["FG1", "FG2"],
                     "frame_size": [512],
@@ -301,9 +301,9 @@
             }
         },
         "e2_2_2tc_1518": {
-            "latency_bins": {"start": [30],
-                             "stop": [80],
-                             "num": 10},
+            "latency_bins": {"start": [100],
+                             "stop": [500],
+                             "num": 16},
             "traffic_profiles": {
                 "foreground": {
                     "levels": [1],
@@ -324,9 +324,9 @@
             }
         },
         "e2_2_4tc": {
-            "latency_bins": {"start": [30],
-                             "stop": [100],
-                             "num": 10},
+            "latency_bins": {"start": [100],
+                             "stop": [800],
+                             "num": 16},
             "traffic_profiles": {
                 "foreground": {
                     "levels": [1],
@@ -347,9 +347,9 @@
             }
         },
         "e2_2_8tc": {
-            "latency_bins": {"start": [30],
-                             "stop": [100],
-                             "num": 10},
+            "latency_bins": {"start": [100],
+                             "stop": [1200],
+                             "num": 16},
             "traffic_profiles": {
                 "foreground": {
                     "levels": [1],
@@ -370,9 +370,9 @@
             }
         },
         "e2_2_16tc": {
-            "latency_bins": {"start": [30],
-                             "stop": [130],
-                             "num": 10},
+            "latency_bins": {"start": [100],
+                             "stop": [1200],
+                             "num": 16},
             "traffic_profiles": {
                 "foreground": {
                     "levels": [1],

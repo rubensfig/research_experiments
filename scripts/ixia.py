@@ -11,8 +11,8 @@ STORE_STATS = True
 
 TEST_INTERVAL = 60
 EXPSET = "SC"
-EXP = "e2_1_16tc"
-SAVE_DIR = r"C:\Users\Administrator\Documents\rubens\smartqos_final\l1"
+EXP = "e2_1_4tc_512"
+SAVE_DIR = r"C:\Users\Administrator\Documents\rubens\smartqos_final_e2_1"
 
 apiServerIP = "127.0.0.1"
 chassisIP = "172.30.20.132"
@@ -32,15 +32,15 @@ def topology_setup(ixnetwork, traffic_items):
         traffic_item_name = traffic_items[i]
 
         BASE_UPSTREAM_MAC = f"00:{i}:01:00:00:01"
-        BASE_UPSTREAM_GATEWAY_MAC = f"00:11:22:33:44:{i}"
+        BASE_UPSTREAM_GATEWAY_MAC = f"00:11:22:33:44:{i+1}"
         BASE_DOWNSTREAM_MAC = f"01:{i}:00:00:00:01"
-        BASE_DOWNSTREAM_GATEWAY_MAC = f"00:FF:22:33:44:{i}"
-        
+        BASE_DOWNSTREAM_GATEWAY_MAC = f"00:FF:22:33:44:{i+1}"
+
         UPSTREAM_IP = f"10.{i}.0.0"
-        DOWNSTREAM_IP = f"192.168.{i}.0"
+        DOWNSTREAM_IP = f"192.16{i}.0.0"
 
         ixnetwork.info("Add US Device Group")
-        us_dg = topo.DeviceGroup.add(Name="Upstream-"+traffic_item_name, Multiplier=1)
+        us_dg = topo.DeviceGroup.add(Name="Upstream-" + traffic_item_name, Multiplier=1)
         us_mac = us_dg.Ethernet.add()
         us_mac.Mac.Single(BASE_UPSTREAM_MAC)
         us_mac.UseVlans = "true"
@@ -56,7 +56,9 @@ def topology_setup(ixnetwork, traffic_items):
         us_v4.ManualGatewayMac.Single(BASE_UPSTREAM_GATEWAY_MAC)
 
         ixnetwork.info("Add DS Device Group")
-        ds_dg = topo.DeviceGroup.add(Name="Downstream-"+traffic_item_name, Multiplier=MAX_FLOWS)
+        ds_dg = topo.DeviceGroup.add(
+            Name="Downstream-" + traffic_item_name, Multiplier=MAX_FLOWS
+        )
         ds_mac = ds_dg.Ethernet.add()
         ds_mac.Mac.Increment(
             start_value=BASE_DOWNSTREAM_MAC, step_value="00:00:00:00:00:01"
@@ -91,12 +93,13 @@ def config_foreground(topology, traffic_item):
             pass
 
     endpoint = traffic_item.EndpointSet.add(
-        Name=fg_config["flow_groups"][0], Sources=upstream_src,
+        Name=fg_config["flow_groups"][0],
+        Sources=upstream_src,
     )
     endpoint.ScalableDestinations = [
         {
             # "arg1": "/api/v1/sessions/1/ixnetwork/topology/1/deviceGroup/2/ethernet/1/ipv4/1",
-            "arg1": downstream_src + '/ethernet/1/ipv4/1', # Very hacky
+            "arg1": downstream_src + "/ethernet/1/ipv4/1",  # Very hacky
             "arg2": 1,
             "arg3": 1,
             "arg4": 1,
@@ -113,61 +116,82 @@ def config_foreground(topology, traffic_item):
 
     v4 = fg_config_element.Stack.find()[2]
     prio = v4.Field.find()[2]
-    prio.SingleValue = fg_config["priority"][0]
+    prio.SingleValue = hex(fg_config["priority"][0])
     prio.ActiveFieldChoice = True
 
 
 def get_background_loops():
     background = config[EXPSET][EXP]["traffic_profiles"]["background"]
-    return background["frame_size"], background["levels"]
+
+    # Check if the background config has direct levels or is divided into priorities
+    if "levels" in bg_config:
+        # Handle the flat structure with direct `levels`
+        prio_configs = {"default": bg_config}
+    else:
+        # Handle nested priority levels
+        prio_configs = {key: value for key, value in bg_config.items() if key.startswith("prio_")}
+
+    print(prio_configs)
+    return prio_configs[list(prio_configs)[0]]["frame_size"], prio_configs[list(prio_configs)[0]]["levels"]
 
 
 def config_background(topology, traffic_items, level_id, packet_size):
     bg_config = config[EXPSET][EXP]["traffic_profiles"]["background"]
 
-    for item in bg_config["traffic_items"]:
+    # Check if the background config has direct levels or is divided into priorities
+    if "levels" in bg_config:
+        # Handle the flat structure with direct `levels`
+        prio_configs = {"default": bg_config}
+    else:
+        # Handle nested priority levels
+        prio_configs = {key: value for key, value in bg_config.items() if key.startswith("prio_")}
 
-        upstream_src = ""
-        downstream_src = ""
+    for prio_level, prio_config in prio_configs.items():
+        for item in prio_config["traffic_items"]:
 
-        for devicegroup in topology.DeviceGroup.find():
-            if ("Upstream-" + item) == devicegroup.Name:
-                upstream_src = devicegroup
-            elif ("Downstream-" + item) == devicegroup.Name:
-                downstream_src = devicegroup.href
-            else:
-                pass
+            upstream_src = ""
+            downstream_src = ""
 
-        for i in range(0, len(bg_config["flow_groups"])):
+            for devicegroup in topology.DeviceGroup.find():
+                if ("Upstream-" + item) == devicegroup.Name:
+                    upstream_src = devicegroup
+                elif ("Downstream-" + item) == devicegroup.Name:
+                    downstream_src = devicegroup.href
+                else:
+                    pass
 
-            endpoint = traffic_item.EndpointSet.find(Name=item+bg_config["flow_groups"][i])
-            if not endpoint:
-                endpoint = traffic_item.EndpointSet.add(
-                    Name=item+bg_config["flow_groups"][i], Sources=upstream_src
+            for i in range(0, len(prio_config["flow_groups"])):
+
+                endpoint = traffic_item.EndpointSet.find(
+                    Name=item + prio_config["flow_groups"][i]
                 )
+                if not endpoint:
+                    endpoint = traffic_item.EndpointSet.add(
+                        Name=item + prio_config["flow_groups"][i], Sources=upstream_src
+                    )
 
-            endpoint.ScalableDestinations = [
-                {
-                    # "arg1": "/api/v1/sessions/1/ixnetwork/topology/1/deviceGroup/2/ethernet/1/ipv4/1",
-                    "arg1": downstream_src + '/ethernet/1/ipv4/1', # Very hacky
-                    "arg2": 1,
-                    "arg3": 1,
-                    "arg4": 2,  # Start
-                    "arg5": bg_config["levels"][level_id],
-                }
-            ]  # Number of endpoints = arg5
+                endpoint.ScalableDestinations = [
+                    {
+                        # "arg1": "/api/v1/sessions/1/ixnetwork/topology/1/deviceGroup/2/ethernet/1/ipv4/1",
+                        "arg1": downstream_src + "/ethernet/1/ipv4/1",  # Very hacky
+                        "arg2": 1,
+                        "arg3": 1,
+                        "arg4": 2,  # Start
+                        "arg5": prio_config["levels"][level_id],
+                    }
+                ]  # Number of endpoints = arg5
 
-            bg_config_element = traffic_item.ConfigElement.find()[-1]
+                bg_config_element = traffic_item.ConfigElement.find()[-1]
 
-            bg_config_element.FrameRate.Type = "bitsPerSecond"
-            bg_config_element.FrameRate.BitRateUnitsType = "bitsPerSec"
-            bg_config_element.FrameRate.Rate = bg_config["data_rate"][level_id]
-            bg_config_element.FrameSize.FixedSize = packet_size
+                bg_config_element.FrameRate.Type = "bitsPerSecond"
+                bg_config_element.FrameRate.BitRateUnitsType = "bitsPerSec"
+                bg_config_element.FrameRate.Rate = prio_config["data_rate"][level_id]
+                bg_config_element.FrameSize.FixedSize = packet_size
 
-            v4 = bg_config_element.Stack.find()[2]
-            prio = v4.Field.find()[2]
-            prio.SingleValue = bg_config["priority"][i]
-            prio.ActiveFieldChoice = True
+                v4 = bg_config_element.Stack.find()[2]
+                prio = v4.Field.find()[2]
+                prio.SingleValue = hex(prio_config["priority"][i])
+                prio.ActiveFieldChoice = True
 
 
 # create a test tool session
@@ -188,7 +212,17 @@ port = portMap.Map(Location=chassisIP + ";5;13", Name="Port 1")
 portMap.Connect(ForceOwnership=True, HostReadyTimeout=20, LinkUpTimeout=60)
 
 # Setup Topology
-traffic_items = config[EXPSET][EXP]["traffic_profiles"]["background"]["traffic_items"]
+prio_configs = None
+bg_config = config[EXPSET][EXP]["traffic_profiles"]["background"]
+# Check if the background config has direct levels or is divided into priorities
+if "levels" in bg_config:
+    # Handle the flat structure with direct `levels`
+    prio_configs = {"default": bg_config}
+else:
+    # Handle nested priority levels
+    prio_configs = {key: value for key, value in bg_config.items() if key.startswith("prio_")}
+print(prio_configs)
+traffic_items = prio_configs[list(prio_configs)[0]]["traffic_items"]
 topology = topology_setup(ixnetwork, traffic_items)
 ixnetwork.StartAllProtocols(Arg1="sync")
 
@@ -202,12 +236,13 @@ traffic_item = ixnetwork.Traffic.TrafficItem.add(
 traffic = ixnetwork.Traffic.find()[0]
 traffic.Statistics.Latency.Mode = "cutThrough"
 
-config_foreground(topology, traffic_item)
+if "foreground" in config[EXPSET][EXP]["traffic_profiles"]:
+    config_foreground(topology, traffic_item)
 packet_sizes, levels = get_background_loops()
 
 # Test configurations
 lb_config = config[EXPSET][EXP]["latency_bins"]
-repetitions = config[EXPSET]["repetitions"] + 1 # Account for "warmup"
+repetitions = config[EXPSET]["repetitions"] + 1  # Account for "warmup"
 
 
 for level_id in range(0, len(levels)):
@@ -223,7 +258,7 @@ for level_id in range(0, len(levels)):
                 np.linspace(
                     start=lb_config["start"][level_id],
                     stop=lb_config["stop"][level_id],
-                    num=lb_config["num"]
+                    num=lb_config["num"],
                 )
             )
             tracking = traffic_item.Tracking.find()[0]
@@ -301,7 +336,7 @@ for level_id in range(0, len(levels)):
 
             ixnetwork.Traffic.Start()
 
-            if repeat == 0: # Deal with weird latency bins issue
+            if repeat == 0:  # Deal with weird latency bins issue
                 ixnetwork.Traffic.Stop()
                 continue
 
