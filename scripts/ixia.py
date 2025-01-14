@@ -10,15 +10,16 @@ COLLECT_STATS = True
 STORE_STATS = True
 
 TEST_INTERVAL = 60
-EXPSET = "SC"
-EXP = "e2_1_4tc_512"
-SAVE_DIR = r"C:\Users\Administrator\Documents\rubens\smartqos_final_e2_1"
+EXPSET = "LS2"
+EXP = "e1_1"
+SAVE_DIR = r"C:\Users\Administrator\Documents\rubens\load_strategies"
 
 apiServerIP = "127.0.0.1"
 chassisIP = "172.30.20.132"
-MAX_FLOWS = 65536
+# MAX_FLOWS = 65536
+MAX_FLOWS = 16384
 
-json_file_path = "./l1.json"
+json_file_path = "./load_strategies.json"
 
 with open(json_file_path, "r") as j:
     config = json.loads(j.read())
@@ -221,8 +222,11 @@ if "levels" in bg_config:
 else:
     # Handle nested priority levels
     prio_configs = {key: value for key, value in bg_config.items() if key.startswith("prio_")}
-print(prio_configs)
-traffic_items = prio_configs[list(prio_configs)[0]]["traffic_items"]
+
+traffic_items = [prio_configs[i]["traffic_items"] for i in prio_configs]
+traffic_items = [item for sublist in traffic_items for item in (sublist if isinstance(sublist, list) else [sublist])] # flatten list
+
+print(traffic_items)
 topology = topology_setup(ixnetwork, traffic_items)
 ixnetwork.StartAllProtocols(Arg1="sync")
 
@@ -344,9 +348,7 @@ for level_id in range(0, len(levels)):
                 continue
             ixnetwork.Traffic.Stop()
 
-            level_data = config[EXPSET][EXP]["traffic_profiles"]["background"][
-                "levels"
-            ][level_id]
+            level_data = levels[level_id]
             stats_save_dir = (
                 SAVE_DIR + "\\" + EXP + "\\" + str(level_data) + "\\" + str(packet_size)
             )
