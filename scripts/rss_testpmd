@@ -1,0 +1,2 @@
+flow create 0 ingress pattern eth / ipv4 tos is 7 / udp / end actions rss queues 0 1 2 3 end / end
+flow create 0 ingress pattern eth / ipv4 tos is 6 / udp / end actions rss queues 2 3 4 5 end / end
